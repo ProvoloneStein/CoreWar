@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/01/27 18:38:26 by pstein           ###   ########.fr       */
+/*   Updated: 2020/01/27 21:34:47 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,35 @@ void	int32_to_byte(char *data,
 	}
 }
 
-i
-t_pars parser_init(t_pars *parser)
+static void		free_all(char *s1, int x)
+{
+	if (x)
+		free(s1);
+}
+
+char			*ft_strplus_c(char *s1, char s2, int x)
+{
+	char			*new_s;
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	new_s = ft_strnew(ft_strlen(s1) + 2);
+	if (new_s == NULL)
+		return (NULL);
+	while (s1[i])
+		new_s[j++] = s1[i++];
+	new_s[j++] = s2;
+	new_s[j] = '\0';
+	free_all(s1,x);
+	return (new_s);
+}
+
+
+t_pars *parser_init()
 {
 	t_pars *pars;
 
@@ -49,9 +76,11 @@ void assembler(int fd)
 {
 	t_pars *parser;
 
-	parser = parser_init(parser)
+	parser = parser_init();
 	read_tok(fd, parser);
+	ft_printf("%s %s 123", parser->name, parser->comment);
 }
+
 int main()
 {
 	int fd;

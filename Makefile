@@ -6,7 +6,7 @@
 #    By: pstein <pstein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 16:25:48 by pstein            #+#    #+#              #
-#    Updated: 2020/01/27 13:42:20 by pstein           ###   ########.fr        #
+#    Updated: 2020/01/27 19:45:23 by pstein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LEM_IN_SRC_DIR= srcs/
 
 HEADER= lem_in.h
 
-CLEM_IN= main.c
+CLEM_IN= main.c name.c
 
 LEM_IN_SRC = $(addprefix $(LEM_IN_SRC_DIR),$(CLEM_IN))
 
