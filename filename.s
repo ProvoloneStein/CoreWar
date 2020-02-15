@@ -1,5 +1,2 @@
-.name "perec
-3
-2
-1"
-.comment "sdsdsds"
+.name "@name"
+.comment        "Just a basic Winn@er Program"

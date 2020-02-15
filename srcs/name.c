@@ -146,7 +146,7 @@ int checkline(char *str, t_pars *pars, int fd)
 		return (1);
 	if (ft_strncmp(NAME_CMD_STRING, (str + i), ft_strlen(NAME_CMD_STRING)) == 0  && pars->is_name != 1)
 		return(name_w(str + i + strlen(NAME_CMD_STRING), pars, fd));
-	else if(ft_strncmp(COMMENT_CMD_STRING, str + i, ft_strlen(COMMENT_CMD_STRING)) && pars->is_com != 1)
+	else if (ft_strncmp(COMMENT_CMD_STRING, (str + i), ft_strlen(COMMENT_CMD_STRING)) == 0 && pars->is_com != 1)
 		return(com_w(str + i + strlen(COMMENT_CMD_STRING), pars, fd));
     return(-1);    
 

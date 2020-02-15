@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/01/27 21:34:47 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/04 20:43:44 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ t_pars *parser_init()
 	pars->c_len = 0;
 	pars->comment = NULL;
 	pars->name = NULL;
+	pars->row = 0;
+	pars->col = 0;
 	return(pars);
 }
 
