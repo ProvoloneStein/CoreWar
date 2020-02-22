@@ -6,7 +6,7 @@
 #    By: pstein <pstein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 16:25:48 by pstein            #+#    #+#              #
-#    Updated: 2020/01/27 19:45:23 by pstein           ###   ########.fr        #
+#    Updated: 2020/02/22 15:11:10 by pstein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ LIB = -L libft/ -lft
 
 LEM_IN_SRC_DIR= srcs/
 
-HEADER= lem_in.h
+HEADER= assem.h
 
-CLEM_IN= main.c name.c
+CLEM_IN= main.c functions.c read_struckt.c
 
 LEM_IN_SRC = $(addprefix $(LEM_IN_SRC_DIR),$(CLEM_IN))
 

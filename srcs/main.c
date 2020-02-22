@@ -6,11 +6,11 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/04 20:43:44 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/22 15:33:33 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
+#include "assem.h"
 #include "op.h"
 #include <stdint.h>
 
@@ -63,24 +63,33 @@ t_pars *parser_init()
 	t_pars *pars;
 
 	pars = (t_pars*)malloc(sizeof(t_pars));
-	pars->is_com = 0;
-	pars->is_name = 0;
-	pars->n_len = 0;
-	pars->c_len = 0;
 	pars->comment = NULL;
 	pars->name = NULL;
-	pars->row = 0;
-	pars->col = 0;
+	pars->line = 0;
+	pars->column = 0;
 	return(pars);
 }
 
-void assembler(int fd)
+void make_tok(t_pars *parser)
+{
+    parser->token = (t_token*)malloc(sizeof(t_token));
+    parser->token->type = LABEL;
+    parser->token->content = "live";
+    parser->token->next = (t_token*)malloc(sizeof(t_token));
+    parser->token->next->type = DIRECT;
+    parser->token->next->content = "1";
+    parser->token->next->next = NULL;
+}
+
+void assembler()
 {
 	t_pars *parser;
 
 	parser = parser_init();
-	read_tok(fd, parser);
-	ft_printf("%s %s 123", parser->name, parser->comment);
+	make_tok(parser);
+//	read_tok(fd, parser);
+	ft_printf("%s\n", parser->token->content);
+	cteate(parser);
 }
 
 int main()
@@ -89,9 +98,9 @@ int main()
 	char *bytecode;
 	int32_t len = 4;
 
-	if ((fd = open("filename.s", O_RDONLY)) == -1)
-		return(-1);
-	assembler(fd);	
+	/*if ((fd = open("filename.s", O_RDONLY)) == -1)
+		return(-1);*/
+	assembler();
 	if ((fd = open("filename.cor", O_CREAT | O_WRONLY, 0644)) == -1)
 		return(-1);
 	if (!(bytecode = ft_strnew((size_t)len)))
