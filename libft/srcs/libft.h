@@ -52,6 +52,7 @@ char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack,
 		const char *needle, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strcmp1(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
 long long int		ft_atoi_long(const char *str);
@@ -76,7 +77,7 @@ void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char const *s, int fd);
+void				ft_putstr_fd1(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);

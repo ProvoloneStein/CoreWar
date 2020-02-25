@@ -65,7 +65,7 @@ int			ft_putstr_fd_free(char *s, int fd)
 	return (i);
 }
 
-void		ft_putstr_fd(char const *s, int fd)
+void		ft_putstr_fd1(char const *s, int fd)
 {
 	int i;
 
