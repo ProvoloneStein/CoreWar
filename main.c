@@ -1,39 +1,107 @@
 #include "assem.h"
 #include "stdlib.h"
 #include "stdio.h"
-/*
-t_pars *parser_init()
+void	int32_to_byte(char *data,
+							int32_t pos,
+							int32_t value,
+							size_t size)
 {
-	t_pars *pars;
+	int8_t		i;
 
-	pars = (t_pars*)malloc(sizeof(t_pars));
-	pars->comment = NULL;
-	pars->name = NULL;
-	pars->line = 0;
-	pars->column = 0;
-	pars->token = NULL;
-	return(pars);
+	i = 0;
+	while (size)
+	{
+		data[pos + size - 1] = (uint8_t)((value >> i) & 0xFF);
+		i += 8;
+		size--;
+	}
 }
 
-void move(t_pars *pars)
+static void		free_all(char *s1, int x)
 {
-	pars->token = pars->token->next->next;
+	if (x)
+		free(s1);
 }
 
-int main(int ac, char **av)
+char			*ft_strplus_c(char *s1, char s2, int x)
 {
-	t_pars *pars;
+	char			*new_s;
+	unsigned int	i;
+	unsigned int	j;
 
-	pars = parser_init();
-	pars->token = (t_token*)malloc(sizeof(t_token));
-	pars->token->content = "kek";
-	pars->token->next = (t_token*)malloc(sizeof(t_token));
-	pars->token->next->content = "kok";
-	pars->token->next->next = (t_token*)malloc(sizeof(t_token));
-	pars->token->next->next->content = "kak";
-	printf("%s", pars->token->content);
-	move(pars);
-	printf("%s", pars->token->content);
-	return(0);
-}*/
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	new_s = ft_strnew(ft_strlen(s1) + 2);
+	if (new_s == NULL)
+		return (NULL);
+	while (s1[i])
+		new_s[j++] = s1[i++];
+	new_s[j++] = s2;
+	new_s[j] = '\0';
+	free_all(s1,x);
+	return (new_s);
 }
+
+
+//t_pars *parser_init()
+//{
+//	t_pars *pars;
+//
+//	pars = (t_pars*)malloc(sizeof(t_pars));
+//	pars->comment = NULL;
+//	pars->name = NULL;
+//	pars->line = 0;
+//	pars->column = 0;
+//	return(pars);
+//}
+//
+//void make_tok(t_pars *parser)
+//{
+//    parser->token = (t_token*)malloc(sizeof(t_token));
+//    parser->token->type = LABEL;
+//    parser->token->content = "live";
+//    parser->token->next = (t_token*)malloc(sizeof(t_token));
+//    parser->token->next->type = DIRECT;
+//    parser->token->next->content = "1";
+//    parser->token->next->next = NULL;
+//}
+
+void assembler()
+{
+//	t_pars *parser;
+
+//	parser = parser_init();
+//	make_tok(parser);
+//	read_tok(fd, parser);
+//	ft_printf("%s\n", parser->token->content);
+//	cteate(parser);
+}
+
+int main(int argc, char** argv) {
+    int fd;
+    t_token *list;
+    char *bytecode;
+    int32_t len = 4;
+
+    /*if ((fd = open("filename.s", O_RDONLY)) == -1)
+        return(-1);*/
+    if (argc != 2)
+    {
+        ft_printf("usage: ./assembler map");
+    }
+    list = create_list(argv[1]);
+	while(list)
+	{
+		ft_printf("%i, %s\n",list->type, list->content);
+		list = list->next;
+	}
+	//assembler();
+	if ((fd = open("filename.cor", O_CREAT | O_WRONLY, 0644)) == -1)
+		return(-1);
+	if (!(bytecode = ft_strnew((size_t)len)))
+		return(1);
+	int32_to_byte(bytecode, 0, COREWAR_EXEC_MAGIC, 4);
+	write(fd, bytecode, (size_t)len);	
+	return(1);

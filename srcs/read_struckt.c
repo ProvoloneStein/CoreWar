@@ -29,36 +29,36 @@ int make_com(t_pars *parser)
 }
 
 
-//char *what_function(t_pars *parser)
-//{
-//    if (ft_strequ(parser->token->content, "live"))
-//        return(ft_live(parser));
-//    return(NULL);
-//}
+char *what_function(t_pars *parser)
+{
+    if (ft_strequ(parser->token->content, "live"))
+        return(ft_live(parser));
+    return(NULL);    
+}
 
-//int cteate(t_pars *parser)
-//{
-//    char *bytecode;
-//    t_token *head;
-//
-//    head = parser->token;
-//    bytecode = NULL;
-//    parser->byte = 136;
-//    while (parser->token->type == 1)
-//        if (make_com(parser) != 1)
-//            return(-1);
-////    if (!(parser->comment && parser->name))
-////        return(-1);
-//    while (parser->token && parser->token->type != END)
-//    {
-//        if (parser->token->type == NEW_LINE && parser->token->type == LABEL)//1
-//            parser->token = parser->token->next;
-//        else if (parser->token->type == LABEL)//1
-//            what_function(parser);
-//       /* else if(parser->token->type == MENTION)
-//            make_mention();*/
-//        else
-//            return(-1);
-//    }
-//    return(1);
-//}
+int cteate(t_pars *parser)
+{
+    char *bytecode;
+    t_token *head;
+
+    head = parser->token;
+    bytecode = NULL;
+    parser->code_size = 136;
+    while (parser->token->type == 1)
+        if (make_com(parser) != 1)
+            return(-1);
+//    if (!(parser->comment && parser->name))
+//        return(-1);
+    while (parser->token && parser->token->type != END)
+    {
+        if (parser->token->type == NEW_LINE && parser->token->type == LABEL)//1
+            parser->token = parser->token->next;
+        else if (parser->token->type == INSTRUCTION)//1
+            parser->code = what_function(parser);
+       /* else if(parser->token->type == MENTION)
+            make_mention();*/
+        else
+            return(-1);    
+    }
+    return(1);
+}

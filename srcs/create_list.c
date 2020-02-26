@@ -118,7 +118,7 @@ void    read_map(char** map, char* fd_map)
     }
 }
 
-t_oken  find_token(char* c, int* end)
+t_token  find_token(char* c, int* end)
 {
     while (c[*end])
     {
