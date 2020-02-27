@@ -31,7 +31,7 @@ int make_com(t_pars *parser)
 
 char *what_function(t_pars *parser)
 {
-    if (!ft_strcmp(parser->token->content, "live"))
+    if (!ft_strcmp1(parser->token->content, "live"))
         return (ft_live(parser));
     else if (!ft_strcmp(parser->token->content, "ldi"))
         return (ft_ldi(parser));
@@ -73,7 +73,6 @@ int make_code(t_pars *parser)
 
     head = parser->token;
     bytecode = NULL;
-    parser->code_size = 30;
     while (parser->token->type == 1)
         if (make_com(parser) != 1)
             return(-1);

@@ -90,6 +90,7 @@ char *next_arg(t_pars *parser, int type, int size)
     if ((parser->token->next->type == DIRECT || parser->token->next->type == DIRECT_LABEL) && (params = write_dir(parser, size))
                     && (type == 1 || type == 4 || type == 5 || type == 7))
     {
+        ft_printf("\n%x %x %x %x\n", params[0], params[1], params[2], params[3]);
         parser->token = parser->token->next;
         return(params);
     }
@@ -136,7 +137,8 @@ char *write_dir(t_pars *parser, size_t size)
     }
     else if (parser->token->next->type == DIRECT)
     {
-        int_to_byte(line, 0, ft_atoi(parser->token->content), size);
+        int_to_byte(line, 0, ft_atoi(parser->token->next->content), size);
+        ft_printf("\n%x %x %x %x\n", line[0], line[1], line[2], line[3]);
     }
     else
         return(NULL);

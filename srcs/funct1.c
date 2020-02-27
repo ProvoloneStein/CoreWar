@@ -4,12 +4,15 @@ char *ft_live(t_pars *parser)
     char *codeline;
     char *param;
 
-    codeline = ft_strnew(NAME_SIZE + 1);
+    codeline = ft_strnew(NAME_SIZE + 4);
     int_to_byte(codeline, 0, 0x01, NAME_SIZE);
     if ((param = next_arg(parser, 1, 4)))
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
+       // ft_printf("\n%x %x %x %x , %i\n", param[0], param[1], param[2], param[3], ft_strlen(param));
+      //  codeline = ft_strplus(codeline, param, 1, 1);
+        ft_memcpy(&codeline[1], param, 4);
         parser->token = parser->token->next;
+        ft_printf("\n%x %x %x %x %x %i KEK\n", codeline[0], codeline[1], codeline[2], codeline[3], codeline[4], ft_strlen(codeline));
         return(codeline);
     }
     free(codeline);

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/27 19:05:09 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/27 19:44:30 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,8 @@ char *ft_aff(t_pars *parser);
 
 
 
+
+int make_code(t_pars *parser);
 
 
 char *next_arg(t_pars *parser, int type, int size);

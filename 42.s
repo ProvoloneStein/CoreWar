@@ -1,4 +1,5 @@
-.name "@name"
-.comment        "Just a basic Winn@er Program"  	
+.name "Batman"
+.comment "This city needs me"	
 
 	live	%1
+	
