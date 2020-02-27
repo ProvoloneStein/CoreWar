@@ -14,7 +14,7 @@ char *ft_and(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 7, 4))
+    if ((param = next_arg(parser, 7, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -48,7 +48,7 @@ char *ft_or(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 7, 4))
+    if ((param = next_arg(parser, 7, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -82,7 +82,7 @@ char *ft_xor(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 7, 4))
+    if ((param = next_arg(parser, 7, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -133,7 +133,7 @@ char *ft_ldi(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 7, 2))
+    if ((param = next_arg(parser, 7, 2)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;

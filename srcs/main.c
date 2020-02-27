@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/26 19:15:55 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/27 18:44:15 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ t_pars *parser_init()
 	t_pars *pars;
 
 	pars = (t_pars*)malloc(sizeof(t_pars));
-	pars->comment = NULL;
-	pars->name = NULL;
+	pars->comment = "Just a basic Winn@er Program";
+	pars->name =  "@name";
+	pars->token = NULL;
+	pars->mention = NULL;
+	pars->code = ft_strnew(0);
 	pars->line = 0;
 	pars->column = 0;
-	pars->code_size = 100;
+	pars->code_size = 10;
 	return(pars);
 }
 
@@ -35,15 +38,6 @@ void make_tok(t_pars *parser)
     parser->token->next->type = DIRECT;
     parser->token->next->content = "1";
     parser->token->next->next = NULL;
-}
-
-char *assembler(t_pars *parser)
-{
-	make_tok(parser);
-//	read_tok(fd, parser);
-	ft_printf("%s\n", parser->token->content);
-	cteate(parser);
-	return(parser->code);
 }
 
 int writing_in_file(t_pars *parser)
@@ -74,40 +68,39 @@ int writing_in_file(t_pars *parser)
 	return(1);
 
 }
-int main()
+int assembler(char *fd_map)
 {
-	char *code;
 	t_pars *parser;
+	char *kek = fd_map;
 
-	parser = parser_init();
-	code = assembler(parser);
+	ft_printf("%s", kek);
+	if (!(parser = parser_init()))
+		return(-1);
+//	if (!(create_list(fd_map, parser)))
+//		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
+	make_tok(parser);
+//	read_tok(fd, parser);
+//	make_code(parser);
 	writing_in_file(parser);
 	return(1);
 }
-int main(int argc, char** argv) {
-    int fd;
-    t_token *list;
-    char *bytecode;
-    int32_t len = 4;
 
-    /*if ((fd = open("filename.s", O_RDONLY)) == -1)
-        return(-1);*/
-    if (argc != 2)
-    {
-        ft_printf("usage: ./assembler map");
-    }
-    list = create_list(argv[1]);
-	while(list)
-	{
-		ft_printf("%i, %s\n",list->type, list->content);
-		list = list->next;
-	}
-	//assembler();
-	if ((fd = open("filename.cor", O_CREAT | O_WRONLY, 0644)) == -1)
-		return(-1);
-	if (!(bytecode = ft_strnew((size_t)len)))
-		return(1);
-	int32_to_byte(bytecode, 0, COREWAR_EXEC_MAGIC, 4);
-	write(fd, bytecode, (size_t)len);	
-	return(1);
+int is_s_file(char *str)
+{
+	int i;
+
+	i = ft_strlen(str);
+	if (i >= 3 && str[i - 2] == '.' && str[i - 1] == 's')
+		return (1);
+	return(0);	
+
+}
+
+int main(int argc, char **argv)
+{
+	if (argc == 2 && is_s_file(argv[1]))
+		assembler(argv[1]);
+	else
+		ft_printf("usage: ./assembler map");
+	return(0);	
 }

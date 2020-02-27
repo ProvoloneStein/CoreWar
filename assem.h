@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/26 19:24:26 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/27 19:05:09 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef enum
     INSTRUCTION, //оператор
     DIRECT_LABEL, //ссылка на метку
     DIRECT, //цифра
+	INDIRECT_LABEL,
+	INDIRECT,
     REGISTER, //регистер
     END
 }	t_oken;
@@ -66,12 +68,12 @@ typedef struct			s_pars
 ** functions.c
 */
 void	int_to_byte(char *data,int32_t pos, int32_t value, size_t size); //переводит число в байткод
-int arg_type(t_pars *parser, int size, char *code); //записывает байт с типами аргументов
-char *next_arg(t_pars *parser, int type, int size); //кушает аргументы и выдает их оутпутом  (type надо бы сделать структурой хз как)
-int find_value(t_pars *parser); //находит расположение метки и выдает на соклько байтов сдвинуться
-char *write_dir(t_pars *parser, size_t size);
-char *write_indir(t_pars *parser);
-char *write_reg(t_pars *parser);// возвращают строку с кодом аргумента
+int		arg_type(t_pars *parser, int size, char *code); //записывает байт с типами аргументов
+char	*next_arg(t_pars *parser, int type, int size); //кушает аргументы и выдает их оутпутом  (type надо бы сделать структурой хз как)
+int		find_value(t_pars *parser); //находит расположение метки и выдает на соклько байтов сдвинуться
+char	*write_dir(t_pars *parser, size_t size);
+char	*write_indir(t_pars *parser);
+char	*write_reg(t_pars *parser);// возвращают строку с кодом аргумента
 
 /*
 ** funct1.c

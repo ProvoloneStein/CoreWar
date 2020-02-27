@@ -14,7 +14,7 @@ char *ft_sti(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 3, 2))
+    if ((param = next_arg(parser, 3, 2)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -65,7 +65,7 @@ char *ft_lld(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 4, 4))
+    if ((param = next_arg(parser, 4, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -94,7 +94,7 @@ char *ft_lldi(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 7, 2))
+    if ((param = next_arg(parser, 7, 2)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;

@@ -18,9 +18,6 @@ void neg_to_byte(char *data, int32_t pos, int32_t value, size_t size)
     data[pos + size - 1] = (uint8_t)((value >> i) & 0x00) + (uint8_t)(1 >> i);
 }*/
 
-
-
-
 void	int_to_byte(char *data,int32_t pos, int32_t value, size_t size)
 {
 	int8_t		i;

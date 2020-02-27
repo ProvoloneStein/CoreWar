@@ -6,7 +6,7 @@ char *ft_live(t_pars *parser)
 
     codeline = ft_strnew(NAME_SIZE + 1);
     int_to_byte(codeline, 0, 0x01, NAME_SIZE);
-    if (param = next_arg(parser, 1, 4))
+    if ((param = next_arg(parser, 1, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
@@ -30,7 +30,7 @@ char *ft_ld(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 1, 4))
+    if ((param = next_arg(parser, 1, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -59,7 +59,7 @@ char *ft_st(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 3, 4))
+    if ((param = next_arg(parser, 3, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -87,7 +87,7 @@ char *ft_add(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 3, 4))
+    if ((param = next_arg(parser, 3, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
@@ -121,7 +121,7 @@ char *ft_sub(t_pars *parser)
         free(codeline);
         return(NULL);
     }
-    if (param = next_arg(parser, 3, 4))
+    if ((param = next_arg(parser, 3, 4)))
     {
         codeline = ft_strplus(codeline, param, 1, 1);
         size++;
