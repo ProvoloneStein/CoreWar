@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/28 15:05:05 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/28 16:23:01 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_pars *parser_init()
 	t_pars *pars;
 
 	pars = (t_pars*)malloc(sizeof(t_pars));
-	pars->comment = "This city needs me";
-	pars->name = "Batman";
+	pars->comment = NULL;
+	pars->name = NULL;
 	pars->token = NULL;
 	pars->mention = NULL;
-	pars->code = ft_strnew(0);
 	pars->line = 0;
+	pars->i = 0;//это для печати
 	pars->column = 0;
 	pars->code_size = 5;
 	return(pars);
@@ -46,7 +46,6 @@ int writing_in_file(t_pars *parser)
 	char *bytecode;
 	int i;
 	int len;
-	int j = 0;
 
 	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + parser->code_size;
 	i = 0;
@@ -56,8 +55,7 @@ int writing_in_file(t_pars *parser)
 		return(-1);
 	int_to_byte(bytecode, i, COREWAR_EXEC_MAGIC, 4);
 	i += 4;
-	ft_memcpy(&bytecode[i], parser->name, (j = ft_strlen(parser->name)));
-	ft_printf("\n%i\n", j);
+	ft_memcpy(&bytecode[i], parser->name, (ft_strlen(parser->name));
 	i += PROG_NAME_LENGTH;
 	i += 4;
 	int_to_byte(bytecode, i, parser->code_size, 4);
@@ -67,7 +65,6 @@ int writing_in_file(t_pars *parser)
 	i += 4;
 	parser->i = i;
 	make_code(parser, &bytecode);
-	//ft_memcpy(&bytecode[i], parser->code, parser->code_size);
 	write(fd, bytecode, len);
 	return(1);
 

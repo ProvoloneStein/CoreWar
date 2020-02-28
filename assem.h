@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/28 15:05:54 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/28 16:22:29 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,22 @@ typedef struct			s_pars
 
 
 /*
+** main.c
+*/
+t_pars *parser_init(); //инициация парсера ТВОЕГО
+int is_s_file(char *str); // пока чекает что .s  подали и все
+int assembler(char *fd_map); // собсна наш ассемблер! еще дисасемблер можно ебнуть
+int writing_in_file(t_pars *parser); // Непосредственно Каха! Пишет байткод в файл
+
+/*
+** read_struct.c
+*/
+int make_com(t_pars *parser); // подфункция чек команд
+int make_name(t_pars *parser); // подфункция чек команд
+int check_commands(t_pars *parser); //считываю токены комментом, валидирует и записываю их
+int what_function(t_pars *parser, char **bytecode); // по токенам функций запускаю соответствующую валидацию и запись в байткод
+int make_code(t_pars *parser, char **bytecode); // считываю токены функций
+/*
 ** functions.c
 */
 void	int_to_byte(char *data,int32_t pos, int32_t value, size_t size); //переводит число в байткод
@@ -107,15 +123,4 @@ int ft_aff(t_pars *parser, char **bytecode);
 
 
 
-
-int make_code(t_pars *parser, char **bytecode);
-
-
-int cteate(t_pars *parser);
-int read_tok(int fd, t_pars *pars);
-char			*ft_strplus_c(char *s1, char s2, int x);
-void	int_to_byte(char *data,
-							int32_t pos,
-							int32_t value,
-							size_t size);
 #endif
