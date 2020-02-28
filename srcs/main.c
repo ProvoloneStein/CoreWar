@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/27 19:43:37 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/28 15:05:05 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int writing_in_file(t_pars *parser)
 	char *bytecode;
 	int i;
 	int len;
+	int j = 0;
 
 	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + parser->code_size;
 	i = 0;
@@ -55,7 +56,8 @@ int writing_in_file(t_pars *parser)
 		return(-1);
 	int_to_byte(bytecode, i, COREWAR_EXEC_MAGIC, 4);
 	i += 4;
-	ft_memcpy(&bytecode[i], parser->name, ft_strlen(parser->name));
+	ft_memcpy(&bytecode[i], parser->name, (j = ft_strlen(parser->name)));
+	ft_printf("\n%i\n", j);
 	i += PROG_NAME_LENGTH;
 	i += 4;
 	int_to_byte(bytecode, i, parser->code_size, 4);
@@ -63,7 +65,9 @@ int writing_in_file(t_pars *parser)
 	ft_memcpy(&bytecode[i], parser->comment, ft_strlen(parser->comment));
 	i += COMMENT_LENGTH;
 	i += 4;
-	ft_memcpy(&bytecode[i], parser->code, parser->code_size);
+	parser->i = i;
+	make_code(parser, &bytecode);
+	//ft_memcpy(&bytecode[i], parser->code, parser->code_size);
 	write(fd, bytecode, len);
 	return(1);
 
@@ -78,9 +82,7 @@ int assembler(char *fd_map)
 		return(-1);
 //	if (!(create_list(fd_map, parser)))
 //		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
-	make_tok(parser);
-//	read_tok(fd, parser);
-	make_code(parser);
+	make_tok(parser); // ЩАКОММЕНТЬ ПЕРЕД КОМПИЛЯЦИЕЙ!!! ФЕЙКОВОЕ ЧТЕНИЕ ЧТОБЫ ПРОВЕРИТЬ РАБОТАЕТ ИЛИ НЕТ ВРАЙТЕР
 	writing_in_file(parser);
 	return(1);
 }

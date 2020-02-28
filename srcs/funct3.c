@@ -1,132 +1,86 @@
 #include "assem.h"
 
-char *ft_sti(t_pars *parser)
+int ft_sti(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
     int size;
 
     size = 0;
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x0b, NAME_SIZE);
-    if (!(arg_type(parser, 3, codeline)))
-    {
-        free(codeline);
-        return(NULL);
-    }
-    if ((param = next_arg(parser, 3, 2)))
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
+    int_to_byte(*bytecode, parser->i, 0x0b, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if (!(arg_type(parser, 3, bytecode)))
+        return(0);
+    if ((next_arg(parser, 3, 2, bytecode)))
         size++;
-    }
-    if ((param = next_arg(parser, 7, 2)) && size == 1)
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
+    if ((next_arg(parser, 7, 2, bytecode)) && size == 1)
         size++;
-    }
-    if ((param = next_arg(parser, 5, 2)) && size == 2)
+    if ((next_arg(parser, 5, 2, bytecode)) && size == 2)
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }
 
-char *ft_fork(t_pars *parser)
+int ft_fork(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
-
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x0c, NAME_SIZE);
-    if ((param = next_arg(parser, 1, 2)))
+    int_to_byte(*bytecode, 0, 0x0c, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if ((next_arg(parser, 1, 2, bytecode)))
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }
 
-char *ft_lld(t_pars *parser)
+int ft_lld(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
     int size;
 
     size = 0;
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x0d, NAME_SIZE);
-    if (!(arg_type(parser, 2, codeline)))
-    {
-        free(codeline);
-        return(NULL);
-    }
-    if ((param = next_arg(parser, 4, 4)))
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
+    int_to_byte(*bytecode, parser->i, 0x0d, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if (!(arg_type(parser, 2, bytecode)))
+        return(0);
+    if ((next_arg(parser, 4, 4, bytecode)))
         size++;
-    }
-    if ((param = next_arg(parser, 3, 4)) && size == 1)
+    if ((next_arg(parser, 3, 4, bytecode)) && size == 1)
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }
 
-char *ft_lldi(t_pars *parser)
+int ft_lldi(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
     int size;
 
     size = 0;
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x0e, NAME_SIZE);
-    if (!(arg_type(parser, 3, codeline)))
-    {
-        free(codeline);
-        return(NULL);
-    }
-    if ((param = next_arg(parser, 7, 2)))
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
+    int_to_byte(*bytecode, parser->i, 0x0e, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if (!(arg_type(parser, 3, bytecode)))
+        return(0);
+    if ((next_arg(parser, 7, 2, bytecode)))
         size++;
-    }
-    if ((param = next_arg(parser, 5, 2)) && size == 1)
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
+    if ((next_arg(parser, 5, 2, bytecode)) && size == 1)
         size++;
-    }
-    if ((param = next_arg(parser, 3, 2)) && size == 2)
+    if ((next_arg(parser, 3, 2, bytecode)) && size == 2)
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }
 
-char *ft_lfork(t_pars *parser)
+int ft_lfork(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
-
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x0f, NAME_SIZE);
-    if ((param = next_arg(parser, 1, 2)))
+    int_to_byte(*bytecode, parser->i, 0x0f, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if ((next_arg(parser, 1, 2, bytecode)))
     {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }

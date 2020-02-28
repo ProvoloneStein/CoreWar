@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/27 19:44:30 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/28 15:05:54 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ typedef struct			s_pars
 	t_ment				*mention;
     int					column;
     int					line;
-	char 				*code;
 	int					code_size;
+	int 				i;
 }						t_pars;
 
 
@@ -68,53 +68,50 @@ typedef struct			s_pars
 ** functions.c
 */
 void	int_to_byte(char *data,int32_t pos, int32_t value, size_t size); //переводит число в байткод
-int		arg_type(t_pars *parser, int size, char *code); //записывает байт с типами аргументов
-char	*next_arg(t_pars *parser, int type, int size); //кушает аргументы и выдает их оутпутом  (type надо бы сделать структурой хз как)
+int		arg_type(t_pars *parser, int size, char **code); //записывает байт с типами аргументов
+int		next_arg(t_pars *parser, int type, int size, char **bytecode); //кушает аргументы и выдает их оутпутом  (type надо бы сделать структурой хз как)
 int		find_value(t_pars *parser); //находит расположение метки и выдает на соклько байтов сдвинуться
-char	*write_dir(t_pars *parser, size_t size);
-char	*write_indir(t_pars *parser);
-char	*write_reg(t_pars *parser);// возвращают строку с кодом аргумента
+int		write_dir(t_pars *parser, size_t size, char **bytecode);
+int		write_indir(t_pars *parser, char **bytecode);
+int		write_reg(t_pars *parser, char **bytecode);// возвращают строку с кодом аргумента
 
 /*
 ** funct1.c
 */
-char *ft_live(t_pars *parser);
-char *ft_ld(t_pars *parser);
-char *ft_st(t_pars *parser);
-char *ft_add(t_pars *parser);
-char *ft_sub(t_pars *parser);
+int ft_live(t_pars *parser, char **bytecode);
+int	ft_ld(t_pars *parser, char **bytecode);
+int	ft_st(t_pars *parser, char **bytecode);
+int	ft_add(t_pars *parser, char **bytecode);
+int	ft_sub(t_pars *parser, char **bytecode);
 /*
 ** funct2.c
 */
-char *ft_and(t_pars *parser);
-char *ft_or(t_pars *parser);
-char *ft_xor(t_pars *parser);
-char *ft_zjmp(t_pars *parser);
-char *ft_ldi(t_pars *parser);
+int	ft_and(t_pars *parser, char **bytecode);
+int	ft_or(t_pars *parser, char **bytecode);
+int	ft_xor(t_pars *parser, char **bytecode);
+int	ft_zjmp(t_pars *parser, char **bytecode);
+int	ft_ldi(t_pars *parser, char **bytecode);
 /*
 ** funct3.c
 */
-char *ft_sti(t_pars *parser);
-char *ft_fork(t_pars *parser);
-char *ft_lld(t_pars *parser);
-char *ft_lldi(t_pars *parser);
-char *ft_lfork(t_pars *parser);
+int	ft_sti(t_pars *parser, char **bytecode);
+int	ft_fork(t_pars *parser, char **bytecode);
+int	ft_lld(t_pars *parser, char **bytecode);
+int	ft_lldi(t_pars *parser, char **bytecode);
+int	ft_lfork(t_pars *parser, char **bytecode);
 /*
 ** funct4.c
 */
-char *ft_aff(t_pars *parser);
+int ft_aff(t_pars *parser, char **bytecode);
 
 
 
 
 
-int make_code(t_pars *parser);
+int make_code(t_pars *parser, char **bytecode);
 
 
-char *next_arg(t_pars *parser, int type, int size);
-int arg_type(t_pars *parser, int size, char *code);
 int cteate(t_pars *parser);
-char *ft_live(t_pars *parser);
 int read_tok(int fd, t_pars *pars);
 char			*ft_strplus_c(char *s1, char s2, int x);
 void	int_to_byte(char *data,

@@ -1,23 +1,15 @@
 #include "assem.h"
 
-char *ft_aff(t_pars *parser)
+int ft_aff(t_pars *parser, char **bytecode)
 {
-    char *codeline;
-    char *param;
-
-    codeline = ft_strnew(NAME_SIZE + 1);
-    int_to_byte(codeline, 0, 0x10, NAME_SIZE);
-    if (!(arg_type(parser, 1, codeline)))
+    int_to_byte(*bytecode, parser->i, 0x10, NAME_SIZE);
+    parser->i += NAME_SIZE;
+    if (!(arg_type(parser, 1, bytecode)))
+        return(0);
+    if ((next_arg(parser, 3, 2, bytecode)))
     {
-        free(codeline);
-        return(NULL);
-    }
-    if ((param = next_arg(parser, 3, 2)))
-    {
-        codeline = ft_strplus(codeline, param, 1, 1);
         parser->token = parser->token->next;
-        return(codeline);
+        return(1);
     }
-    free(codeline);
-    return(NULL);
+    return(0);
 }
