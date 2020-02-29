@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/28 16:23:01 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/29 18:56:22 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ t_pars *parser_init()
 	pars->line = 0;
 	pars->i = 0;//это для печати
 	pars->column = 0;
-	pars->code_size = 5;
+	pars->code_size = 0;
 	return(pars);
 }
-
+/*
 void make_tok(t_pars *parser)
 {
     parser->token = (t_token*)malloc(sizeof(t_token));
@@ -38,7 +38,7 @@ void make_tok(t_pars *parser)
     parser->token->next->type = DIRECT;
     parser->token->next->content = "1";
     parser->token->next->next = NULL;
-}
+}*/
 
 int writing_in_file(t_pars *parser)
 {
@@ -51,8 +51,9 @@ int writing_in_file(t_pars *parser)
 	i = 0;
 	if ((fd = open("filename.cor", O_CREAT | O_WRONLY, 0644)) == -1)
 		return(-1);
-	if (!(bytecode = ft_strnew((size_t)parser->code_size)))
+	if (!(bytecode = ft_strnew((size_t)len)))
 		return(-1);
+	check_commands(parser);
 	int_to_byte(bytecode, i, COREWAR_EXEC_MAGIC, 4);
 	i += 4;
 	ft_memcpy(&bytecode[i], parser->name, (ft_strlen(parser->name)));
@@ -64,8 +65,22 @@ int writing_in_file(t_pars *parser)
 	i += COMMENT_LENGTH;
 	i += 4;
 	parser->i = i;
+	ft_printf("i = %i", i);
 	make_code(parser, &bytecode);
 	write(fd, bytecode, len);
+	return(1);
+
+}
+int find_size(t_pars *parser)
+{
+	t_token *head;
+
+	head = parser->token;
+	while(parser->token && parser->token->next->type != END)
+		parser->token = parser->token->next;
+	parser->code_size = parser->token->byte;
+	ft_printf("\n%i\n", parser->code_size);
+	parser->token = head;
 	return(1);
 
 }
@@ -80,7 +95,14 @@ int assembler(char *fd_map)
 	if (!(create_list(fd_map, parser)))
 		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
 //	make_tok(parser); // ЩАКОММЕНТЬ ПЕРЕД КОМПИЛЯЦИЕЙ!!! ФЕЙКОВОЕ ЧТЕНИЕ ЧТОБЫ ПРОВЕРИТЬ РАБОТАЕТ ИЛИ НЕТ ВРАЙТЕР
-//	writing_in_file(parser);
+/*	while (parser->token)
+	{
+		ft_printf("%i, %s, %i\n", parser->token->type, parser->token->content, parser->token->byte);
+		parser->token = parser->token->next;
+	}*/
+	parser->code_size = 50;
+	//find_size(parser);
+	writing_in_file(parser);
 	return(1);
 }
 

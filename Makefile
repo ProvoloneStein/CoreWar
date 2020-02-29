@@ -6,7 +6,7 @@
 #    By: pstein <pstein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 16:25:48 by pstein            #+#    #+#              #
-#    Updated: 2020/02/28 15:44:24 by pstein           ###   ########.fr        #
+#    Updated: 2020/02/29 17:06:51 by pstein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LEM_IN_SRC_DIR= srcs/
 
 HEADER= assem.h
 
-CLEM_IN= main.c functions.c read_struct.c funct1.c funct2.c funct3.c funct4.c 
+CLEM_IN= main.c functions.c read_struct.c funct1.c funct2.c funct3.c funct4.c create_list.c checks.c operations.c variables.c
 
 LEM_IN_SRC = $(addprefix $(LEM_IN_SRC_DIR),$(CLEM_IN))
 

@@ -3,35 +3,35 @@
 
 int make_com(t_pars *parser)
 {
-    if (parser->token && ft_strcmp(parser->token->content, "comment") && parser->comment == NULL)
+    if (parser->token->type == COMMENT && parser->comment == NULL)
     {
-        if (parser->token->next && ft_strlen(parser->token->next->content) <= COMMENT_LENGTH) //?
+        if (ft_strlen(parser->token->content) <= COMMENT_LENGTH) //?
         {
-            parser->comment = parser->token->next->content;
-            parser->token = parser->token->next->next;
+            parser->comment = parser->token->content;
+            parser->token = parser->token->next;
         }
         else
-            return(-1);
+            return(0);
     }
     else
-        return(-1);
+        return(0);
     return(1);    
 }
 
 int make_name(t_pars *parser)
 {
-    if (parser->token == NAME && ft_strcmp(parser->token->content, "name") && parser->name == NULL)
+    if (parser->token->type == NAME && parser->name == NULL)
     {
-        if (parser->token->next && ft_strlen(parser->token->next->content) <= PROG_NAME_LENGTH) //??
+        if (ft_strlen(parser->token->content) <= PROG_NAME_LENGTH) //??
         {
-            parser->name = parser->token->next->content;
-            parser->token = parser->token->next->next;
+            parser->name = parser->token->content;
+            parser->token = parser->token->next;
         }
         else
-            return(-1);
+            return(0);
     }
     else
-        return(-1);
+        return(0);
     return(1);    
 }
 
@@ -40,7 +40,7 @@ int check_commands(t_pars *parser)
     t_token *head;
 
     head = parser->token;
-    while (parser->token == NAME || parser->token == COMMENT)
+    while (parser->token && (parser->token->type == NAME || parser->token->type == COMMENT))
     {
         if (make_name(parser) || make_com(parser))
             continue;
@@ -105,11 +105,12 @@ int make_code(t_pars *parser, char **bytecode)
        if (parser->token->type == INSTRUCTION)//1
         {
             if (what_function(parser, bytecode))
-                //continue;
-                ft_printf("KEK");
+                ft_printf("\nfun\n");
             else
                 return(-1);
         }
+        else if (parser->token->type == LABEL)
+            parser->token = parser->token->next;
         else
             return(-1);    
     }

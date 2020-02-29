@@ -22,11 +22,13 @@ int ft_ld(t_pars *parser, char **bytecode)
         return(0);
     if ((next_arg(parser, 1, 4, bytecode)))
         size++;
+    ft_printf("size = %i", size);
     if ((next_arg(parser, 4, 4, bytecode)) && size == 1)
     {
         parser->token = parser->token->next;
         return(1);
     }
+    ft_printf("size = %i", size);
     return(0);
 }
 
