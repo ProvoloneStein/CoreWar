@@ -2,48 +2,49 @@
 // Created by Greyjoy Aliza on 2020-02-23.
 //
 
+int     g_line = 1;
+int     g_column = 1;
+int     g_end;
+int     g_byte;
+char*   g_link_chars = "abcdefghijklmnopqrstuvwxyz_0123456789";
+
 #include "assem.h"
 
-char    *find_operation(char* str)
+void    score_line(char* c, int value, int ascending)
 {
-    if (!ft_strcmp1(str, "live"))
-        return ("live");
-    else if (!ft_strcmp1(str, "ldi"))
-        return ("ldi");
-    else if (!ft_strcmp1(str, "ld"))
-        return ("ld");
-    else if (!ft_strcmp1(str, "sti"))
-        return ("sti");
-    else if (!ft_strcmp1(str, "add"))
-        return ("add");
-    else if (!ft_strcmp1(str, "sub"))
-        return ("sub");
-    else if (!ft_strcmp1(str, "and"))
-        return ("and");
-    else if (!ft_strcmp1(str, "or"))
-        return ("or");
-    else if (!ft_strcmp1(str, "xor"))
-        return ("xor");
-    else if (!ft_strcmp1(str, "zjmp"))
-        return ("zjmp");
-    else if (!ft_strcmp1(str, "sti"))
-        return ("sti");
-    else if (!ft_strcmp1(str, "fork"))
-        return ("fork");
-    else if (!ft_strcmp1(str, "lldi"))
-        return ("lldi");
-    else if (!ft_strcmp1(str, "lld"))
-        return ("lld");
-    else if (!ft_strcmp1(str, "lfork"))
-        return ("lfork");
-    else if (!ft_strcmp1(str, "aff"))
-        return ("aff");
-    return 0;
+    while (value)
+    {
+        if (ascending)
+        {
+            if (c[g_end] == '\n')
+            {
+                g_column = 1;
+                g_line++;
+            }
+            else
+                g_column++;
+            g_end++;
+        }
+        else
+        {
+            if (c[g_end - 1] == '\n')
+            {
+                g_column = 0;
+                while (c[g_end + g_column] != '\n')
+                    g_column++;
+                g_column++;
+                g_line--;
+            }
+            else
+                g_column--;
+            g_end--;
+        }
+        value--;
+    }
 }
 
-char *get_content(char *map, t_oken token, int* end)
+char *get_content(char *map, t_oken token)
 {
-    char*   link_chars = "abcdefghijklmnopqrstuvwxyz_0123456789";
     char*   temp;
     int     i;
     int     start;
@@ -55,47 +56,22 @@ char *get_content(char *map, t_oken token, int* end)
     if (token == NAME || token == COMMENT)
         while (*map && i != 2)
         {
-            if (map[start + *end] == '"' && i == 0)
+            if (map[start + g_end] == '"' && i == 0)
                 i = 1;
             else if (i == 0)
                 start++;
             if (i == 1)
                 len++;
-            if (map[start + len + *end] == '"' && i == 1)
+            if (map[start + len + g_end] == '"' && i == 1)
                 i = 2;
         }
-    else if (token == LABEL)
-    {
-        while (map[*end] != '\n')
-            *end = *end - 1;
-        while (map[*end + len] != ':')
-            len++;
-    }
     else if (token == INSTRUCTION)
     {
-        temp = find_operation(map + *end);
-        *end = *end + ft_strlen(temp);
+        temp = find_operation(map + g_end);
         return ft_strdup(temp);
     }
-    else if (token == DIRECT_LABEL)
-    {
-        *end = *end + 2;
-        while (ft_strchr(link_chars, map[*end + len]))
-            len++;
-        *end = *end - 1;
-        len++;
-    }
-    else if (token == DIRECT)
-    {
-        *end = *end + 1;
-        while (ft_isdigit(map[*end + len]))
-            len++;
-        temp = ft_itoa(ft_atoi(map + *end));
-        *end = *end + len;
-        return temp;
-    }
-    temp = ft_strsub(map, start + *end + 1, len - 1);
-    *end = *end + start + len + 1;
+    temp = ft_strsub(map, start + g_end + 1, len - 1);
+    score_line(map, start + len + 1, 1);
     return temp;
 }
 
@@ -118,25 +94,41 @@ void    read_map(char** map, char* fd_map)
     }
 }
 
-t_token  find_token(char* c, int* end)
+t_oken  find_token(char* c, t_token** tok)
 {
-    while (c[*end])
+    int     flag;
+
+    flag = 0;
+    while ((c[g_end] == ' ' || c[g_end] == '\t' || c[g_end] == '\n' || c[g_end] == '#' || c[g_end] == ',') && c[g_end])
     {
-        if (!ft_strcmp1(c + *end, ".name"))
-            return NAME;
-        else if (!ft_strcmp1(c + *end, ".comment"))
-            return COMMENT;
-        else if (!ft_strcmp1(c + *end, "%:"))
-            return DIRECT_LABEL;
-        else if (!ft_strcmp1(c + *end, "%"))
-            return DIRECT;
-        else if (!ft_strcmp1(c + *end, ":"))
-            return LABEL;
-        else if (find_operation(c + *end))
-            return INSTRUCTION;
-        *end = *end + 1;
+        if (c[g_end] == '#')
+            while (c[g_end] != '\n' && c[g_end])
+                score_line(c, 1, 1);
+        else
+            score_line(c, 1, 1);
     }
-    return END;
+    (*tok)->column = g_column;
+    (*tok)->line = g_line;
+    if (!ft_strcmp1(c + g_end, ".name"))
+        return NAME;
+    else if (!ft_strcmp1(c + g_end, ".comment"))
+        return COMMENT;
+    else if (find_operation(c + g_end))
+    {
+        g_byte++;
+        (*tok)->byte = g_byte;
+        return INSTRUCTION;
+    }
+    while (ft_strchr(g_link_chars, c[g_end]) && c[g_end])
+    {
+        flag = 1;
+        score_line(c, 1, 1);
+    }
+    if (!c[g_end])
+        return END;
+    else if (c[g_end] == ':' && flag)
+        return LABEL;
+    return ERROR;
 }
 
 t_token *create_elem()
@@ -145,37 +137,71 @@ t_token *create_elem()
 
     tokenElem = (t_token*)malloc(sizeof(t_token));
     tokenElem->type = END;
-    tokenElem->byte = 0;
-    tokenElem->column = 0;
+    tokenElem->byte = g_byte;
+    tokenElem->column = g_column;
     tokenElem->content = 0;
-    tokenElem->line = 0;
+    tokenElem->line = g_line;
     tokenElem->next = 0;
     return tokenElem;
 }
 
-t_token *create_list(char* fd_map)
+void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
+{
+    t_ment  *ment;
+    int len;
+
+    len = 0;
+    while (map[g_end] != '\n')
+        score_line(map, 1, 0);
+    score_line(map, 1, 1);
+    while (map[g_end + len] != ':')
+        len++;
+    ment = (t_ment*)malloc(sizeof(t_ment));
+    ment->name = ft_strsub(map, g_end, len);
+    ment->byte = g_byte;
+    if (!pars->mention)
+    {
+        pars->mention = ment;
+        *temp1 = ment;
+    }
+    else
+        pars->mention->next = ment;
+    score_line(map, len + 1, 1);
+}
+
+t_token *create_list(char* fd_map, t_pars* pars)
 {
     t_token *temp;
-    t_token *list;
+    t_ment *temp1;
     char* map;
-    int i;
-    int allowedTokens;
 
-    i = 0;
-    allowedTokens = 0;
-    list = create_elem();
-    temp = list;
+    pars->token = create_elem();
+    temp = pars->token;
+    temp1 = 0;
     read_map(&map, fd_map);
-    while (map[i])
+    g_end = 0;
+    g_byte = 0;
+    while (map[g_end])
     {
-        list->type = find_token(map, &i);
-        if (list->type != END)
+        pars->token->type = find_token(map, &pars->token);
+        if (pars->token->type == ERROR)
+            return pars->token;
+        if (pars->token->type == LABEL)
         {
-            list->content = get_content(map, list->type, &i);
-            list->next = create_elem();
-            list = list->next;
+            get_next_metion(pars, map, &temp1);
+            pars->token->next = create_elem();
+            pars->token = pars->token->next;
+        }
+        if (pars->token->type != END && pars->token->type != LABEL)
+        {
+            pars->token->content = get_content(map, pars->token->type);
+            if (pars->token->type == INSTRUCTION)
+                add_variables(&pars->token, map);
+            pars->token->next = create_elem();
+            pars->token = pars->token->next;
         }
     }
-    list = temp;
-    return list;
+    pars->token = temp;
+    pars->mention = temp1;
+    return pars->token;
 }

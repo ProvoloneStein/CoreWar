@@ -55,7 +55,7 @@ int writing_in_file(t_pars *parser)
 		return(-1);
 	int_to_byte(bytecode, i, COREWAR_EXEC_MAGIC, 4);
 	i += 4;
-	ft_memcpy(&bytecode[i], parser->name, (ft_strlen(parser->name));
+	ft_memcpy(&bytecode[i], parser->name, (ft_strlen(parser->name)));
 	i += PROG_NAME_LENGTH;
 	i += 4;
 	int_to_byte(bytecode, i, parser->code_size, 4);
@@ -77,8 +77,8 @@ int assembler(char *fd_map)
 	ft_printf("%s", kek);
 	if (!(parser = parser_init()))
 		return(-1);
-//	if (!(create_list(fd_map, parser)))
-//		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
+	if (!(create_list(fd_map, parser)))
+		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
 	make_tok(parser); // ЩАКОММЕНТЬ ПЕРЕД КОМПИЛЯЦИЕЙ!!! ФЕЙКОВОЕ ЧТЕНИЕ ЧТОБЫ ПРОВЕРИТЬ РАБОТАЕТ ИЛИ НЕТ ВРАЙТЕР
 	writing_in_file(parser);
 	return(1);

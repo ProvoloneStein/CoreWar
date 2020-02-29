@@ -38,7 +38,8 @@ typedef enum
 	INDIRECT_LABEL,
 	INDIRECT,
     REGISTER, //регистер
-    END
+    END,
+    ERROR
 }	t_oken;
 
 typedef struct			s_token
@@ -119,8 +120,27 @@ int	ft_lfork(t_pars *parser, char **bytecode);
 ** funct4.c
 */
 int ft_aff(t_pars *parser, char **bytecode);
-
-
-
-
+/*
+ * create_list.c
+ */
+t_token *create_list(char* fd_map, t_pars* pars);
+void    score_line(char* c, int value, int ascending);
+t_token *create_elem();
+/*
+ * operations.c
+ */
+void    plus2bytes(char *str);
+/*
+ * variables.c
+ */
+t_oken  find_variables(char* c, t_token** tok);
+void    add_variables(t_token** token, char* map);
+char    *get_variables(char *map, t_oken token);
+/*
+ * checks.c
+ */
+char    *find_operation(char* str);
+int     if_digits(char* str);
+int     if_register(char* str);
+int     if_label(char* str);
 #endif
