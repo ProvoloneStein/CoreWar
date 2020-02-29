@@ -23,6 +23,7 @@ void add_variables(t_token** token, char* map) {
                 plus2bytes(operation);
             (*token)->content = get_variables(map, (*token)->type);
             (*token)->byte = g_byte;
+            plus_byte(operation);
             while (map[g_end] && (map[g_end] == '\t' || map[g_end] == ',' || map[g_end] == ' '))
                 score_line(map, 1, 1);
         }

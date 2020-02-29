@@ -159,13 +159,17 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
     ment = (t_ment*)malloc(sizeof(t_ment));
     ment->name = ft_strsub(map, g_end, len);
     ment->byte = g_byte;
+    ment->next = 0;
     if (!pars->mention)
     {
         pars->mention = ment;
         *temp1 = ment;
     }
     else
+    {
         pars->mention->next = ment;
+        pars->mention = pars->mention->next;
+    }
     score_line(map, len + 1, 1);
 }
 
@@ -191,6 +195,8 @@ t_token *create_list(char* fd_map, t_pars* pars)
             get_next_metion(pars, map, &temp1);
             pars->token->next = create_elem();
             pars->token = pars->token->next;
+            if (!check_unique_label(pars, temp1))
+                return (0);
         }
         if (pars->token->type != END && pars->token->type != LABEL)
         {

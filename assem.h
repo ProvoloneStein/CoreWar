@@ -130,6 +130,8 @@ t_token *create_elem();
  * operations.c
  */
 void    plus2bytes(char *str);
+void    plus_byte(char *str);
+int    check_unique_label(t_pars* pars, t_ment* ment);
 /*
  * variables.c
  */
