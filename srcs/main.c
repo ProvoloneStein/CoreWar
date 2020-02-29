@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/29 18:56:22 by pstein           ###   ########.fr       */
+/*   Updated: 2020/02/29 20:14:04 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int writing_in_file(t_pars *parser)
 	i += COMMENT_LENGTH;
 	i += 4;
 	parser->i = i;
-	ft_printf("i = %i", i);
 	make_code(parser, &bytecode);
 	write(fd, bytecode, len);
 	return(1);
@@ -79,7 +78,6 @@ int find_size(t_pars *parser)
 	while(parser->token && parser->token->next->type != END)
 		parser->token = parser->token->next;
 	parser->code_size = parser->token->byte;
-	ft_printf("\n%i\n", parser->code_size);
 	parser->token = head;
 	return(1);
 
@@ -87,9 +85,7 @@ int find_size(t_pars *parser)
 int assembler(char *fd_map)
 {
 	t_pars *parser;
-	char *kek = fd_map;
 
-	ft_printf("%s", kek);
 	if (!(parser = parser_init()))
 		return(-1);
 	if (!(create_list(fd_map, parser)))

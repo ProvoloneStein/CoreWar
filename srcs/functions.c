@@ -42,20 +42,20 @@ int arg_type(t_pars *parser, int size, char **code)
     i = 7;
     while (size > 0)
     {
-        if (parser->token->next->type == DIRECT || parser->token->next->type == DIRECT_LABEL)
+        if (parser->token->type == DIRECT || parser->token->type == DIRECT_LABEL)
         {
             parser->token = parser->token->next;
             num = num | (1 << i);
             i -= 2;
         }
-        else if (parser->token->next->type == INDIRECT || parser->token->next->type == INDIRECT_LABEL)
+        else if (parser->token->type == INDIRECT || parser->token->type == INDIRECT_LABEL)
         {
             parser->token = parser->token->next;
             num = num | (1 << i);
             num = num | (1 << (i - 1));
             i -= 2;
         }
-        else if (parser->token->next->type == REGISTER)
+        else if (parser->token->type == REGISTER)
         {
             parser->token = parser->token->next;
             num = num | (1 << (i - 1));
@@ -89,19 +89,19 @@ int arg_type(t_pars *parser, int size, char **code)
 int next_arg(t_pars *parser, int type, int size, char **bytecode)
 {
 
-    if ((parser->token->next->type == DIRECT || parser->token->next->type == DIRECT_LABEL) && (write_dir(parser, size, bytecode) != -1)
+    if ((parser->token->type == DIRECT || parser->token->type == DIRECT_LABEL) && (write_dir(parser, size, bytecode) != -1)
                     && (type == 1 || type == 4 || type == 5 || type == 7))
     {
         parser->token = parser->token->next;
         return(1);
     }
-    else if ((parser->token->next->type == INDIRECT || parser->token->next->type == INDIRECT_LABEL) && (write_indir(parser, bytecode) != -1)
+    else if ((parser->token->type == INDIRECT || parser->token->type == INDIRECT_LABEL) && (write_indir(parser, bytecode) != -1)
         && (type == 2 || type == 4 || type == 6 || type == 7))
     {
         parser->token = parser->token->next;
         return(1);
     }
-    else if ((parser->token->next->type == REGISTER) && (write_reg(parser, bytecode) != -1)
+    else if ((parser->token->type == REGISTER) && (write_reg(parser, bytecode) != -1)
         && (type == 3 || type == 5 || type == 6 || type == 7))
     {    
         parser->token = parser->token->next;
@@ -117,10 +117,10 @@ int find_value(t_pars *parser)
 
     head = parser->mention;
     i = 0;
-    while (parser->mention && !(ft_strcmp(parser->mention->name, parser->token->next->content)))
+    while (parser->mention && !(ft_strcmp(parser->mention->name, parser->token->content)))
         parser->mention = parser->mention->next;
     if (parser->mention)
-            i = parser->token->next->byte - parser->mention->byte;
+            i = parser->token->byte - parser->mention->byte;
     return (i);
 }
 
@@ -128,17 +128,17 @@ int write_dir(t_pars *parser, size_t size, char **bytecode)
 {
     int num;
 
-    if (!(parser->token->next->content))
+    if (!(parser->token->content))
         return(-1);
-    if (parser->token->next->type == DIRECT_LABEL)
+    if (parser->token->type == DIRECT_LABEL)
     {
         num = find_value(parser);
+        ft_printf("KEK");
         int_to_byte(*bytecode, parser->i, num, size);
     }
-    else if (parser->token->next->type == DIRECT)
+    else if (parser->token->type == DIRECT)
     {
-        ft_printf("DIR %i %s\n", ft_atoi(parser->token->next->content), parser->token->next->content);
-        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->next->content), size);
+        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->content), size);
     }
     else
         return(-1);
@@ -150,16 +150,16 @@ int write_indir(t_pars *parser, char **bytecode)
 {
     int num;
 
-    if (!(parser->token->next->content))
+    if (!(parser->token->content))
         return(-1);
-    if (parser->token->next->type == INDIRECT_LABEL)
+    if (parser->token->type == INDIRECT_LABEL)
     {
         num = find_value(parser);
         int_to_byte(*bytecode, parser->i, num, IND_SIZE);
     }
-    else if (parser->token->next->type == INDIRECT)
+    else if (parser->token->type == INDIRECT)
     {
-        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->next->content), IND_SIZE);
+        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->content), IND_SIZE);
     }
     else
         return(-1);
@@ -169,12 +169,11 @@ int write_indir(t_pars *parser, char **bytecode)
 
 int write_reg(t_pars *parser, char **bytecode)
 {
-    if (!(parser->token->next->content))
+    if (!(parser->token->content))
         return(-1);
-    if (parser->token->next->type == REGISTER)
+    if (parser->token->type == REGISTER)
     {
-        ft_printf("REG %i %s\n", ft_atoi(parser->token->next->content), parser->token->next->content);
-        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->next->content), 1);
+        int_to_byte(*bytecode, parser->i, ft_atoi(parser->token->content), 1);
     }
     else
         return(-1);
