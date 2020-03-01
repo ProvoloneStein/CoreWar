@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/29 17:04:03 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/01 19:06:04 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,11 @@ typedef struct			s_pars
     int					line;
 	int					code_size;
 	int 				i;
+    char                *filename;
 }						t_pars;
 
 
+int errors_handler(int i, int x, int y);
 /*
 ** main.c
 */
@@ -74,23 +76,30 @@ int assembler(char *fd_map); // собсна наш ассемблер! еще �
 int writing_in_file(t_pars *parser); // Непосредственно Каха! Пишет байткод в файл
 
 /*
-** read_struct.c
+** ====================CODE GENERATOR====================
 */
-int make_com(t_pars *parser); // подфункция чек команд
-int make_name(t_pars *parser); // подфункция чек команд
-int check_commands(t_pars *parser); //считываю токены комментом, валидирует и записываю их
-int what_function(t_pars *parser, char **bytecode); // по токенам функций запускаю соответствующую валидацию и запись в байткод
-int make_code(t_pars *parser, char **bytecode); // считываю токены функций
+
 /*
-** functions.c
+** read from token struct and validate CHAMPIONS NAME AND COMMENT
+** ===>>>   read_commands.c   <<<===
 */
-void	int_to_byte(char *data,int32_t pos, int32_t value, size_t size); //переводит число в байткод
-int		arg_type(t_pars *parser, int size, char **code); //записывает байт с типами аргументов
-int		next_arg(t_pars *parser, int type, int size, char **bytecode); //кушает аргументы и выдает их оутпутом  (type надо бы сделать структурой хз как)
-int		find_value(t_pars *parser); //находит расположение метки и выдает на соклько байтов сдвинуться
-int		write_dir(t_pars *parser, size_t size, char **bytecode);
-int		write_indir(t_pars *parser, char **bytecode);
-int		write_reg(t_pars *parser, char **bytecode);// возвращают строку с кодом аргумента
+
+int	make_com(t_pars *parser);
+int	make_name(t_pars *parser);
+int	check_commands(t_pars *parser); 
+
+/*
+** read tokens from struct and opens instruction writers
+** ===>>>   read_struct.c   <<<===
+*/
+
+int			what_function(t_pars *parser, char **bytecode);
+int			make_code(t_pars *pars, char **bytecode);
+
+/*
+** writers for every function
+** ===>>>   funct1.c funct2.c funct3.c funct4.c <<< ===
+*/
 
 /*
 ** funct1.c
@@ -120,6 +129,37 @@ int	ft_lfork(t_pars *parser, char **bytecode);
 ** funct4.c
 */
 int ft_aff(t_pars *parser, char **bytecode);
+
+/*
+** convertin int to bytecode function and making "code of instruction params info" function
+** In other words - all bitwise operations functions LMAO
+** ===>>>   functions2.c   <<<===
+*/
+
+void		int_to_byte(char *bytecode, int32_t pos, int32_t num, size_t size);
+int			arg_type(t_pars *parser, int size, char **code);
+
+/*
+** T_DIR T_INDIR T_REG generating functions and instruction validator there
+** ===>>>   functions.c   <<<===
+*/
+
+int		next_arg(t_pars *parser, int type, int size, char **bytecode);
+int		find_value(t_pars *parser);
+int		write_dir(t_pars *pars, size_t size, char **code);
+int		write_indir(t_pars *pars, char **code);
+int		write_reg(t_pars *pars, char **code);
+
+
+
+
+
+
+
+
+
+
+
 /*
  * create_list.c
  */

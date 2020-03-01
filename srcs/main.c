@@ -6,14 +6,58 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/02/29 20:14:04 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/01 19:28:11 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "assem.h"
-#include "op.h"
 
-t_pars *parser_init()
+char *ft_progname(char *name)
+{
+    char *str;
+    int i;
+    int j;
+
+     j = 0;
+     i = ft_strlen(name);
+     str = (char*)malloc(sizeof(char) * (i + 3));
+     while(j != i)
+     {
+         str[j] = name[j];
+     }
+     ft_strcpy(str, "cor");
+     return(str);
+}
+
+void ft_free_str(t_pars *parser)
+{
+	t_token *head_t;
+	t_ment *head_m;
+
+	while (parser->mention)
+	{
+		head_m = parser->mention->next;
+		free(parser->mention);
+		parser->mention = head_m;
+	}
+	while (parser->token)
+	{
+		head_t = parser->token->next;
+		if (parser->token->content)
+			free(parser->token->content);
+		free(parser->token);
+		parser->token = head_t;
+	}
+	if (parser->filename)
+		free(parser->filename);
+	if (parser->comment)
+		free(parser->comment);
+	if (parser->name);	
+		free(parser->name);
+	free(parser);
+}
+
+t_pars *parser_init(char *progname)
 {
 	t_pars *pars;
 
@@ -26,79 +70,21 @@ t_pars *parser_init()
 	pars->i = 0;//это для печати
 	pars->column = 0;
 	pars->code_size = 0;
+	pars->filename = ft_progname(progname);
 	return(pars);
 }
-/*
-void make_tok(t_pars *parser)
-{
-    parser->token = (t_token*)malloc(sizeof(t_token));
-    parser->token->type = INSTRUCTION;
-    parser->token->content = "live";
-    parser->token->next = (t_token*)malloc(sizeof(t_token));
-    parser->token->next->type = DIRECT;
-    parser->token->next->content = "1";
-    parser->token->next->next = NULL;
-}*/
 
-int writing_in_file(t_pars *parser)
-{
-	int fd;
-	char *bytecode;
-	int i;
-	int len;
-
-	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + parser->code_size;
-	i = 0;
-	if ((fd = open("filename.cor", O_CREAT | O_WRONLY, 0644)) == -1)
-		return(-1);
-	if (!(bytecode = ft_strnew((size_t)len)))
-		return(-1);
-	check_commands(parser);
-	int_to_byte(bytecode, i, COREWAR_EXEC_MAGIC, 4);
-	i += 4;
-	ft_memcpy(&bytecode[i], parser->name, (ft_strlen(parser->name)));
-	i += PROG_NAME_LENGTH;
-	i += 4;
-	int_to_byte(bytecode, i, parser->code_size, 4);
-	i += 4;
-	ft_memcpy(&bytecode[i], parser->comment, ft_strlen(parser->comment));
-	i += COMMENT_LENGTH;
-	i += 4;
-	parser->i = i;
-	make_code(parser, &bytecode);
-	write(fd, bytecode, len);
-	return(1);
-
-}
-int find_size(t_pars *parser)
-{
-	t_token *head;
-
-	head = parser->token;
-	while(parser->token && parser->token->next->type != END)
-		parser->token = parser->token->next;
-	parser->code_size = parser->token->byte;
-	parser->token = head;
-	return(1);
-
-}
 int assembler(char *fd_map)
 {
 	t_pars *parser;
 
-	if (!(parser = parser_init()))
+	if (!(parser = parser_init(fd_map)))
 		return(-1);
 	if (!(create_list(fd_map, parser)))
 		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
-//	make_tok(parser); // ЩАКОММЕНТЬ ПЕРЕД КОМПИЛЯЦИЕЙ!!! ФЕЙКОВОЕ ЧТЕНИЕ ЧТОБЫ ПРОВЕРИТЬ РАБОТАЕТ ИЛИ НЕТ ВРАЙТЕР
-/*	while (parser->token)
-	{
-		ft_printf("%i, %s, %i\n", parser->token->type, parser->token->content, parser->token->byte);
-		parser->token = parser->token->next;
-	}*/
-	parser->code_size = 50;
-	//find_size(parser);
+	//parser->code_size = 50;
 	writing_in_file(parser);
+	ft_free_str(parser);
 	return(1);
 }
 
