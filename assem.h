@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 19:06:04 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/03 20:01:59 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,4 +185,7 @@ char    *find_operation(char* str);
 int     if_digits(char* str);
 int     if_register(char* str);
 int     if_label(char* str);
+
+int errors_handler(int i, int x, int y);
+
 #endif

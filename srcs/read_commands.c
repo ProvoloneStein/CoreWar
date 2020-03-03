@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 17:01:07 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 17:33:31 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/03 20:04:26 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	check_commands(t_pars *parser)
 	{
 		if (make_name(parser) || make_com(parser))
 			continue;
-		error_handler(3, parser->token->line, parser->token->column);
+		errors_handler(3, parser->token->line, parser->token->column);
 		parser->token = head;
 		return (0);
 	}

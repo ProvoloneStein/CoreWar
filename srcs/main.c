@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 19:28:11 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/03 20:27:47 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,14 @@ char *ft_progname(char *name)
 
      j = 0;
      i = ft_strlen(name);
-     str = (char*)malloc(sizeof(char) * (i + 3));
-     while(j != i)
+     str = (char*)malloc(sizeof(char) * (i - 2));
+     while(j != i - 2)
      {
          str[j] = name[j];
+		 j++;
      }
-     ft_strcpy(str, "cor");
+	 str[j] = '\0';
+     str = ft_strplus(str, ".cor", 1, 0);
      return(str);
 }
 
@@ -52,7 +54,7 @@ void ft_free_str(t_pars *parser)
 		free(parser->filename);
 	if (parser->comment)
 		free(parser->comment);
-	if (parser->name);	
+	if (parser->name)	
 		free(parser->name);
 	free(parser);
 }
@@ -71,6 +73,7 @@ t_pars *parser_init(char *progname)
 	pars->column = 0;
 	pars->code_size = 0;
 	pars->filename = ft_progname(progname);
+	ft_printf("%s\n", pars->filename);
 	return(pars);
 }
 
@@ -79,12 +82,17 @@ int assembler(char *fd_map)
 	t_pars *parser;
 
 	if (!(parser = parser_init(fd_map)))
-		return(-1);
+		return(-1);	
 	if (!(create_list(fd_map, parser)))
 		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
-	//parser->code_size = 50;
+	while(parser->token)
+	{
+		ft_printf("%s %i\n", parser->token->content, parser->token->byte);
+		parser->token=parser->token->next;
+	}
 	writing_in_file(parser);
-	ft_free_str(parser);
+	ft_printf("KEK");
+	//ft_free_str(parser);
 	return(1);
 }
 

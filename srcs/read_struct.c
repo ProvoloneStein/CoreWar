@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 16:33:30 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 18:27:39 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/03 20:04:07 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int			make_code(t_pars *pars, char **bytecode)
 		else
 		{
 			pars->token = head;
-			return (error_handler(4, pars->token->line, pars->token->column));
+			return (errors_handler(4, pars->token->line, pars->token->column));
 		}
 	}
 	pars->token = head;

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 15:43:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 18:20:20 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/03 20:14:11 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		next_arg(t_pars *parser, int type, int size, char **bytecode)
 		parser->token = parser->token->next;
 		return (1);
 	}
-	return (errors_handle(2, parser->token->line, parser->token->column));
+	return (errors_handler(2, parser->token->line, parser->token->column));
 }
 
 int		find_value(t_pars *parser)
@@ -74,17 +74,17 @@ int		write_dir(t_pars *pars, size_t size, char **code)
 	int	num;
 
 	if (!(pars->token->content))
-		return (errors_handle(0, pars->token->line, pars->token->column));
+		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == DIRECT_LABEL)
 	{
-		if ((num = find_value(pars)))
-			return (errors_handle(1, pars->token->line, pars->token->column));
+		if (!(num = find_value(pars)))
+			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, size);
 	}
 	else if (pars->token->type == DIRECT)
 		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), size);
 	else
-		return (errors_handle(2, pars->token->line, pars->token->column));
+		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += size;
 	return (1);
 }
@@ -94,17 +94,17 @@ int		write_indir(t_pars *pars, char **code)
 	int	num;
 
 	if (!(pars->token->content))
-		return (errors_handle(0, pars->token->line, pars->token->column));
+		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == INDIRECT_LABEL)
 	{
 		if ((num = find_value(pars)))
-			return (errors_handle(1, pars->token->line, pars->token->column));
+			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, IND_SIZE);
 	}
 	else if (pars->token->type == INDIRECT)
 		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), IND_SIZE);
 	else
-		return (errors_handle(2, pars->token->line, pars->token->column));
+		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += IND_SIZE;
 	return (1);
 }
@@ -112,11 +112,11 @@ int		write_indir(t_pars *pars, char **code)
 int		write_reg(t_pars *pars, char **code)
 {
 	if (!(pars->token->content))
-		return (errors_handle(0, pars->token->line, pars->token->column));
+		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == REGISTER)
 		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), 1);
 	else
-		return (errors_handle(1, pars->token->line, pars->token->column));
+		return (errors_handler(1, pars->token->line, pars->token->column));
 	pars->i += 1;
 	return (1);
 }
