@@ -4,53 +4,53 @@ int     g_byte;
 
 void    plus2bytes(char *str)
 {
-    if (!ft_strcmp1(str, "live"))
+    if (!ft_strcmp(str, "live"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "ld"))
+    else if (!ft_strcmp(str, "ld"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "st"))
+    else if (!ft_strcmp(str, "st"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "add"))
+    else if (!ft_strcmp(str, "add"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "sub"))
+    else if (!ft_strcmp(str, "sub"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "and"))
+    else if (!ft_strcmp(str, "and"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "or"))
+    else if (!ft_strcmp(str, "or"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "xor"))
+    else if (!ft_strcmp(str, "xor"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "lld"))
+    else if (!ft_strcmp(str, "lld"))
         g_byte += 2;
-    else if (!ft_strcmp1(str, "aff"))
+    else if (!ft_strcmp(str, "aff"))
         g_byte += 2;
 }
 
 void    plus_byte(char *str)
 {
-    if (!ft_strcmp1(str, "ldi"))
+    if (!ft_strcmp(str, "ldi"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "ld"))
+    else if (!ft_strcmp(str, "ld"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "sti"))
+    else if (!ft_strcmp(str, "sti"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "st"))
+    else if (!ft_strcmp(str, "st"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "add"))
+    else if (!ft_strcmp(str, "add"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "sub"))
+    else if (!ft_strcmp(str, "sub"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "and"))
+    else if (!ft_strcmp(str, "and"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "or"))
+    else if (!ft_strcmp(str, "or"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "xor"))
+    else if (!ft_strcmp(str, "xor"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "lldi"))
+    else if (!ft_strcmp(str, "lldi"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "lld"))
+    else if (!ft_strcmp(str, "lld"))
         g_byte += 1;
-    else if (!ft_strcmp1(str, "aff"))
+    else if (!ft_strcmp(str, "aff"))
         g_byte += 1;
 }
 
