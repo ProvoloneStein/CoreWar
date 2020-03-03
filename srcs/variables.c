@@ -7,9 +7,12 @@ int     g_byte;
 char*   g_link_chars;
 
 
-void add_variables(t_token** token, char* map) {
-    char* operation;
+void add_variables(t_token** token, char* map)
+{
+    char*   operation;
+    int     flag;
 
+    flag = 1;
     operation = find_operation(map + g_end);
     score_line(map, ft_strlen(operation), 1);
     while (map[g_end] && map[g_end] != '\n' && map[g_end] != '#' && (*token)->type != ERROR)
@@ -22,7 +25,11 @@ void add_variables(t_token** token, char* map) {
             if ((*token)->type == DIRECT_LABEL || (*token)->type == DIRECT)
                 plus2bytes(operation);
             (*token)->content = get_variables(map, (*token)->type);
-            (*token)->byte = g_byte;
+            if (flag)
+            {
+                (*token)->byte = g_byte;
+                flag = 0;
+            }
             plus_byte(operation);
             while (map[g_end] && (map[g_end] == '\t' || map[g_end] == ',' || map[g_end] == ' '))
                 score_line(map, 1, 1);

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(corewar C)
+project(corewar1 C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -7,7 +7,7 @@ include_directories(.)
 include_directories(libft/printf)
 include_directories(libft/srcs)
 
-add_executable(corewar
+add_executable(corewar1
         libft/printf/checker.c
         libft/printf/colors.c
         libft/printf/display.c
@@ -88,9 +88,13 @@ add_executable(corewar
         libft/srcs/get_next_line.c
         libft/srcs/get_next_line.h
         libft/srcs/libft.h
+        srcs/create_list.c
+        srcs/funct1.c
+        srcs/funct2.c
+        srcs/funct3.c
+        srcs/funct4.c
         srcs/functions.c
         srcs/main.c
-        srcs/read_struckt.c
+        srcs/read_struct.c
         assem.h
-        op.h
-        srcs/create_list.c)
+        op.h srcs/operations.c srcs/variables.c srcs/checks.c)

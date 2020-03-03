@@ -189,6 +189,7 @@ t_token *create_list(char* fd_map, t_pars* pars)
     {
         pars->token->type = find_token(map, &pars->token);
         if (pars->token->type == ERROR)
+            //ЧИСТИ ЧИСТИ ДА КАК ЭТИМ ЧИСТИТЬ?
             return pars->token;
         if (pars->token->type == LABEL)
         {
@@ -206,6 +207,8 @@ t_token *create_list(char* fd_map, t_pars* pars)
             pars->token->next = create_elem();
             pars->token = pars->token->next;
         }
+        if (pars->token->type == END)
+            pars->code_size = pars->token->byte;
     }
     pars->token = temp;
     pars->mention = temp1;
