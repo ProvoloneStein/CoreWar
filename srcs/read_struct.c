@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 16:33:30 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/03 20:04:07 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/05 17:26:23 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int			make_code(t_pars *pars, char **bytecode)
 	{
 		if (pars->token->type == INSTRUCTION)
 		{
+			pars->f_head = pars->token->byte;
 			if (what_function(pars, bytecode))
 				continue;
 			pars->token = head;

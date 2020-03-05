@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/03 20:01:59 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/05 17:28:17 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct			s_pars
     int					line;
 	int					code_size;
 	int 				i;
+    int                 f_head;
     char                *filename;
 }						t_pars;
 

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 15:43:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/03 20:14:11 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/05 17:27:28 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ int		next_arg(t_pars *parser, int type, int size, char **bytecode)
 	return (errors_handler(2, parser->token->line, parser->token->column));
 }
 
+int ft_equ(char *str, char *str1)
+{
+	int i;
+	i = 0;
+	while(str[i] && str1[i] && str[i] == str1[i])
+	i++;
+	if (str[i] == '\0' && str1[i] == '\0')
+		return(1);
+	return(0);	
+}
+
 int		find_value(t_pars *parser)
 {
 	t_ment	*head;
@@ -61,11 +72,13 @@ int		find_value(t_pars *parser)
 
 	head = parser->mention;
 	i = 0;
-	while (parser->mention
-			&& !(ft_strcmp(parser->mention->name, parser->token->content)))
+	while (parser->mention && (ft_strcmp(parser->mention->name, parser->token->content)))
+	{
 		parser->mention = parser->mention->next;
+	}
 	if (parser->mention)
-		i = parser->token->byte - parser->mention->byte;
+		i = parser->mention->byte - parser->f_head + 1;
+	parser->mention = head;
 	return (i);
 }
 
@@ -97,7 +110,7 @@ int		write_indir(t_pars *pars, char **code)
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == INDIRECT_LABEL)
 	{
-		if ((num = find_value(pars)))
+		if (!(num = find_value(pars)))
 			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, IND_SIZE);
 	}

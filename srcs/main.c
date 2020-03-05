@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/03 20:27:47 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/05 17:25:07 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ t_pars *parser_init(char *progname)
 	pars->i = 0;//это для печати
 	pars->column = 0;
 	pars->code_size = 0;
+	pars->f_head = 0;
 	pars->filename = ft_progname(progname);
 	ft_printf("%s\n", pars->filename);
 	return(pars);
@@ -85,13 +86,12 @@ int assembler(char *fd_map)
 		return(-1);	
 	if (!(create_list(fd_map, parser)))
 		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
-	while(parser->token)
+	/*while(parser->token)
 	{
-		ft_printf("%s %i\n", parser->token->content, parser->token->byte);
-		parser->token=parser->token->next;
-	}
+		ft_printf("%i %i\n", parser->token->type, parser->token->byte);
+		parser->token = parser->token->next;
+	}*/
 	writing_in_file(parser);
-	ft_printf("KEK");
 	//ft_free_str(parser);
 	return(1);
 }

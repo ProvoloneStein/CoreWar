@@ -157,7 +157,7 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
     while (map[g_end + len] != ':')
         len++;
     ment = (t_ment*)malloc(sizeof(t_ment));
-    ment->name = ft_strsub(map, g_end, len);
+    ment->name = ft_strsub(map, g_end, len); //g_end + 1 len - 1 че за хуйня почему
     ment->byte = g_byte;
     ment->next = 0;
     if (!pars->mention)
