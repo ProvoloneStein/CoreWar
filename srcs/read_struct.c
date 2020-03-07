@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 16:33:30 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/05 17:26:23 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/07 17:37:55 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int			what_function(t_pars *parser, char **bytecode)
 		return (ft_ldi(parser, bytecode));
 	else if (!ft_strcmp1(parser->token->content, "ld"))
 		return (ft_ld(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "sti"))
-		return (ft_sti(parser, bytecode));
+	else if (!ft_strcmp1(parser->token->content, "st"))
+		return (ft_st(parser, bytecode));
 	else if (!ft_strcmp1(parser->token->content, "add"))
 		return (ft_add(parser, bytecode));
 	else if (!ft_strcmp1(parser->token->content, "sub"))
@@ -69,7 +69,7 @@ int			make_code(t_pars *pars, char **bytecode)
 			if (what_function(pars, bytecode))
 				continue;
 			pars->token = head;
-			return (0);
+			return (ft_printf("LOL?"));
 		}
 		else if (pars->token->type == LABEL)
 			pars->token = pars->token->next;

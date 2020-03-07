@@ -1,37 +1,12 @@
-#include "assem.h"
+
 #include "op.h"
 #include "stdlib.h"
 #include "stdio.h"
-void	int_to_byte(char *data,
-							int32_t pos,
-							int32_t value,
-							size_t size)
-{
-	int8_t		i;
+#include <fcntl.h>
 
-	i = 0;
-	while (size)
-	{
-		data[pos + size - 1] = (uint8_t)((value >> i) & 0xFF);
-		i += 8;
-		size--;
-	}
-}
+int			get_next_line(const int fd, char **line);
 
-void neg_to_byte(char *data, int32_t pos, int32_t value, size_t size)
-{
-	int8_t		i;
-
-	i = 0;
-	while (size - 1 > 0)
-	{
-		data[pos + size - 1] = (uint8_t)((value >> i) & 0x00);
-		i += 8;
-		size--;
-	}
-    data[pos + size - 1] = (uint8_t)((value >> i) & 0x00) + (uint8_t)(1 >> i);
-}
-
+<<<<<<< Updated upstream
 t_pars *parser_init()
 {
 	t_pars *pars;
@@ -105,3 +80,15 @@ int writing_in_file(t_pars *parser)
 //	writing_in_file(parser);
 //	return(1);
 //}
+=======
+int main()
+{
+	char *line;
+	int fd;
+	fd = open("42.cor", O_RDONLY);
+	if (get_next_line(fd, &line) < 1)
+		printf("ERROR\n");
+	printf("k = %c\n", line[4]);
+	return(1);
+}
+>>>>>>> Stashed changes
