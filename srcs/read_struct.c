@@ -14,42 +14,42 @@
 
 static int	what_function2(t_pars *parser, char **bytecode)
 {
-	if (!ft_strcmp1(parser->token->content, "xor"))
+	if (!ft_strcmp(parser->token->content, "xor"))
 		return (ft_xor(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "zjmp"))
+	else if (!ft_strcmp(parser->token->content, "zjmp"))
 		return (ft_zjmp(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "sti"))
+	else if (!ft_strcmp(parser->token->content, "sti"))
 		return (ft_sti(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "fork"))
+	else if (!ft_strcmp(parser->token->content, "fork"))
 		return (ft_fork(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "lldi"))
+	else if (!ft_strcmp(parser->token->content, "lldi"))
 		return (ft_lldi(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "lld"))
+	else if (!ft_strcmp(parser->token->content, "lld"))
 		return (ft_lld(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "lfork"))
+	else if (!ft_strcmp(parser->token->content, "lfork"))
 		return (ft_lfork(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "aff"))
+	else if (!ft_strcmp(parser->token->content, "aff"))
 		return (ft_aff(parser, bytecode));
 	return (0);
 }
 
 int			what_function(t_pars *parser, char **bytecode)
 {
-	if (!ft_strcmp1(parser->token->content, "live"))
+	if (!ft_strcmp(parser->token->content, "live"))
 		return (ft_live(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "ldi"))
+	else if (!ft_strcmp(parser->token->content, "ldi"))
 		return (ft_ldi(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "ld"))
+	else if (!ft_strcmp(parser->token->content, "ld"))
 		return (ft_ld(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "st"))
+	else if (!ft_strcmp(parser->token->content, "st"))
 		return (ft_st(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "add"))
+	else if (!ft_strcmp(parser->token->content, "add"))
 		return (ft_add(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "sub"))
+	else if (!ft_strcmp(parser->token->content, "sub"))
 		return (ft_sub(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "and"))
+	else if (!ft_strcmp(parser->token->content, "and"))
 		return (ft_and(parser, bytecode));
-	else if (!ft_strcmp1(parser->token->content, "or"))
+	else if (!ft_strcmp(parser->token->content, "or"))
 		return (ft_or(parser, bytecode));
 	return (what_function2(parser, bytecode));
 }
