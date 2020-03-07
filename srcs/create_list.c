@@ -116,7 +116,7 @@ t_oken  find_token(char* c, t_token** tok)
         return NAME;
     else if (if_comment(c + g_end))
         return COMMENT;
-    else if (find_operation(c + g_end))
+    else if (if_operation(c + g_end))
     {
         g_byte++;
         (*tok)->byte = g_byte;

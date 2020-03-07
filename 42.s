@@ -32,13 +32,14 @@ hedestad:
 	live	%42
 	fork	%:hedeby
 malmo:
-	live	%42
-	fork	%:sweden
+	live %42
+	fork%:sweden
 	zjmp	%:sweden
 
+st:
 stockholm:
-	live	%42
-	st		r1, -39
+	live %42
+	st r1, -39
 	st		r2, -48
 	st		r1, -57
 	st		r2, -66

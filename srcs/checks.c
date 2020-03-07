@@ -137,4 +137,18 @@ int     if_comment(char* str)
     return (0);
 }
 
+int     if_operation(char* str)
+{
+    char*   temp;
+    int     i;
+
+    i = 0;
+    temp = find_operation(str);
+    if (!temp)
+        return (0);
+    i = ft_strlen(temp);
+    if (str[i] == ' ' || str[i] == '\t' || str[i] == '%')
+        return (1);
+    return (0);
+}
 

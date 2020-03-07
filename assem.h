@@ -188,6 +188,7 @@ int     if_register(char* str);
 int     if_label(char* str);
 int     if_name(char* str);
 int     if_comment(char* str);
+int     if_operation(char* str);
 
 int errors_handler(int i, int x, int y);
 
