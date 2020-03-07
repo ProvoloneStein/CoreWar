@@ -94,7 +94,9 @@ add_executable(corewar1
         srcs/funct3.c
         srcs/funct4.c
         srcs/functions.c
+        srcs/functions2.c
         srcs/main.c
+        srcs/errors.c
         srcs/read_struct.c
         assem.h
         op.h srcs/operations.c srcs/variables.c srcs/checks.c)

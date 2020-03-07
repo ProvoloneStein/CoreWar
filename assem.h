@@ -164,7 +164,7 @@ int		write_reg(t_pars *pars, char **code);
 /*
  * create_list.c
  */
-t_token *create_list(char* fd_map, t_pars* pars);
+int     create_list(char* fd_map, t_pars* pars);
 void    score_line(char* c, int value, int ascending);
 t_token *create_elem();
 /*
@@ -186,6 +186,8 @@ char    *find_operation(char* str);
 int     if_digits(char* str);
 int     if_register(char* str);
 int     if_label(char* str);
+int     if_name(char* str);
+int     if_comment(char* str);
 
 int errors_handler(int i, int x, int y);
 

@@ -1136,9 +1136,22 @@ CMakeFiles/corewar1.dir/srcs/functions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar1.dir/srcs/functions.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/galiza/Desktop/corewar1/srcs/functions.c -o CMakeFiles/corewar1.dir/srcs/functions.c.s
 
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: CMakeFiles/corewar1.dir/flags.make
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: ../srcs/functions2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/corewar1.dir/srcs/functions2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/functions2.c.o   -c /Users/galiza/Desktop/corewar1/srcs/functions2.c
+
+CMakeFiles/corewar1.dir/srcs/functions2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar1.dir/srcs/functions2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/galiza/Desktop/corewar1/srcs/functions2.c > CMakeFiles/corewar1.dir/srcs/functions2.c.i
+
+CMakeFiles/corewar1.dir/srcs/functions2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar1.dir/srcs/functions2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/galiza/Desktop/corewar1/srcs/functions2.c -o CMakeFiles/corewar1.dir/srcs/functions2.c.s
+
 CMakeFiles/corewar1.dir/srcs/main.c.o: CMakeFiles/corewar1.dir/flags.make
 CMakeFiles/corewar1.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/corewar1.dir/srcs/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/corewar1.dir/srcs/main.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/main.c.o   -c /Users/galiza/Desktop/corewar1/srcs/main.c
 
 CMakeFiles/corewar1.dir/srcs/main.c.i: cmake_force
@@ -1149,9 +1162,22 @@ CMakeFiles/corewar1.dir/srcs/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar1.dir/srcs/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/galiza/Desktop/corewar1/srcs/main.c -o CMakeFiles/corewar1.dir/srcs/main.c.s
 
+CMakeFiles/corewar1.dir/srcs/errors.c.o: CMakeFiles/corewar1.dir/flags.make
+CMakeFiles/corewar1.dir/srcs/errors.c.o: ../srcs/errors.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/corewar1.dir/srcs/errors.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/errors.c.o   -c /Users/galiza/Desktop/corewar1/srcs/errors.c
+
+CMakeFiles/corewar1.dir/srcs/errors.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/corewar1.dir/srcs/errors.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/galiza/Desktop/corewar1/srcs/errors.c > CMakeFiles/corewar1.dir/srcs/errors.c.i
+
+CMakeFiles/corewar1.dir/srcs/errors.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/corewar1.dir/srcs/errors.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/galiza/Desktop/corewar1/srcs/errors.c -o CMakeFiles/corewar1.dir/srcs/errors.c.s
+
 CMakeFiles/corewar1.dir/srcs/read_struct.c.o: CMakeFiles/corewar1.dir/flags.make
 CMakeFiles/corewar1.dir/srcs/read_struct.c.o: ../srcs/read_struct.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building C object CMakeFiles/corewar1.dir/srcs/read_struct.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/corewar1.dir/srcs/read_struct.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/read_struct.c.o   -c /Users/galiza/Desktop/corewar1/srcs/read_struct.c
 
 CMakeFiles/corewar1.dir/srcs/read_struct.c.i: cmake_force
@@ -1164,7 +1190,7 @@ CMakeFiles/corewar1.dir/srcs/read_struct.c.s: cmake_force
 
 CMakeFiles/corewar1.dir/srcs/operations.c.o: CMakeFiles/corewar1.dir/flags.make
 CMakeFiles/corewar1.dir/srcs/operations.c.o: ../srcs/operations.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building C object CMakeFiles/corewar1.dir/srcs/operations.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/corewar1.dir/srcs/operations.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/operations.c.o   -c /Users/galiza/Desktop/corewar1/srcs/operations.c
 
 CMakeFiles/corewar1.dir/srcs/operations.c.i: cmake_force
@@ -1177,7 +1203,7 @@ CMakeFiles/corewar1.dir/srcs/operations.c.s: cmake_force
 
 CMakeFiles/corewar1.dir/srcs/variables.c.o: CMakeFiles/corewar1.dir/flags.make
 CMakeFiles/corewar1.dir/srcs/variables.c.o: ../srcs/variables.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building C object CMakeFiles/corewar1.dir/srcs/variables.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building C object CMakeFiles/corewar1.dir/srcs/variables.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/variables.c.o   -c /Users/galiza/Desktop/corewar1/srcs/variables.c
 
 CMakeFiles/corewar1.dir/srcs/variables.c.i: cmake_force
@@ -1190,7 +1216,7 @@ CMakeFiles/corewar1.dir/srcs/variables.c.s: cmake_force
 
 CMakeFiles/corewar1.dir/srcs/checks.c.o: CMakeFiles/corewar1.dir/flags.make
 CMakeFiles/corewar1.dir/srcs/checks.c.o: ../srcs/checks.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building C object CMakeFiles/corewar1.dir/srcs/checks.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building C object CMakeFiles/corewar1.dir/srcs/checks.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/corewar1.dir/srcs/checks.c.o   -c /Users/galiza/Desktop/corewar1/srcs/checks.c
 
 CMakeFiles/corewar1.dir/srcs/checks.c.i: cmake_force
@@ -1286,7 +1312,9 @@ corewar1_OBJECTS = \
 "CMakeFiles/corewar1.dir/srcs/funct3.c.o" \
 "CMakeFiles/corewar1.dir/srcs/funct4.c.o" \
 "CMakeFiles/corewar1.dir/srcs/functions.c.o" \
+"CMakeFiles/corewar1.dir/srcs/functions2.c.o" \
 "CMakeFiles/corewar1.dir/srcs/main.c.o" \
+"CMakeFiles/corewar1.dir/srcs/errors.c.o" \
 "CMakeFiles/corewar1.dir/srcs/read_struct.c.o" \
 "CMakeFiles/corewar1.dir/srcs/operations.c.o" \
 "CMakeFiles/corewar1.dir/srcs/variables.c.o" \
@@ -1378,14 +1406,16 @@ corewar1: CMakeFiles/corewar1.dir/srcs/funct2.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/funct3.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/funct4.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/functions.c.o
+corewar1: CMakeFiles/corewar1.dir/srcs/functions2.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/main.c.o
+corewar1: CMakeFiles/corewar1.dir/srcs/errors.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/read_struct.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/operations.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/variables.c.o
 corewar1: CMakeFiles/corewar1.dir/srcs/checks.c.o
 corewar1: CMakeFiles/corewar1.dir/build.make
 corewar1: CMakeFiles/corewar1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Linking C executable corewar1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Linking C executable corewar1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/corewar1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

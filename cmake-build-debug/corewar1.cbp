@@ -338,6 +338,9 @@
 		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/create_list.c">
 			<Option target="corewar1"/>
 		</Unit>
+		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/errors.c">
+			<Option target="corewar1"/>
+		</Unit>
 		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/funct1.c">
 			<Option target="corewar1"/>
 		</Unit>
@@ -351,6 +354,9 @@
 			<Option target="corewar1"/>
 		</Unit>
 		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/functions.c">
+			<Option target="corewar1"/>
+		</Unit>
+		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/functions2.c">
 			<Option target="corewar1"/>
 		</Unit>
 		<Unit filename="/Users/galiza/Desktop/corewar1/srcs/main.c">

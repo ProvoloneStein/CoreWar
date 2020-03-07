@@ -2256,6 +2256,33 @@ srcs/create_list.c.s:
 	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/create_list.c.s
 .PHONY : srcs/create_list.c.s
 
+srcs/errors.o: srcs/errors.c.o
+
+.PHONY : srcs/errors.o
+
+# target to build an object file
+srcs/errors.c.o:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/errors.c.o
+.PHONY : srcs/errors.c.o
+
+srcs/errors.i: srcs/errors.c.i
+
+.PHONY : srcs/errors.i
+
+# target to preprocess a source file
+srcs/errors.c.i:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/errors.c.i
+.PHONY : srcs/errors.c.i
+
+srcs/errors.s: srcs/errors.c.s
+
+.PHONY : srcs/errors.s
+
+# target to generate assembly for a file
+srcs/errors.c.s:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/errors.c.s
+.PHONY : srcs/errors.c.s
+
 srcs/funct1.o: srcs/funct1.c.o
 
 .PHONY : srcs/funct1.o
@@ -2390,6 +2417,33 @@ srcs/functions.s: srcs/functions.c.s
 srcs/functions.c.s:
 	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/functions.c.s
 .PHONY : srcs/functions.c.s
+
+srcs/functions2.o: srcs/functions2.c.o
+
+.PHONY : srcs/functions2.o
+
+# target to build an object file
+srcs/functions2.c.o:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/functions2.c.o
+.PHONY : srcs/functions2.c.o
+
+srcs/functions2.i: srcs/functions2.c.i
+
+.PHONY : srcs/functions2.i
+
+# target to preprocess a source file
+srcs/functions2.c.i:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/functions2.c.i
+.PHONY : srcs/functions2.c.i
+
+srcs/functions2.s: srcs/functions2.c.s
+
+.PHONY : srcs/functions2.s
+
+# target to generate assembly for a file
+srcs/functions2.c.s:
+	$(MAKE) -f CMakeFiles/corewar1.dir/build.make CMakeFiles/corewar1.dir/srcs/functions2.c.s
+.PHONY : srcs/functions2.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -2745,6 +2799,9 @@ help:
 	@echo "... srcs/create_list.o"
 	@echo "... srcs/create_list.i"
 	@echo "... srcs/create_list.s"
+	@echo "... srcs/errors.o"
+	@echo "... srcs/errors.i"
+	@echo "... srcs/errors.s"
 	@echo "... srcs/funct1.o"
 	@echo "... srcs/funct1.i"
 	@echo "... srcs/funct1.s"
@@ -2760,6 +2817,9 @@ help:
 	@echo "... srcs/functions.o"
 	@echo "... srcs/functions.i"
 	@echo "... srcs/functions.s"
+	@echo "... srcs/functions2.o"
+	@echo "... srcs/functions2.i"
+	@echo "... srcs/functions2.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

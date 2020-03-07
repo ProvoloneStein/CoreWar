@@ -75,7 +75,7 @@ char *get_content(char *map, t_oken token)
     return temp;
 }
 
-void    read_map(char** map, char* fd_map)
+int     read_map(char** map, char* fd_map)
 {
     char    buf[BUFF_SIZE + 1];
     char*   temp1;
@@ -92,6 +92,9 @@ void    read_map(char** map, char* fd_map)
             free(*map);
         *map = temp1;
     }
+    if (ft_strcmp(buf, "\n"))
+        return (0);
+    return (1);
 }
 
 t_oken  find_token(char* c, t_token** tok)
@@ -109,9 +112,9 @@ t_oken  find_token(char* c, t_token** tok)
     }
     (*tok)->column = g_column;
     (*tok)->line = g_line;
-    if (!ft_strcmp1(c + g_end, ".name"))
+    if (if_name(c + g_end))
         return NAME;
-    else if (!ft_strcmp1(c + g_end, ".comment"))
+    else if (if_comment(c + g_end))
         return COMMENT;
     else if (find_operation(c + g_end))
     {
@@ -154,6 +157,8 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
     while (map[g_end] != '\n')
         score_line(map, 1, 0);
     score_line(map, 1, 1);
+    while (map[g_end] == ' ' || map[g_end] == '\t')
+        score_line(map, 1, 1);
     while (map[g_end + len] != ':')
         len++;
     ment = (t_ment*)malloc(sizeof(t_ment));
@@ -173,7 +178,7 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
     score_line(map, len + 1, 1);
 }
 
-t_token *create_list(char* fd_map, t_pars* pars)
+int    create_list(char* fd_map, t_pars* pars)
 {
     t_token *temp;
     t_ment *temp1;
@@ -182,7 +187,12 @@ t_token *create_list(char* fd_map, t_pars* pars)
     pars->token = create_elem();
     temp = pars->token;
     temp1 = 0;
-    read_map(&map, fd_map);
+    if (!read_map(&map, fd_map))
+    {
+        pars->token->type = ERROR;
+        pars->token->content = ft_strdup("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)");
+        return (0);
+    }
     g_end = 0;
     g_byte = 0;
     while (map[g_end])
@@ -190,7 +200,7 @@ t_token *create_list(char* fd_map, t_pars* pars)
         pars->token->type = find_token(map, &pars->token);
         if (pars->token->type == ERROR)
             //ЧИСТИ ЧИСТИ ДА КАК ЭТИМ ЧИСТИТЬ?
-            return pars->token;
+            return (0);
         if (pars->token->type == LABEL)
         {
             get_next_metion(pars, map, &temp1);
@@ -212,5 +222,5 @@ t_token *create_list(char* fd_map, t_pars* pars)
     }
     pars->token = temp;
     pars->mention = temp1;
-    return pars->token;
+    return (1);
 }

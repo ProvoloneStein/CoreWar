@@ -233,6 +233,12 @@ CMakeFiles/corewar1.dir/srcs/create_list.c.o: ../libft/printf/ft_printf.h
 CMakeFiles/corewar1.dir/srcs/create_list.c.o: ../libft/srcs/libft.h
 CMakeFiles/corewar1.dir/srcs/create_list.c.o: ../srcs/create_list.c
 
+CMakeFiles/corewar1.dir/srcs/errors.c.o: .././assem.h
+CMakeFiles/corewar1.dir/srcs/errors.c.o: .././op.h
+CMakeFiles/corewar1.dir/srcs/errors.c.o: ../libft/printf/ft_printf.h
+CMakeFiles/corewar1.dir/srcs/errors.c.o: ../libft/srcs/libft.h
+CMakeFiles/corewar1.dir/srcs/errors.c.o: ../srcs/errors.c
+
 CMakeFiles/corewar1.dir/srcs/funct1.c.o: .././assem.h
 CMakeFiles/corewar1.dir/srcs/funct1.c.o: .././op.h
 CMakeFiles/corewar1.dir/srcs/funct1.c.o: ../libft/printf/ft_printf.h
@@ -262,6 +268,12 @@ CMakeFiles/corewar1.dir/srcs/functions.c.o: .././op.h
 CMakeFiles/corewar1.dir/srcs/functions.c.o: ../libft/printf/ft_printf.h
 CMakeFiles/corewar1.dir/srcs/functions.c.o: ../libft/srcs/libft.h
 CMakeFiles/corewar1.dir/srcs/functions.c.o: ../srcs/functions.c
+
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: .././assem.h
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: .././op.h
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: ../libft/printf/ft_printf.h
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: ../libft/srcs/libft.h
+CMakeFiles/corewar1.dir/srcs/functions2.c.o: ../srcs/functions2.c
 
 CMakeFiles/corewar1.dir/srcs/main.c.o: .././assem.h
 CMakeFiles/corewar1.dir/srcs/main.c.o: .././op.h

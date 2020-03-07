@@ -55,14 +55,14 @@ void make_tok(t_pars *parser)
     parser->token->next->next = NULL;
 }
 
-char *assembler(t_pars *parser)
-{
-	make_tok(parser);
-//	read_tok(fd, parser);
-	ft_printf("%s\n", parser->token->content);
-	cteate(parser);
-	return(parser->code);
-}
+//char *assembler(t_pars *parser)
+//{
+//	make_tok(parser);
+////	read_tok(fd, parser);
+//	ft_printf("%s\n", parser->token->content);
+//	cteate(parser);
+//	return(parser->code);
+//}
 
 int writing_in_file(t_pars *parser)
 {
@@ -95,13 +95,13 @@ int writing_in_file(t_pars *parser)
 	return(1);
 
 }
-int main()
-{
-	char *code;
-	t_pars *parser;
-
-	parser = parser_init();
-//	code = assembler(parser);
-	writing_in_file(parser);
-	return(1);
-}
+//int main()
+//{
+//	char *code;
+//	t_pars *parser;
+//
+//	parser = parser_init();
+////	code = assembler(parser);
+//	writing_in_file(parser);
+//	return(1);
+//}

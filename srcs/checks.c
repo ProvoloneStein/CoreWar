@@ -96,3 +96,45 @@ int     if_label(char* str)
         return (1);
     return (0);
 }
+
+int     if_name(char* str)
+{
+    int     i;
+
+    i = 0;
+    if (ft_strcmp1(str, ".name"))
+        return (0);
+    i = i + ft_strlen(".name");
+    while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+        i++;
+    if (!str[i] || str[i] != '"')
+        return (0);
+    i++;
+    while (str[i] && str[i] != '"')
+        i++;
+    if (str[i])
+        return (1);
+    return (0);
+}
+
+int     if_comment(char* str)
+{
+    int     i;
+
+    i = 0;
+    if (ft_strcmp1(str, ".comment"))
+        return (0);
+    i = i + ft_strlen(".comment");
+    while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
+        i++;
+    if (!str[i] || str[i] != '"')
+        return (0);
+    i++;
+    while (str[i] && str[i] != '"')
+        i++;
+    if (str[i])
+        return (1);
+    return (0);
+}
+
+

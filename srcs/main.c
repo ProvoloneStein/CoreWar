@@ -91,7 +91,7 @@ int assembler(char *fd_map)
 		ft_printf("%i %i\n", parser->token->type, parser->token->byte);
 		parser->token = parser->token->next;
 	}*/
-	writing_in_file(parser);
+	//writing_in_file(parser);
 	//ft_free_str(parser);
 	return(1);
 }

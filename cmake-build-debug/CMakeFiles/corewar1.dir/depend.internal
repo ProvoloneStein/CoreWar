@@ -233,6 +233,12 @@ CMakeFiles/corewar1.dir/srcs/create_list.c.o
  ../libft/printf/ft_printf.h
  ../libft/srcs/libft.h
  /Users/galiza/Desktop/corewar1/srcs/create_list.c
+CMakeFiles/corewar1.dir/srcs/errors.c.o
+ .././assem.h
+ .././op.h
+ ../libft/printf/ft_printf.h
+ ../libft/srcs/libft.h
+ /Users/galiza/Desktop/corewar1/srcs/errors.c
 CMakeFiles/corewar1.dir/srcs/funct1.c.o
  .././assem.h
  .././op.h
@@ -263,6 +269,12 @@ CMakeFiles/corewar1.dir/srcs/functions.c.o
  ../libft/printf/ft_printf.h
  ../libft/srcs/libft.h
  /Users/galiza/Desktop/corewar1/srcs/functions.c
+CMakeFiles/corewar1.dir/srcs/functions2.c.o
+ .././assem.h
+ .././op.h
+ ../libft/printf/ft_printf.h
+ ../libft/srcs/libft.h
+ /Users/galiza/Desktop/corewar1/srcs/functions2.c
 CMakeFiles/corewar1.dir/srcs/main.c.o
  .././assem.h
  .././op.h
