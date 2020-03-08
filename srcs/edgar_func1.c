@@ -6,18 +6,14 @@ int     g_end;
 int     g_byte;
 char*   g_link_chars;
 
-t_oken  get_tok(char* c, t_token** tok)
+t_oken  get_tok(char* c)
 {
     if (if_name(c + g_end))
         return NAME;
     else if (if_comment(c + g_end))
         return COMMENT;
     else if (if_operation(c + g_end))
-    {
-        g_byte++;
-        (*tok)->byte = g_byte;
         return INSTRUCTION;
-    }
     return (-1);
 }
 

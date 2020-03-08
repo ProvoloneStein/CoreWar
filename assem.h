@@ -207,7 +207,7 @@ void    skip_space(char *c);
 /*
  * edgar_func1.c
  */
-t_oken  get_tok(char* c, t_token** tok);
+t_oken  get_tok(char* c);
 void    skip_sp(char* map);
 void    take_label(t_pars* pars, char* map, t_ment** temp1);
 void    take_ins(t_pars* pars, char* map);

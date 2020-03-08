@@ -35,8 +35,11 @@ t_oken  find_token(char* c, t_token** tok, t_pars* pars)
     skip_space(c);
     (*tok)->column = g_column;
     (*tok)->line = g_line;
-    if (get_tok(c, tok) != -1)
-        return get_tok(c, tok);
+    if (get_tok(c) != -1)
+    {
+        (*tok)->byte = ++g_byte;
+        return get_tok(c);
+    }
     while (ft_strchr(g_link_chars, c[g_end]) && c[g_end])
     {
         flag = 1;
