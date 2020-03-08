@@ -6,6 +6,27 @@ int     g_end;
 int     g_byte;
 char*   g_link_chars;
 
+char    *find_oper(char* str)
+{
+    if (!ft_strcmp1(str, "or"))
+        return ("or");
+    else if (!ft_strcmp1(str, "xor"))
+        return ("xor");
+    else if (!ft_strcmp1(str, "zjmp"))
+        return ("zjmp");
+    else if (!ft_strcmp1(str, "fork"))
+        return ("fork");
+    else if (!ft_strcmp1(str, "lldi"))
+        return ("lldi");
+    else if (!ft_strcmp1(str, "lld"))
+        return ("lld");
+    else if (!ft_strcmp1(str, "lfork"))
+        return ("lfork");
+    else if (!ft_strcmp1(str, "aff"))
+        return ("aff");
+    return (0);
+}
+
 char    *find_operation(char* str)
 {
     if (!ft_strcmp1(str, "live"))
@@ -24,23 +45,7 @@ char    *find_operation(char* str)
         return ("sub");
     else if (!ft_strcmp1(str, "and"))
         return ("and");
-    else if (!ft_strcmp1(str, "or"))
-        return ("or");
-    else if (!ft_strcmp1(str, "xor"))
-        return ("xor");
-    else if (!ft_strcmp1(str, "zjmp"))
-        return ("zjmp");
-    else if (!ft_strcmp1(str, "fork"))
-        return ("fork");
-    else if (!ft_strcmp1(str, "lldi"))
-        return ("lldi");
-    else if (!ft_strcmp1(str, "lld"))
-        return ("lld");
-    else if (!ft_strcmp1(str, "lfork"))
-        return ("lfork");
-    else if (!ft_strcmp1(str, "aff"))
-        return ("aff");
-    return 0;
+    return find_oper(str);
 }
 
 int     if_digits(char* str)
@@ -96,59 +101,3 @@ int     if_label(char* str)
         return (1);
     return (0);
 }
-
-int     if_name(char* str)
-{
-    int     i;
-
-    i = 0;
-    if (ft_strcmp1(str, ".name"))
-        return (0);
-    i = i + ft_strlen(".name");
-    while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-        i++;
-    if (!str[i] || str[i] != '"')
-        return (0);
-    i++;
-    while (str[i] && str[i] != '"')
-        i++;
-    if (str[i])
-        return (1);
-    return (0);
-}
-
-int     if_comment(char* str)
-{
-    int     i;
-
-    i = 0;
-    if (ft_strcmp1(str, ".comment"))
-        return (0);
-    i = i + ft_strlen(".comment");
-    while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
-        i++;
-    if (!str[i] || str[i] != '"')
-        return (0);
-    i++;
-    while (str[i] && str[i] != '"')
-        i++;
-    if (str[i])
-        return (1);
-    return (0);
-}
-
-int     if_operation(char* str)
-{
-    char*   temp;
-    int     i;
-
-    i = 0;
-    temp = find_operation(str);
-    if (!temp)
-        return (0);
-    i = ft_strlen(temp);
-    if (str[i] == ' ' || str[i] == '\t' || str[i] == '%')
-        return (1);
-    return (0);
-}
-

@@ -89,6 +89,9 @@ add_executable(qwe
         libft/srcs/get_next_line.h
         libft/srcs/libft.h
         srcs/checks.c
+        srcs/checks2.c
+        srcs/edgar_func.c
+        srcs/edgar_func1.c
         srcs/code_generator.c
         srcs/create_list.c
         srcs/errors.c

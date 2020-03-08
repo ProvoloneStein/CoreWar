@@ -54,7 +54,7 @@ void    plus_byte(char *str)
         g_byte += 1;
 }
 
-int    check_unique_label(t_pars* pars, t_ment* ment)
+void    check_unique_label(t_ment* ment)
 {
     t_ment* temp1;
     t_ment* temp2;
@@ -66,16 +66,10 @@ int    check_unique_label(t_pars* pars, t_ment* ment)
         while (temp2)
         {
             if (!ft_strcmp(temp1->name, temp2->name))
-            {
-                pars->token = create_elem();
-                // ЧИСТИ ЧИСТИ ЧИСТИ ДА КАК ЭТИМ ЧИСТИТЬ?
-                pars->token->type = ERROR;
-                return (0);
-            }
+                err_handler(2, 0 ,0);
             temp2 = temp2->next;
         }
         temp1 = temp1->next;
         temp2 = temp1->next;
     }
-    return (1);
 }

@@ -15,25 +15,22 @@ void add_variables(t_token** token, char* map)
     flag = 1;
     operation = find_operation(map + g_end);
     score_line(map, ft_strlen(operation), 1);
-    while (map[g_end] && map[g_end] != '\n' && map[g_end] != '#' && (*token)->type != ERROR)
+    while (map[g_end] && map[g_end] != '\n' && map[g_end] != '#')
     {
         (*token)->next = create_elem();
         (*token) = (*token)->next;
         (*token)->type = find_variables(map, token);
-        if ((*token)->type != ERROR)
+        if ((*token)->type == DIRECT_LABEL || (*token)->type == DIRECT)
+            plus2bytes(operation);
+        (*token)->content = get_variables(map, (*token)->type);
+        if (flag)
         {
-            if ((*token)->type == DIRECT_LABEL || (*token)->type == DIRECT)
-                plus2bytes(operation);
-            (*token)->content = get_variables(map, (*token)->type);
-            if (flag)
-            {
-                plus_byte(operation);
-                flag = 0;
-            }
-            (*token)->byte = g_byte;
-            while (map[g_end] && (map[g_end] == '\t' || map[g_end] == ',' || map[g_end] == ' '))
-                score_line(map, 1, 1);
+            plus_byte(operation);
+            flag = 0;
         }
+        (*token)->byte = g_byte;
+        while (map[g_end] && (map[g_end] == '\t' || map[g_end] == ',' || map[g_end] == ' '))
+            score_line(map, 1, 1);
     }
 }
 
@@ -53,7 +50,8 @@ t_oken find_variables(char* c, t_token** tok)
         return REGISTER;
     else if (if_digits(c + g_end))
         return INDIRECT;
-    return ERROR;
+    err_handler(3, (*tok)->column, (*tok)->line);
+    return (0);
 }
 
 

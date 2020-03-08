@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/galiza/Desktop/qwe/. -I/Users/galiza/Desktop/qwe/libft/printf -I/Users/galiza/Desktop/qwe/libft/srcs 
+C_INCLUDES = -I/Users/galiza/Desktop/corewar1/. -I/Users/galiza/Desktop/corewar1/libft/printf -I/Users/galiza/Desktop/corewar1/libft/srcs 
 

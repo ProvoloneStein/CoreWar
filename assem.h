@@ -38,8 +38,7 @@ typedef enum
 	INDIRECT_LABEL,
 	INDIRECT,
     REGISTER, //регистер
-    END,
-    ERROR
+    END
 }	t_oken;
 
 typedef struct			s_token
@@ -165,14 +164,14 @@ int		write_reg(t_pars *pars, char **code);
  * create_list.c
  */
 int     create_list(char* fd_map, t_pars* pars);
-void    score_line(char* c, int value, int ascending);
 t_token *create_elem();
+void    get_next_metion(t_pars* pars, char* map, t_ment** temp1);
 /*
  * operations.c
  */
 void    plus2bytes(char *str);
 void    plus_byte(char *str);
-int    check_unique_label(t_pars* pars, t_ment* ment);
+void    check_unique_label(t_ment* ment);
 /*
  * variables.c
  */
@@ -186,10 +185,30 @@ char    *find_operation(char* str);
 int     if_digits(char* str);
 int     if_register(char* str);
 int     if_label(char* str);
+/*
+ * checks2.c
+ */
 int     if_name(char* str);
 int     if_comment(char* str);
 int     if_operation(char* str);
+int     check_map(char* map);
 
+/*
+ * errors.c
+ */
 int errors_handler(int i, int x, int y);
-
+void    err_handler(int i, int x, int y);
+/*
+ * edgar_func.c
+ */
+void    score_line(char* c, int value, int ascending);
+char    *get_content(char *map, t_oken token);
+void    skip_space(char *c);
+/*
+ * edgar_func1.c
+ */
+t_oken  get_tok(char* c, t_token** tok);
+void    skip_sp(char* map);
+void    take_label(t_pars* pars, char* map, t_ment** temp1);
+void    take_ins(t_pars* pars, char* map);
 #endif

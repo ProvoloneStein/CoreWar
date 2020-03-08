@@ -1,79 +1,11 @@
-//
-// Created by Greyjoy Aliza on 2020-02-23.
-//
 
 int     g_line = 1;
 int     g_column = 1;
-int     g_end;
-int     g_byte;
+int     g_end = 0;
+int     g_byte = 0;
 char*   g_link_chars = "abcdefghijklmnopqrstuvwxyz_0123456789";
 
 #include "assem.h"
-
-void    score_line(char* c, int value, int ascending)
-{
-    while (value)
-    {
-        if (ascending)
-        {
-            if (c[g_end] == '\n')
-            {
-                g_column = 1;
-                g_line++;
-            }
-            else
-                g_column++;
-            g_end++;
-        }
-        else
-        {
-            if (c[g_end - 1] == '\n')
-            {
-                g_column = 0;
-                while (c[g_end + g_column] != '\n')
-                    g_column++;
-                g_column++;
-                g_line--;
-            }
-            else
-                g_column--;
-            g_end--;
-        }
-        value--;
-    }
-}
-
-char *get_content(char *map, t_oken token)
-{
-    char*   temp;
-    int     i;
-    int     start;
-    int     len;
-
-    i = 0;
-    start = 0;
-    len = 0;
-    if (token == NAME || token == COMMENT)
-        while (*map && i != 2)
-        {
-            if (map[start + g_end] == '"' && i == 0)
-                i = 1;
-            else if (i == 0)
-                start++;
-            if (i == 1)
-                len++;
-            if (map[start + len + g_end] == '"' && i == 1)
-                i = 2;
-        }
-    else if (token == INSTRUCTION)
-    {
-        temp = find_operation(map + g_end);
-        return ft_strdup(temp);
-    }
-    temp = ft_strsub(map, start + g_end + 1, len - 1);
-    score_line(map, start + len + 1, 1);
-    return temp;
-}
 
 int     read_map(char** map, char* fd_map)
 {
@@ -92,46 +24,31 @@ int     read_map(char** map, char* fd_map)
             free(*map);
         *map = temp1;
     }
-    if (ft_strcmp(buf, "\n"))
-        return (0);
-    return (1);
+    return check_map(*map);
 }
 
-t_oken  find_token(char* c, t_token** tok)
+t_oken  find_token(char* c, t_token** tok, t_pars* pars)
 {
     int     flag;
 
     flag = 0;
-    while ((c[g_end] == ' ' || c[g_end] == '\t' || c[g_end] == '\n' || c[g_end] == '#' || c[g_end] == ',') && c[g_end])
-    {
-        if (c[g_end] == '#')
-            while (c[g_end] != '\n' && c[g_end])
-                score_line(c, 1, 1);
-        else
-            score_line(c, 1, 1);
-    }
+    skip_space(c);
     (*tok)->column = g_column;
     (*tok)->line = g_line;
-    if (if_name(c + g_end))
-        return NAME;
-    else if (if_comment(c + g_end))
-        return COMMENT;
-    else if (if_operation(c + g_end))
-    {
-        g_byte++;
-        (*tok)->byte = g_byte;
-        return INSTRUCTION;
-    }
+    if (get_tok(c, tok) != -1)
+        return get_tok(c, tok);
     while (ft_strchr(g_link_chars, c[g_end]) && c[g_end])
     {
         flag = 1;
         score_line(c, 1, 1);
     }
+    pars->code_size = pars->token->byte;
     if (!c[g_end])
         return END;
     else if (c[g_end] == ':' && flag)
         return LABEL;
-    return ERROR;
+    err_handler(1, (*tok)->column, (*tok)->line);
+    return 0;
 }
 
 t_token *create_elem()
@@ -154,15 +71,11 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
     int len;
 
     len = 0;
-    while (map[g_end] != '\n')
-        score_line(map, 1, 0);
-    score_line(map, 1, 1);
-    while (map[g_end] == ' ' || map[g_end] == '\t')
-        score_line(map, 1, 1);
+    skip_sp(map);
     while (map[g_end + len] != ':')
         len++;
     ment = (t_ment*)malloc(sizeof(t_ment));
-    ment->name = ft_strsub(map, g_end, len); //g_end + 1 len - 1 че за хуйня почему
+    ment->name = ft_strsub(map, g_end, len);
     ment->byte = g_byte;
     ment->next = 0;
     if (!pars->mention)
@@ -184,39 +97,18 @@ int    create_list(char* fd_map, t_pars* pars)
     t_ment *temp1;
     char* map;
 
+    temp1 = 0;
     pars->token = create_elem();
     temp = pars->token;
-    temp1 = 0;
     if (!read_map(&map, fd_map))
-    {
-        pars->token->type = ERROR;
-        pars->token->content = ft_strdup("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)");
-        return (0);
-    }
-    g_end = 0;
-    g_byte = 0;
+        err_handler(0, 1, 1);
     while (map[g_end])
     {
-        pars->token->type = find_token(map, &pars->token);
-        if (pars->token->type == ERROR)
-            //ЧИСТИ ЧИСТИ ДА КАК ЭТИМ ЧИСТИТЬ?
-            return (0);
+        pars->token->type = find_token(map, &pars->token, pars);
         if (pars->token->type == LABEL)
-        {
-            get_next_metion(pars, map, &temp1);
-            pars->token->next = create_elem();
-            pars->token = pars->token->next;
-            if (!check_unique_label(pars, temp1))
-                return (0);
-        }
+            take_label(pars, map, &temp1);
         if (pars->token->type != END && pars->token->type != LABEL)
-        {
-            pars->token->content = get_content(map, pars->token->type);
-            if (pars->token->type == INSTRUCTION)
-                add_variables(&pars->token, map);
-            pars->token->next = create_elem();
-            pars->token = pars->token->next;
-        }
+            take_ins(pars, map);
         if (pars->token->type == END)
             pars->code_size = pars->token->byte;
     }

@@ -28,3 +28,16 @@ int errors_handler(int i, int x, int y)
         ft_printf("[%i, %i] not enough params in this function\n", x, y);
     return (0);
 }
+
+void    err_handler(int i, int y, int x)
+{
+    if (i == 0)
+        ft_printf("Syntax error - unexpected end of input (Perhaps you forgot to end with a newline ?)");
+    else if (i == 1)
+        ft_printf("Lexical error at [%i,%i]", x, y);
+    else if (i == 2)
+        ft_printf("Labels got same names");
+    else if (i == 3)
+        ft_printf("Syntax error at token [TOKEN][%i:%i]", x, y);
+    exit(0);
+}

@@ -235,6 +235,12 @@ CMakeFiles/qwe.dir/srcs/checks.c.o: ../libft/printf/ft_printf.h
 CMakeFiles/qwe.dir/srcs/checks.c.o: ../libft/srcs/libft.h
 CMakeFiles/qwe.dir/srcs/checks.c.o: ../srcs/checks.c
 
+CMakeFiles/qwe.dir/srcs/checks2.c.o: .././assem.h
+CMakeFiles/qwe.dir/srcs/checks2.c.o: .././op.h
+CMakeFiles/qwe.dir/srcs/checks2.c.o: ../libft/printf/ft_printf.h
+CMakeFiles/qwe.dir/srcs/checks2.c.o: ../libft/srcs/libft.h
+CMakeFiles/qwe.dir/srcs/checks2.c.o: ../srcs/checks2.c
+
 CMakeFiles/qwe.dir/srcs/code_generator.c.o: .././assem.h
 CMakeFiles/qwe.dir/srcs/code_generator.c.o: .././op.h
 CMakeFiles/qwe.dir/srcs/code_generator.c.o: ../libft/printf/ft_printf.h
@@ -246,6 +252,18 @@ CMakeFiles/qwe.dir/srcs/create_list.c.o: .././op.h
 CMakeFiles/qwe.dir/srcs/create_list.c.o: ../libft/printf/ft_printf.h
 CMakeFiles/qwe.dir/srcs/create_list.c.o: ../libft/srcs/libft.h
 CMakeFiles/qwe.dir/srcs/create_list.c.o: ../srcs/create_list.c
+
+CMakeFiles/qwe.dir/srcs/edgar_func.c.o: .././assem.h
+CMakeFiles/qwe.dir/srcs/edgar_func.c.o: .././op.h
+CMakeFiles/qwe.dir/srcs/edgar_func.c.o: ../libft/printf/ft_printf.h
+CMakeFiles/qwe.dir/srcs/edgar_func.c.o: ../libft/srcs/libft.h
+CMakeFiles/qwe.dir/srcs/edgar_func.c.o: ../srcs/edgar_func.c
+
+CMakeFiles/qwe.dir/srcs/edgar_func1.c.o: .././assem.h
+CMakeFiles/qwe.dir/srcs/edgar_func1.c.o: .././op.h
+CMakeFiles/qwe.dir/srcs/edgar_func1.c.o: ../libft/printf/ft_printf.h
+CMakeFiles/qwe.dir/srcs/edgar_func1.c.o: ../libft/srcs/libft.h
+CMakeFiles/qwe.dir/srcs/edgar_func1.c.o: ../srcs/edgar_func1.c
 
 CMakeFiles/qwe.dir/srcs/errors.c.o: .././assem.h
 CMakeFiles/qwe.dir/srcs/errors.c.o: .././op.h

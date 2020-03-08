@@ -20,7 +20,7 @@ LEM_IN_SRC_DIR= srcs/
 
 HEADER= assem.h
 
-CLEM_IN= main.c functions.c read_struct.c funct1.c funct2.c funct3.c funct4.c create_list.c checks.c operations.c variables.c functions2.c read_commands.c errors.c code_generator.c
+CLEM_IN= main.c functions.c read_struct.c funct1.c funct2.c funct3.c funct4.c create_list.c checks.c operations.c variables.c functions2.c read_commands.c errors.c code_generator.c checks2.c edgar_func.c edgar_func1.c
 
 LEM_IN_SRC = $(addprefix $(LEM_IN_SRC_DIR),$(CLEM_IN))
 
