@@ -14,7 +14,7 @@ t_oken  get_tok(char* c)
         return COMMENT;
     else if (if_operation(c + g_end))
         return INSTRUCTION;
-    return (-1);
+    return (ERROR);
 }
 
 void    skip_sp(char* map)

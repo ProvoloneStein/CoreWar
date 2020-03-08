@@ -48,10 +48,10 @@ RM = /Users/galiza/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/galiza/Desktop/corewar1
+CMAKE_SOURCE_DIR = /Users/galiza/Desktop/qwe
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/galiza/Desktop/corewar1/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/galiza/Desktop/qwe/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles /Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles /Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2283,33 +2283,6 @@ srcs/checks.c.s:
 	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/checks.c.s
 .PHONY : srcs/checks.c.s
 
-srcs/checks2.o: srcs/checks2.c.o
-
-.PHONY : srcs/checks2.o
-
-# target to build an object file
-srcs/checks2.c.o:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/checks2.c.o
-.PHONY : srcs/checks2.c.o
-
-srcs/checks2.i: srcs/checks2.c.i
-
-.PHONY : srcs/checks2.i
-
-# target to preprocess a source file
-srcs/checks2.c.i:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/checks2.c.i
-.PHONY : srcs/checks2.c.i
-
-srcs/checks2.s: srcs/checks2.c.s
-
-.PHONY : srcs/checks2.s
-
-# target to generate assembly for a file
-srcs/checks2.c.s:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/checks2.c.s
-.PHONY : srcs/checks2.c.s
-
 srcs/code_generator.o: srcs/code_generator.c.o
 
 .PHONY : srcs/code_generator.o
@@ -2363,60 +2336,6 @@ srcs/create_list.s: srcs/create_list.c.s
 srcs/create_list.c.s:
 	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/create_list.c.s
 .PHONY : srcs/create_list.c.s
-
-srcs/edgar_func.o: srcs/edgar_func.c.o
-
-.PHONY : srcs/edgar_func.o
-
-# target to build an object file
-srcs/edgar_func.c.o:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func.c.o
-.PHONY : srcs/edgar_func.c.o
-
-srcs/edgar_func.i: srcs/edgar_func.c.i
-
-.PHONY : srcs/edgar_func.i
-
-# target to preprocess a source file
-srcs/edgar_func.c.i:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func.c.i
-.PHONY : srcs/edgar_func.c.i
-
-srcs/edgar_func.s: srcs/edgar_func.c.s
-
-.PHONY : srcs/edgar_func.s
-
-# target to generate assembly for a file
-srcs/edgar_func.c.s:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func.c.s
-.PHONY : srcs/edgar_func.c.s
-
-srcs/edgar_func1.o: srcs/edgar_func1.c.o
-
-.PHONY : srcs/edgar_func1.o
-
-# target to build an object file
-srcs/edgar_func1.c.o:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func1.c.o
-.PHONY : srcs/edgar_func1.c.o
-
-srcs/edgar_func1.i: srcs/edgar_func1.c.i
-
-.PHONY : srcs/edgar_func1.i
-
-# target to preprocess a source file
-srcs/edgar_func1.c.i:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func1.c.i
-.PHONY : srcs/edgar_func1.c.i
-
-srcs/edgar_func1.s: srcs/edgar_func1.c.s
-
-.PHONY : srcs/edgar_func1.s
-
-# target to generate assembly for a file
-srcs/edgar_func1.c.s:
-	$(MAKE) -f CMakeFiles/qwe.dir/build.make CMakeFiles/qwe.dir/srcs/edgar_func1.c.s
-.PHONY : srcs/edgar_func1.c.s
 
 srcs/errors.o: srcs/errors.c.o
 
@@ -2991,21 +2910,12 @@ help:
 	@echo "... srcs/checks.o"
 	@echo "... srcs/checks.i"
 	@echo "... srcs/checks.s"
-	@echo "... srcs/checks2.o"
-	@echo "... srcs/checks2.i"
-	@echo "... srcs/checks2.s"
 	@echo "... srcs/code_generator.o"
 	@echo "... srcs/code_generator.i"
 	@echo "... srcs/code_generator.s"
 	@echo "... srcs/create_list.o"
 	@echo "... srcs/create_list.i"
 	@echo "... srcs/create_list.s"
-	@echo "... srcs/edgar_func.o"
-	@echo "... srcs/edgar_func.i"
-	@echo "... srcs/edgar_func.s"
-	@echo "... srcs/edgar_func1.o"
-	@echo "... srcs/edgar_func1.i"
-	@echo "... srcs/edgar_func1.s"
 	@echo "... srcs/errors.o"
 	@echo "... srcs/errors.i"
 	@echo "... srcs/errors.s"

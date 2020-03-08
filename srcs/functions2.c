@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 16:24:42 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 18:10:05 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 22:02:32 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void		int_to_byte(char *bytecode, int32_t pos, int32_t num, size_t size)
 	int8_t	i;
 
 	i = 0;
+	ft_printf("\n kek = %i, pos = %i size = %i \n", num, pos, size);
 	while (size)
 	{
 		bytecode[pos + size - 1] = (uint8_t)((num >> i) & 0xFF);

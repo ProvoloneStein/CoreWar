@@ -78,7 +78,7 @@ char *get_variables(char *map, t_oken token)
             len++;
         while (ft_isdigit(map[g_end + len]))
             len++;
-        temp = ft_itoa(ft_atoi(map + g_end));
+        temp = ft_itoa(ft_atoi_asm(map + g_end));
         score_line(map, len, 1);
         return temp;
     }
@@ -98,7 +98,7 @@ char *get_variables(char *map, t_oken token)
             len++;
         while (ft_isdigit(map[g_end + len]))
             len++;
-        temp = ft_itoa(ft_atoi(map + g_end));
+        temp = ft_itoa(ft_atoi_asm(map + g_end));
         score_line(map, len, 1);
         return temp;
     }
@@ -108,7 +108,7 @@ char *get_variables(char *map, t_oken token)
         score_line(map, 1, 1);
         while (ft_isdigit(map[g_end + len]))
             len++;
-        temp = ft_itoa(ft_atoi(map + g_end));
+        temp = ft_itoa(ft_atoi_asm(map + g_end));
         score_line(map, len, 1);
         return temp;
     }

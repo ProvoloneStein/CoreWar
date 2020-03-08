@@ -29,15 +29,18 @@ int     read_map(char** map, char* fd_map)
 
 t_oken  find_token(char* c, t_token** tok, t_pars* pars)
 {
+    t_oken  temp;
     int     flag;
 
     flag = 0;
     skip_space(c);
     (*tok)->column = g_column;
     (*tok)->line = g_line;
-    if (get_tok(c) != -1)
+    temp = get_tok(c);
+    if (temp != ERROR)
     {
-        (*tok)->byte = ++g_byte;
+        if (temp == INSTRUCTION)
+            (*tok)->byte = ++g_byte;
         return get_tok(c);
     }
     while (ft_strchr(g_link_chars, c[g_end]) && c[g_end])

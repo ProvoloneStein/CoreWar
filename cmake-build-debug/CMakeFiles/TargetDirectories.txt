@@ -1,3 +1,3 @@
-/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/galiza/Desktop/corewar1/cmake-build-debug/CMakeFiles/qwe.dir
+/Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/galiza/Desktop/qwe/cmake-build-debug/CMakeFiles/qwe.dir

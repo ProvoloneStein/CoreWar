@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 18:48:51 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/07 17:38:04 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 20:15:43 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int	writing_in_file(t_pars *pars)
 	int		len;
 
 	len = 4 + PROG_NAME_LENGTH + 4 + 4 + COMMENT_LENGTH + 4 + pars->code_size;
-	if ((fd = open(pars->filename, O_CREAT | O_WRONLY, 0644)) == -1
-			|| !(bytecode = ft_strnew((size_t)len)))
+	if (!(bytecode = ft_strnew((size_t)len)))
 		return (-1);
 	if (!check_commands(pars))
 		return (-1);
@@ -35,6 +34,8 @@ int	writing_in_file(t_pars *pars)
 	pars->i += COMMENT_LENGTH;
 	pars->i += 4;
 	if (!(make_code(pars, &bytecode)))
+		return (-1);
+	if ((fd = open(pars->filename, O_CREAT | O_WRONLY, 0644)) == -1)
 		return (-1);
 	write(fd, bytecode, len);
 	return (1);

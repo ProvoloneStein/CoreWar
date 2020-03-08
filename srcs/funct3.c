@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   funct3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 15:31:22 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 15:39:19 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/07 19:06:32 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_sti(t_pars *parser, char **bytecode)
 int	ft_fork(t_pars *parser, char **bytecode)
 {
 	parser->token = parser->token->next;
-	int_to_byte(*bytecode, 0, 0x0c, NAME_SIZE);
+	int_to_byte(*bytecode, parser->i, 0x0c, NAME_SIZE);
 	parser->i += NAME_SIZE;
 	if (next_arg(parser, 1, 2, bytecode))
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/07 17:28:53 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 22:51:16 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ t_pars *parser_init(char *progname)
 	pars->code_size = 0;
 	pars->f_head = 0;
 	pars->filename = ft_progname(progname);
-	ft_printf("%s\n", pars->filename);
 	return(pars);
 }
 
@@ -85,10 +84,10 @@ int assembler(char *fd_map)
 	if (!(parser = parser_init(fd_map)))
 		return(-1);	
 	if (!(create_list(fd_map, parser)))
-		return(-1);  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
+		return(ft_printf("Error"));  // прога в случае невалидного вода должна вылетать с ошибкой и показывать строчку и +- место в котором обнаружена ошибка/ внутри парсера должны быть заполнены токены и метки после твоей функции
 	/*while(parser->token)
 	{
-		ft_printf("%i %s\n", parser->token->type, parser->token->content);
+		ft_printf("%i %i %s\n", parser->token->type, parser->token->byte, parser->token->content);
 		parser->token = parser->token->next;
 	}*/
 	/*while(parser->mention)
@@ -96,6 +95,7 @@ int assembler(char *fd_map)
 		ft_printf("%s\n", parser->mention->name);
 		parser->mention = parser->mention->next;
 	}*/
+	ft_printf("%s is readed\n", parser->filename);
 	writing_in_file(parser);
 	//ft_free_str(parser);
 	return(1);

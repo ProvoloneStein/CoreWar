@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/05 17:28:17 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 22:02:31 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ typedef enum
 	INDIRECT_LABEL,
 	INDIRECT,
     REGISTER, //регистер
-    END
+    END,
+    ERROR
 }	t_oken;
 
 typedef struct			s_token
@@ -84,8 +85,8 @@ int writing_in_file(t_pars *parser); // Непосредственно Каха!
 ** ===>>>   read_commands.c   <<<===
 */
 
-int	make_com(t_pars *parser);
-int	make_name(t_pars *parser);
+int	make_com(t_pars *parser, int *i);
+int	make_name(t_pars *parser, int *i);
 int	check_commands(t_pars *parser); 
 
 /*

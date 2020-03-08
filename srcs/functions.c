@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 15:43:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/07 17:37:30 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 22:06:28 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,10 @@ int		write_dir(t_pars *pars, size_t size, char **code)
 		int_to_byte(*code, pars->i, num, size);
 	}
 	else if (pars->token->type == DIRECT)
-		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), size);
+	{
+		ft_printf("\n%s\n", pars->token->content);
+		int_to_byte(*code, pars->i, ft_atoi_asm(pars->token->content), size);
+	}
 	else
 		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += size;
@@ -115,7 +118,7 @@ int		write_indir(t_pars *pars, char **code)
 		int_to_byte(*code, pars->i, num, IND_SIZE);
 	}
 	else if (pars->token->type == INDIRECT)
-		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), IND_SIZE);
+		int_to_byte(*code, pars->i, ft_atoi_asm(pars->token->content), IND_SIZE);
 	else
 		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += IND_SIZE;
@@ -127,7 +130,7 @@ int		write_reg(t_pars *pars, char **code)
 	if (!(pars->token->content))
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == REGISTER)
-		int_to_byte(*code, pars->i, ft_atoi(pars->token->content), 1);
+		int_to_byte(*code, pars->i, ft_atoi_asm(pars->token->content), 1);
 	else
 		return (errors_handler(1, pars->token->line, pars->token->column));
 	pars->i += 1;

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 22:43:04 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/01 18:15:32 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/08 20:27:13 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ int errors_handler(int i, int x, int y)
     else if (i == 3)
         ft_printf("[%i, %i] comment or name error\n", x, y);
     else if (i == 4)
-        ft_printf("[%i, %i] there is more params that is needed. Isn't it\n?", x, y);
+        ft_printf("[%i, %i] there is more params that is needed. Isn't it?\n", x, y);
     else if (i == 5)
         ft_printf("[%i, %i] not enough params in this function\n", x, y);
+    else if (i == 6)
+       ft_printf("[%i, %i] Your champ should do anything. Why he has no code?\n", x, y); 
     return (0);
 }
 
