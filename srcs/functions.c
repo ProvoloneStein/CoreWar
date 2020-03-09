@@ -71,7 +71,7 @@ int		find_value(t_pars *parser)
 	int		i;
 
 	head = parser->mention;
-	i = 0;
+	i = -1;
 	while (parser->mention && (ft_strcmp(parser->mention->name, parser->token->content)))
 	{
 		parser->mention = parser->mention->next;
@@ -90,15 +90,13 @@ int		write_dir(t_pars *pars, size_t size, char **code)
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == DIRECT_LABEL)
 	{
-		if (!(num = find_value(pars)))
+        num = find_value(pars);
+		if ((num = find_value(pars)) == -1)
 			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, size);
 	}
 	else if (pars->token->type == DIRECT)
-	{
-		ft_printf("\n%s\n", pars->token->content);
 		int_to_byte(*code, pars->i, ft_atoi_asm(pars->token->content), size);
-	}
 	else
 		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += size;
@@ -113,7 +111,8 @@ int		write_indir(t_pars *pars, char **code)
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == INDIRECT_LABEL)
 	{
-		if (!(num = find_value(pars)))
+        num = find_value(pars);
+		if ((num = find_value(pars)) == -1)
 			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, IND_SIZE);
 	}

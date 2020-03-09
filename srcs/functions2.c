@@ -17,7 +17,6 @@ void		int_to_byte(char *bytecode, int32_t pos, int32_t num, size_t size)
 	int8_t	i;
 
 	i = 0;
-	ft_printf("\n kek = %i, pos = %i size = %i \n", num, pos, size);
 	while (size)
 	{
 		bytecode[pos + size - 1] = (uint8_t)((num >> i) & 0xFF);

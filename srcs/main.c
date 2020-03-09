@@ -95,7 +95,7 @@ int assembler(char *fd_map)
 		ft_printf("%s\n", parser->mention->name);
 		parser->mention = parser->mention->next;
 	}*/
-	ft_printf("%s is readed\n", parser->filename);
+	ft_printf("LEL\n");
 	writing_in_file(parser);
 	//ft_free_str(parser);
 	return(1);
@@ -133,5 +133,5 @@ int main(int argc, char **argv)
 		disassembler(argv[1]);*/
 	else
 		ft_printf("usage: ./assembler map");
-	return(0);	
+	return(0);
 }

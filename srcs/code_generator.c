@@ -37,6 +37,8 @@ int	writing_in_file(t_pars *pars)
 		return (-1);
 	if ((fd = open(pars->filename, O_CREAT | O_WRONLY, 0644)) == -1)
 		return (-1);
+    ft_printf("Writing in file %s\n", pars->filename);
 	write(fd, bytecode, len);
+	free(bytecode);
 	return (1);
 }

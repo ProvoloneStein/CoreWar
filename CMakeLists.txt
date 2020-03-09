@@ -106,5 +106,4 @@ add_executable(qwe
         assem.h
         disassem.h
         errors.c
-        mention.c
         op.h)

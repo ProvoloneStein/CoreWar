@@ -8,45 +8,45 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/galiza/Desktop/qwe/cmake-build-debug"/>
+				<Option working_dir="/Users/pstein/corwar_my/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/galiza/Desktop/qwe/cmake-build-debug"/>
+				<Option working_dir="/Users/pstein/corwar_my/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/galiza/Desktop/qwe/cmake-build-debug"/>
+				<Option working_dir="/Users/pstein/corwar_my/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="qwe">
-				<Option output="/Users/galiza/Desktop/qwe/cmake-build-debug/qwe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/galiza/Desktop/qwe/cmake-build-debug"/>
+				<Option output="/Users/pstein/corwar_my/cmake-build-debug/qwe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/pstein/corwar_my/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/galiza/Desktop/qwe/."/>
-					<Add directory="/Users/galiza/Desktop/qwe/libft/printf"/>
-					<Add directory="/Users/galiza/Desktop/qwe/libft/srcs"/>
+					<Add directory="/Users/pstein/corwar_my/."/>
+					<Add directory="/Users/pstein/corwar_my/libft/printf"/>
+					<Add directory="/Users/pstein/corwar_my/libft/srcs"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -55,22 +55,22 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 qwe"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 qwe"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="qwe/fast">
-				<Option output="/Users/galiza/Desktop/qwe/cmake-build-debug/qwe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/galiza/Desktop/qwe/cmake-build-debug"/>
+				<Option output="/Users/pstein/corwar_my/cmake-build-debug/qwe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/pstein/corwar_my/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/galiza/Desktop/qwe/."/>
-					<Add directory="/Users/galiza/Desktop/qwe/libft/printf"/>
-					<Add directory="/Users/galiza/Desktop/qwe/libft/srcs"/>
+					<Add directory="/Users/pstein/corwar_my/."/>
+					<Add directory="/Users/pstein/corwar_my/libft/printf"/>
+					<Add directory="/Users/pstein/corwar_my/libft/srcs"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -79,314 +79,311 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 qwe/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/galiza/Desktop/qwe/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 qwe/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pstein/corwar_my/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/galiza/Desktop/qwe/assem.h">
+		<Unit filename="/Users/pstein/corwar_my/assem.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/disassem.h">
+		<Unit filename="/Users/pstein/corwar_my/disassem.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/errors.c">
+		<Unit filename="/Users/pstein/corwar_my/errors.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/checker.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/checker.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/colors.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/colors.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/display.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/display.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/flags.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/flags.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ft_itoa_bpf.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ft_itoa_bpf.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ft_printf.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ft_printf.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ft_printf.h">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ft_printf.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ld_1.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ld_1.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ld_2.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ld_2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ld_3.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ld_3.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/ld_4.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/ld_4.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/libft_modf.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/libft_modf.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/libft_modf2.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/libft_modf2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/long_doudle.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/long_doudle.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/maxnbr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/maxnbr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/num_str.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/num_str.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/num_str2.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/num_str2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/take_str.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/take_str.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/printf/take_str2.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/printf/take_str2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_atoi.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_atoi.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_bzero.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_bzero.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_isalnum.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_isalnum.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_isalpha.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_isalpha.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_isascii.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_isascii.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_isdigit.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_isdigit.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_isprint.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_isprint.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_itoa.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_itoa.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstadd.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstadd.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstdel.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstdel.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstdelone.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstdelone.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstiter.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstiter.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstmap.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstmap.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_lstnew.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_lstnew.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memalloc.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memalloc.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memccpy.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memccpy.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memchr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memchr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memcmp.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memcmp.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memcpy.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memcpy.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memdel.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memdel.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memmove.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memmove.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_memset.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_memset.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putchar.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putchar.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putchar_fd.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putchar_fd.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putendl.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putendl.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putendl_fd.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putendl_fd.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putnbr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putnbr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putnbr_fd.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putnbr_fd.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putstr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putstr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_putstr_fd.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_putstr_fd.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strcat.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strcat.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strchr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strchr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strclr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strclr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strcmp.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strcmp.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strcpy.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strcpy.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strdel.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strdel.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strdup.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strdup.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strequ.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strequ.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_striter.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_striter.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_striteri.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_striteri.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strjoin.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strjoin.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strlcat.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strlcat.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strlen.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strlen.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strmap.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strmap.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strmapi.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strmapi.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strncat.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strncat.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strncmp.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strncmp.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strncpy.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strncpy.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strnequ.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strnequ.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strnew.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strnew.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strnstr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strnstr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strrchr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strrchr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strsplit.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strsplit.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strstr.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strstr.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strsub.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strsub.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_strtrim.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_strtrim.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_tolower.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_tolower.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/ft_toupper.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/ft_toupper.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/get_next_line.c">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/get_next_line.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/get_next_line.h">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/get_next_line.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/libft/srcs/libft.h">
+		<Unit filename="/Users/pstein/corwar_my/libft/srcs/libft.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/mention.c">
+		<Unit filename="/Users/pstein/corwar_my/op.h">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/op.h">
+		<Unit filename="/Users/pstein/corwar_my/srcs/checks.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/checks.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/code_generator.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/code_generator.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/create_list.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/create_list.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/errors.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/errors.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/funct1.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/funct1.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/funct2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/funct2.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/funct3.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/funct3.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/funct4.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/funct4.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/functions.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/functions.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/functions2.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/functions2.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/main.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/main.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/operations.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/operations.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/read_commands.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/read_commands.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/read_struct.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/read_struct.c">
+		<Unit filename="/Users/pstein/corwar_my/srcs/variables.c">
 			<Option target="qwe"/>
 		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/srcs/variables.c">
-			<Option target="qwe"/>
-		</Unit>
-		<Unit filename="/Users/galiza/Desktop/qwe/CMakeLists.txt">
+		<Unit filename="/Users/pstein/corwar_my/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

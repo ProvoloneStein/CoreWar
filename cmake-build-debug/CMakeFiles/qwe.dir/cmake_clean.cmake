@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/qwe.dir/errors.c.o"
   "CMakeFiles/qwe.dir/libft/printf/checker.c.o"
   "CMakeFiles/qwe.dir/libft/printf/colors.c.o"
   "CMakeFiles/qwe.dir/libft/printf/display.c.o"
@@ -91,10 +92,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/qwe.dir/srcs/read_commands.c.o"
   "CMakeFiles/qwe.dir/srcs/read_struct.c.o"
   "CMakeFiles/qwe.dir/srcs/variables.c.o"
-  "CMakeFiles/qwe.dir/errors.c.o"
-  "CMakeFiles/qwe.dir/mention.c.o"
-  "qwe.pdb"
   "qwe"
+  "qwe.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
