@@ -39,6 +39,8 @@ void    take_ins(t_pars* pars, char* map)
     pars->token->content = get_content(map, pars->token->type);
     if (pars->token->type == INSTRUCTION)
         add_variables(&pars->token, map);
+    if (check_commas(map + g_end - 1))
+        err_handler(3, g_column, g_line);
     pars->token->next = create_elem();
     pars->token = pars->token->next;
 }

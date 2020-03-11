@@ -71,3 +71,15 @@ int     check_map(char* map)
         return (1);
     return (0);
 }
+
+int     check_commas(char* map)
+{
+    int     i;
+
+    i = 0;
+    while (map[i] == ' ' || map[i] == '\t')
+        i--;
+    if (map[i] == ',')
+        return (1);
+    return (0);
+}

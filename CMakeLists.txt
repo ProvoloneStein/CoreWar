@@ -89,6 +89,7 @@ add_executable(qwe
         libft/srcs/get_next_line.h
         libft/srcs/libft.h
         srcs/checks.c
+        srcs/checks2.c
         srcs/code_generator.c
         srcs/create_list.c
         srcs/errors.c
@@ -103,6 +104,8 @@ add_executable(qwe
         srcs/read_commands.c
         srcs/read_struct.c
         srcs/variables.c
+        srcs/edgar_func.c
+        srcs/edgar_func1.c
         assem.h
         disassem.h
         errors.c

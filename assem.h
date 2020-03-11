@@ -193,6 +193,7 @@ int     if_name(char* str);
 int     if_comment(char* str);
 int     if_operation(char* str);
 int     check_map(char* map);
+int     check_commas(char* map);
 
 /*
  * errors.c
