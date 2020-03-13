@@ -1,5 +1,30 @@
 #include "disassem.h"
 
+
+int32_t		bytecode_to_int32(const uint8_t *bytecode, size_t size)
+{
+	int32_t	result;
+	t_bool	sign;
+	int		i;
+
+	result = 0;
+	sign = (t_bool)(bytecode[0] & 0x80);
+	i = 0;
+	while (size)
+	{
+		if (sign)
+			result += ((bytecode[size - 1] ^ 0xFF) << (i++ * 8));
+		else
+			result += bytecode[size - 1] << (i++ * 8);
+		size--;
+	}
+	if (sign)
+		result = ~(result);
+	return (result);
+}
+
+
+
 char *ft_progname(char *name)
 {
     char *str;
@@ -27,53 +52,47 @@ t_reader *reader_init(char *progname)
 	pars->comment = NULL;
 	pars->name = NULL;
 	pars->line = 0;
-	pars->i = 0;//это для печати
+	pars->i = 0;
 	pars->column = 0;
 	pars->code_size = 0;
+    pars->code = NULL;
 	pars->f_head = 0;
 	pars->filename = ft_progname(progname);
 	ft_printf("%s\n", pars->filename);
 	return(pars);
 }
 
-char *rd_chr(char *str, int *i, int size)
-{
-    char *line;
 
-    line = ft_strnew(1);
-    while(str[*i] || size > 0)
-    {
-        ft_strplus_c(line, str[*i], 1);
-        (*i)++;
-    }
-    return(line);
+
+void hero_code(t_read reader, char **code)
+{
+	size_t i;
+
+	while(reader->code[i] < reader->code_size)
+	{
+		if (reader->code[i] >= 0x00 && readeer->code <= 0x10)
+		{
+			hero_func(reader, code);
+		}
+		else
+			erro;
 }
 
-int hex_to_int(char *str, int *i, int size)
-{
-    char *line;
-
-    line = rd_chr(str, i, size);
-    ft_atoi
-}
 
 int disassembler(char *str)
 {
-    t_reader *reader;
+    t_read *reader;
     char *code;
     int fd;
     int i;
     int num;
 
-    fd = open(str, O_RDONLY);
+	code = ft_strnew(0);
+    if ((fd = open(filename, O_RDONLY)) == -1)
+		terminate(ERR_OPEN_FILE);
     reader = reader_init(str);
-    if (get_next_line(fd, &code) < 1)
-        return (0);
-    i = 3;
-    num = ft_strlen(str);
-    if (i + PROG_NAME_LENGTH > num)
-        return(0);
-    reader->name = rd_chr(str, &i, 4);
-    i += 4;
+    read_codefile(reader, fd);
+	hero_code(reader, &code);
+
 
 }
