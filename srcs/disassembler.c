@@ -42,6 +42,22 @@ int32_t		bytecode_to_int32(const uint8_t *bytecode, size_t size)
 	return (result);
 }
 
+static char *create_file_s(char *filename)
+{
+	int i;
+	char	*out_name;
+
+	out_name = (char*)ft_memalloc(sizeof(char) * (ft_strlen(filename) + 3));
+	ft_strcpy(out_name, filename);
+	i = 0;
+	while (out_name[i] != '\0')
+		i++;
+	out_name[i - 1] = 'c';
+	out_name[i] = 'o';
+	out_name[i + 1] = 'r';
+	out_name[i + 2] = '\0';
+	return(out_name);
+}
 
 t_read *reader_init(char *progname)
 {
@@ -55,7 +71,6 @@ t_read *reader_init(char *progname)
 	pars->code_size = 0;
     pars->code = NULL;
 	pars->filename = ft_progname1(progname);
-	ft_printf("%s\n", pars->filename);
 	return(pars);
 }
 
@@ -68,10 +83,7 @@ void hero_code(t_read *reader, char **code)
 	while(reader->i < reader->code_size)
 	{
 		if (reader->code[reader->i]  >= 0x01 && reader->code[reader->i] <= 0x10)
-		{
-			ft_printf("kek = %x", reader->code[reader->i]);
 			*code = ft_strplus(*code, hero_func(reader), 1, 1);
-		}
 		else
 			exit(0);
 	}
@@ -91,8 +103,7 @@ int disassembler(char *filename)
     read_codefile(reader, fd);
 	close(fd);
 	hero_code(reader, &code);
-	ft_printf("LEL1");
-	if ((fd = open(reader->filename, O_CREAT | O_WRONLY, 0644)) == -1)
+	if ((fd = open(reader->filename, O_CREAT| O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
 	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));
 	write(fd, " \"", 2);

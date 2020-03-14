@@ -6,30 +6,12 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 15:57:57 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 17:21:10 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "assem.h"
 
-char *ft_progname(char *name)
-{
-    char *str;
-    int i;
-    int j;
-
-     j = 0;
-     i = ft_strlen(name);
-     str = (char*)malloc(sizeof(char) * (i - 2));
-     while(j != i - 2)
-     {
-         str[j] = name[j];
-		 j++;
-     }
-	 str[j] = '\0';
-     str = ft_strplus(str, ft_strdup(".cor"), 1, 1);
-     return(str);
-}
 
 void ft_free_str(t_pars *parser)
 {
@@ -56,6 +38,23 @@ void ft_free_str(t_pars *parser)
 	free(parser);
 }
 
+static char *create_file(char *filename)
+{
+	int i;
+	char	*out_name;
+
+	out_name = (char*)ft_memalloc(sizeof(char) * (ft_strlen(filename) + 3));
+	ft_strcpy(out_name, filename);
+	i = 0;
+	while (out_name[i] != '\0')
+		i++;
+	out_name[i - 1] = 'c';
+	out_name[i] = 'o';
+	out_name[i + 1] = 'r';
+	out_name[i + 2] = '\0';
+	return(out_name);
+}
+
 t_pars *parser_init(char *progname)
 {
 	t_pars *pars;
@@ -70,7 +69,7 @@ t_pars *parser_init(char *progname)
 	pars->column = 0;
 	pars->code_size = 0;
 	pars->f_head = 0;
-	pars->filename = ft_progname(progname);
+	pars->filename = create_file(progname);
 	return(pars);
 }
 
@@ -119,6 +118,24 @@ int is_cor_file(char *str)
 	return(0);	
 
 }
+/*
+static int		check_for_valid_file(char *filename)
+{
+	int			i;
+	int			len;
+
+	i = 0;
+	len = (int)ft_strlen(filename);
+	while (i < len - 4)
+		i++;
+	if (i == len - 4)
+	{
+		if (!ft_strcmp(".cor", filename + i) && len != 4)
+			return (1);
+	}
+	ft_printf("Invalid file as input: %s\n", filename);
+	return (0);
+}*/
 
 
 int main(int argc, char **argv)
