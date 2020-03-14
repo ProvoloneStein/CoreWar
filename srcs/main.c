@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/08 22:51:16 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 15:57:57 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int assembler(char *fd_map)
 		ft_printf("%s\n", parser->mention->name);
 		parser->mention = parser->mention->next;
 	}*/
-	ft_printf("LEL\n");
 	writing_in_file(parser);
 	ft_free_str(parser);
 	return(1);
@@ -126,8 +125,8 @@ int main(int argc, char **argv)
 {
 	if (argc == 2 && is_s_file(argv[1]))
 		assembler(argv[1]);
-	/*else if (argc == 2 && is_cor_file(argv[1]))	
-		disassembler(argv[1]);*/
+	else if (argc == 2 && is_cor_file(argv[1]))	
+		disassembler(argv[1]);
 	else
 		ft_printf("usage: ./assembler map");
 	return(0);

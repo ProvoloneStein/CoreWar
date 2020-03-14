@@ -13,19 +13,6 @@ static int32_t	read_int(int fd)
 	return (bytecode_to_int32(buffer, 4));
 }
 
-static int32_t	parse_int32(int fd)
-{
-	ssize_t	size;
-	uint8_t	buffer[4];
-
-	size = read(fd, &buffer, 4);
-	if (size == -1)
-		exit(0);
-	if (size < 4)
-		exit(0);
-	return (bytecode_to_int32(buffer, 4));
-}
-
 static char *read_commands(int fd, size_t len)
 {
     ssize_t	size;

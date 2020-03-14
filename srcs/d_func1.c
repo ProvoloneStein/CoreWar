@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   d_func1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 15:21:16 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 15:21:18 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 16:02:53 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char *ft_d_live(t_read *reader)
 {
     char *line;
 
+    ft_printf("LEL");
     line = "\nlive ";
     reader->i += 1;
     line = ft_strplus(line, print_dir(reader, 4), 0, 1);

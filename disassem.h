@@ -14,7 +14,7 @@ typedef struct			s_read
     char				*name;
     char                *comment;
 	int					code_size;
-    uint8_t             code;
+    uint8_t             *code;
     uint8_t            arg_types;
 	int 				i;
     char                *filename;
@@ -47,5 +47,21 @@ char *ft_d_lfork(t_read *reader);
 
 char *ft_d_aff(t_read *reader);
 
+
+
+char *print_dir(t_read *reader, int size);
+char *print_indir(t_read *reader);
+char *print_reg(t_read *reader);
+char	*hero_func2(t_read *reader);
+char		*hero_func(t_read *reader);
+char *print_arg(t_read  *reader, int size, int type, int num);
+int32_t		code_to_int(t_read *reader, size_t size);
+int32_t		bytecode_to_int32(const uint8_t *bytecode, size_t size);
+
+
+int disassembler(char *filename);
+void hero_code(t_read *reader, char **code);
+t_read *reader_init(char *progname);
+char *ft_progname1(char *name);
 
 #endif

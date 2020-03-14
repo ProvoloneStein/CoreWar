@@ -8,8 +8,8 @@ char *ft_progname1(char *name)
 
      j = 0;
      i = ft_strlen(name);
-     str = (char*)malloc(sizeof(char) * (i - 2));
-     while(j != i - 2)
+     str = (char*)malloc(sizeof(char) * (i - 4));
+     while(j != i - 4)
      {
          str[j] = name[j];
 		 j++;
@@ -67,8 +67,11 @@ void hero_code(t_read *reader, char **code)
 
 	while(reader->i < reader->code_size)
 	{
-		if (reader->code[reader->i]  >= 0x00 && reader->code[reader->i] <= 0x10)
+		if (reader->code[reader->i]  >= 0x01 && reader->code[reader->i] <= 0x10)
+		{
+			ft_printf("kek = %x", reader->code[reader->i]);
 			*code = ft_strplus(*code, hero_func(reader), 1, 1);
+		}
 		else
 			exit(0);
 	}
@@ -80,20 +83,27 @@ int disassembler(char *filename)
     t_read *reader;
     char *code;
     int fd;
-    int i;
-    int num;
 
 	code = ft_strnew(0);
     if ((fd = open(filename, O_RDONLY)) == -1)
 		exit(1);
     reader = reader_init(filename);
     read_codefile(reader, fd);
-	clode(fd);
+	close(fd);
 	hero_code(reader, &code);
+	ft_printf("LEL1");
 	if ((fd = open(reader->filename, O_CREAT | O_WRONLY, 0644)) == -1)
 		return (-1);
-	ft_printf("Writing in file %s\n", pars->filename);
+	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));
+	write(fd, " \"", 2);
+	write(fd, reader->name, ft_strlen(reader->name));
+	write(fd, "\"\n", 2);
+	write(fd, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING));
+	write(fd, " \"", 2);
+	write(fd, reader->comment, ft_strlen(reader->comment));
+	write(fd, "\"\n", 2);
 	write(fd, code, ft_strlen(code));
+	write(fd, "\n", 1);
 	close(fd);
 	free(code);	
 	return(1);
