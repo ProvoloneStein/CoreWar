@@ -1,13 +1,14 @@
 #include "assem.h"
+#include "op.h"
 
 int     if_name(char* str)
 {
     int     i;
 
     i = 0;
-    if (ft_strcmp1(str, ".name"))
+    if (ft_strcmp1(str, NAME_CMD_STRING))
         return (0);
-    i = i + ft_strlen(".name");
+    i = i + ft_strlen(NAME_CMD_STRING);
     while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
         i++;
     if (!str[i] || str[i] != '"')
@@ -25,9 +26,9 @@ int     if_comment(char* str)
     int     i;
 
     i = 0;
-    if (ft_strcmp1(str, ".comment"))
+    if (ft_strcmp1(str, COMMENT_CMD_STRING))
         return (0);
-    i = i + ft_strlen(".comment");
+    i = i + ft_strlen(COMMENT_CMD_STRING);
     while (str[i] && (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'))
         i++;
     if (!str[i] || str[i] != '"')
@@ -67,7 +68,7 @@ int     check_map(char* map)
     i++;
     while (map[i] == ' ' || map[i] == '\t')
         i++;
-    if (!map[i] || map[i] == '#')
+    if (!map[i] || map[i] == COMMENT_CHAR)
         return (1);
     return (0);
 }
@@ -79,7 +80,7 @@ int     check_commas(char* map)
     i = 0;
     while (map[i] == ' ' || map[i] == '\t')
         i--;
-    if (map[i] == ',')
+    if (map[i] == SEPARATOR_CHAR)
         return (1);
     return (0);
 }

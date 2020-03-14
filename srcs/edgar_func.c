@@ -82,9 +82,9 @@ void    skip_space(char *c)
 {
 
     while ((c[g_end] == ' ' || c[g_end] == '\t' || c[g_end] == '\n'
-    || c[g_end] == '#' || c[g_end] == ',') && c[g_end])
+    || c[g_end] == COMMENT_CHAR || c[g_end] == SEPARATOR_CHAR) && c[g_end])
     {
-        if (c[g_end] == '#')
+        if (c[g_end] == COMMENT_CHAR)
             while (c[g_end] != '\n' && c[g_end])
                 score_line(c, 1, 1);
         else

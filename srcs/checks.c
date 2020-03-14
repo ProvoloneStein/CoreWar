@@ -1,4 +1,5 @@
 #include "assem.h"
+#include "op.h"
 
 int     g_line;
 int     g_column;
@@ -64,7 +65,7 @@ int     if_digits(char* str)
     }
     while (str[i] && (str[i] == ' ' || str[i] == '\t'))
         i++;
-    if ((!str[i] || str[i] == ',' || str[i] == '\n' || str[i] == '#') && flag)
+    if ((!str[i] || str[i] == SEPARATOR_CHAR || str[i] == '\n' || str[i] == COMMENT_CHAR) && flag)
         return (1);
     return (0);
 }
@@ -83,7 +84,7 @@ int     if_register(char* str)
     }
     while (str[i] && (str[i] == ' ' || str[i] == '\t'))
         i++;
-    if ((!str[i] || str[i] == ',' || str[i] == '\n' || str[i] == '#') && flag)
+    if ((!str[i] || str[i] == SEPARATOR_CHAR || str[i] == '\n' || str[i] == COMMENT_CHAR) && flag)
         return (1);
     return (0);
 }
@@ -97,7 +98,7 @@ int     if_label(char* str)
         i++;
     while (str[i] && (str[i] == ' ' || str[i] == '\t'))
         i++;
-    if (!str[i] || str[i] == ',' || str[i] == '\n' || str[i] == '#')
+    if (!str[i] || str[i] == SEPARATOR_CHAR || str[i] == '\n' || str[i] == COMMENT_CHAR)
         return (1);
     return (0);
 }

@@ -1,4 +1,5 @@
 #include "assem.h"
+#include "op.h"
 
 int     g_line;
 int     g_column;
@@ -15,7 +16,7 @@ void add_variables(t_token** token, char* map)
     flag = 1;
     operation = find_operation(map + g_end);
     score_line(map, ft_strlen(operation), 1);
-    while (map[g_end] && map[g_end] != '\n' && map[g_end] != '#')
+    while (map[g_end] && map[g_end] != '\n' && map[g_end] != COMMENT_CHAR)
     {
         (*token)->next = create_elem();
         (*token) = (*token)->next;
@@ -29,7 +30,7 @@ void add_variables(t_token** token, char* map)
             flag = 0;
         }
         (*token)->byte = g_byte;
-        while (map[g_end] && (map[g_end] == '\t' || map[g_end] == ',' || map[g_end] == ' '))
+        while (map[g_end] && (map[g_end] == '\t' || map[g_end] == SEPARATOR_CHAR || map[g_end] == ' '))
             score_line(map, 1, 1);
     }
 }
@@ -40,11 +41,12 @@ t_oken find_variables(char* c, t_token** tok)
         score_line(c, 1, 1);
     (*tok)->line = g_line;
     (*tok)->column = g_column;
-    if (!ft_strcmp1(c + g_end, "%:") && if_label(c + g_end + 2))
+    if (!ft_strcmp1(c + g_end, DIRECT_CHAR) &&
+            !ft_strcmp1(c + g_end + 1, LABEL_CHAR) && if_label(c + g_end + 2))
         return DIRECT_LABEL;
-    else if (!ft_strcmp1(c + g_end, "%") && if_digits(c + g_end + 1))
+    else if (!ft_strcmp1(c + g_end, DIRECT_CHAR) && if_digits(c + g_end + 1))
         return DIRECT;
-    else if (!ft_strcmp1(c + g_end, ":") && if_label(c + g_end + 1))
+    else if (!ft_strcmp1(c + g_end, LABEL_CHAR) && if_label(c + g_end + 1))
         return INDIRECT_LABEL;
     else if (!ft_strcmp1(c + g_end, "r") && if_register(c + g_end + 1))
         return REGISTER;

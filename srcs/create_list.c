@@ -1,11 +1,11 @@
+#include "assem.h"
+#include "op.h"
 
 int     g_line = 1;
 int     g_column = 1;
 int     g_end = 0;
 int     g_byte = 0;
-char*   g_link_chars = "abcdefghijklmnopqrstuvwxyz_0123456789";
-
-#include "assem.h"
+char*   g_link_chars = LABEL_CHARS;
 
 int     read_map(char** map, char* fd_map)
 {
@@ -51,7 +51,7 @@ t_oken  find_token(char* c, t_token** tok, t_pars* pars)
     pars->code_size = pars->token->byte;
     if (!c[g_end])
         return END;
-    else if (c[g_end] == ':' && flag)
+    else if (c[g_end] == LABEL_CHAR && flag)
         return LABEL;
     err_handler(1, (*tok)->column, (*tok)->line);
     return 0;
@@ -78,7 +78,7 @@ void get_next_metion(t_pars* pars, char* map, t_ment** temp1)
 
     len = 0;
     skip_sp(map);
-    while (map[g_end + len] != ':')
+    while (map[g_end + len] != LABEL_CHAR)
         len++;
     ment = (t_ment*)malloc(sizeof(t_ment));
     ment->name = ft_strsub(map, g_end, len);
