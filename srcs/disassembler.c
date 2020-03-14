@@ -75,7 +75,10 @@ void hero_code(t_read *reader, char **code)
 	while(reader->i < reader->code_size)
 	{
 		if (reader->code[reader->i]  >= 0x01 && reader->code[reader->i] <= 0x10)
-			*code = ft_strplus(*code, hero_func(reader), 1, 1);
+		{
+		    ft_printf(" = %x\n", reader->code[reader->i]);
+		    *code = ft_strplus(*code, hero_func(reader), 1, 1);
+        }
 		else
 			exit(0);
 	}
@@ -94,7 +97,9 @@ int disassembler(char *filename)
     reader = reader_init(filename);
     read_codefile(reader, fd);
 	close(fd);
+	ft_printf("KEK");
 	hero_code(reader, &code);
+    ft_printf("KEK");
 	if ((fd = open(reader->filename, O_CREAT| O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
 	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));

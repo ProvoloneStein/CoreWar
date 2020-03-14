@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="cw_p" targetName="cw_p" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -11,36 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c95ab926-b452-4a9c-b922-ba21dfbed0ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/checks.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/checks.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/checks.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/checks2.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/checks2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/checks2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/code_generator.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/code_generator.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/code_generator.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/.create_list.c.swp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/create_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/create_list.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/create_list.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func4.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/disassembler.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/edgar_func.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/edgar_func1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/errors.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/funct1.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/funct2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/funct3.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/funct4.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/functions.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/functions2.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/operations.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/read_commands.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/read_commands.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/read_commands.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/read_struct.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/reader.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/variables.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/d_func.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/d_func1.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/d_func2.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/d_func3.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/disassembler.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/disassembler.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +31,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -76,13 +58,18 @@
       <recent name="$PROJECT_DIR$/21_corewar/test by jcorwin_team/test_asm" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.qwe">
-    <configuration name="corewar1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/42.s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="corewar1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="corewar1">
+  <component name="RunManager" selected="CMake Application.cw_p">
+    <configuration name="corewar1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/42.s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cw_p" TARGET_NAME="corewar1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cw_p" RUN_TARGET_NAME="corewar1">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="qwe" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/42.s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="qwe" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="qwe">
+    <configuration name="cw_p" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/2.cor" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cw_p" TARGET_NAME="cw_p" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cw_p" RUN_TARGET_NAME="cw_p">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="qwe" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="$PROJECT_DIR$/42.s" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cw_p" TARGET_NAME="qwe" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cw_p" RUN_TARGET_NAME="qwe">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -90,6 +77,7 @@
     <list>
       <item itemvalue="CMake Application.corewar1" />
       <item itemvalue="CMake Application.qwe" />
+      <item itemvalue="CMake Application.cw_p" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -110,7 +98,8 @@
       <workItem from="1583579875173" duration="6060000" />
       <workItem from="1583668101384" duration="7743000" />
       <workItem from="1583752028119" duration="7197000" />
-      <workItem from="1584203531802" duration="1337000" />
+      <workItem from="1584203531802" duration="3612000" />
+      <workItem from="1584209252684" duration="2457000" />
     </task>
     <task id="LOCAL-00001" summary="29.02.2020 edgar">
       <created>1582977397945</created>
@@ -151,16 +140,86 @@
     <option name="LAST_COMMIT_MESSAGE" value="29.02.2020 edgar bugs" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583753667486">
+    <state x="828" y="206" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584209306518">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1583753667486" />
+    <state x="828" y="206" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1584209306518" />
+    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584208567857">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1584208567857" />
+    <state width="904" height="352" key="GridCell.Tab.0.bottom" timestamp="1584211536984">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
+    <state width="904" height="352" key="GridCell.Tab.0.center" timestamp="1584211536984">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
+    <state width="904" height="352" key="GridCell.Tab.0.left" timestamp="1584211536983">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536983" />
+    <state width="904" height="352" key="GridCell.Tab.0.right" timestamp="1584211536984">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
+    <state width="904" height="352" key="GridCell.Tab.1.bottom" timestamp="1584211537511">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.1.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
+    <state width="904" height="352" key="GridCell.Tab.1.center" timestamp="1584211537511">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.1.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
+    <state width="904" height="352" key="GridCell.Tab.1.left" timestamp="1584211537510">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.1.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537510" />
+    <state width="904" height="352" key="GridCell.Tab.1.right" timestamp="1584211537511">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="904" height="352" key="GridCell.Tab.1.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
     <state x="959" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1584203533353">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="959" y="523" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1584203533353" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/main.c</url>
+          <line>142</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/disassembler.c</url>
+          <line>93</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/disassembler.c</url>
+          <line>74</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/d_func.c</url>
+          <line>105</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/d_func1.c</url>
+          <line>44</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/srcs/d_func1.c</url>
+          <line>28</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="g_end" language="ObjectiveC" />

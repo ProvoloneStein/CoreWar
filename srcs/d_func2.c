@@ -6,58 +6,58 @@
 /*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 15:21:33 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 15:21:35 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 20:42:56 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "disassem.h"
 
-char *ft_d_and(t_read *reader)
+char	*ft_d_and(t_read *reader)
 {
-    char *line;
+	char	*line;
 
-    line = "\nand ";
-    reader->i += 1;
-    reader->arg_types = reader->code[reader->i];
-    reader->i += 1;
-    line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
-    return(line);
+	line = "\nand ";
+	reader->i += 1;
+	reader->arg_types = reader->code[reader->i];
+	reader->i += 1;
+	line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
+	return (line);
 }
 
-char *ft_d_or(t_read *reader)
+char	*ft_d_or(t_read *reader)
 {
-    char *line;
+	char	*line;
 
-    line = "\nor ";
-    reader->i += 1;
-    reader->arg_types = reader->code[reader->i];
-    reader->i += 1;
-    line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
-    return(line);
+	line = "\nor ";
+	reader->i += 1;
+	reader->arg_types = reader->code[reader->i];
+	reader->i += 1;
+	line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
+	return (line);
 }
 
-char *ft_d_xor(t_read *reader)
+char	*ft_d_xor(t_read *reader)
 {
-    char *line;
+	char	*line;
 
-    line = "\nxor ";
-    reader->i += 1;
-    reader->arg_types = reader->code[reader->i];
-    reader->i += 1;
-    line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
-    line = ft_strplus(line, ", ", 1, 0);
-    line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
-    return(line);
+	line = "\nxor ";
+	reader->i += 1;
+	reader->arg_types = reader->code[reader->i];
+	reader->i += 1;
+	line = ft_strplus(line, print_arg(reader, 4, 7, 1), 0, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 7, 2), 1, 1);
+	line = ft_strplus(line, ", ", 1, 0);
+	line = ft_strplus(line, print_arg(reader, 4, 3, 3), 1, 1);
+	return (line);
 }
 
 char *ft_d_zjmp(t_read *reader)
