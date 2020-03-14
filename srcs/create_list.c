@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   create_list.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/14 20:07:12 by pstein            #+#    #+#             */
+/*   Updated: 2020/03/14 20:12:58 by pstein           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "assem.h"
 #include "op.h"
 
-int     g_line = 1;
-int     g_column = 1;
-int     g_end = 0;
-int     g_byte = 0;
-char*   g_link_chars = LABEL_CHARS;
+int		g_line = 1;
+int		g_column = 1;
+int		g_end = 0;
+int		g_byte = 0;
+char	*g_link_chars = LABEL_CHARS;
 
-int     read_map(char** map, char* fd_map)
+int		read_map(char** map, char* fd_map)
 {
-    char    buf[BUFF_SIZE + 1];
-    char*   temp1;
-    int     i;
-    int     fd;
+	char	buf[BUFF_SIZE + 1];
+	char	*temp1;
+	int		i;
+	int		fd;
 
-    *map = 0;
-    fd = open(fd_map, O_RDONLY);
-    while ((i = read(fd, buf, BUFF_SIZE)))
-    {
-        buf[i] = '\0';
-        temp1 = ft_strjoin(*map, buf);
-        if (*map)
-            free(*map);
-        *map = temp1;
-    }
+	*map = 0;
+	fd = open(fd_map, O_RDONLY);
+	while ((i = read(fd, buf, BUFF_SIZE)))
+	{
+		buf[i] = '\0';
+		temp1 = ft_strjoin(*map, buf);
+		if (*map)
+			free(*map);
+		*map = temp1;
+	}
     return check_map(*map);
 }
 

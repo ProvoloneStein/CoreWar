@@ -68,6 +68,6 @@ int	check_commands(t_pars *parser)
 	}
 	parser->token = head;
 	if (i != 1 && j != 1)
-		return (0);
+        errors_handler(3, parser->token->line, parser->token->column);
 	return (1);
 }

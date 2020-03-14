@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 18:48:51 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 16:37:33 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 20:07:01 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	writing_in_file(t_pars *pars)
 		return (-1);
 	if ((fd = open(pars->filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
-    ft_printf("Writing in file %s\n", pars->filename);
+	ft_printf("Writing in file %s\n", pars->filename);
 	write(fd, bytecode, len);
 	close(fd);
 	free(bytecode);
