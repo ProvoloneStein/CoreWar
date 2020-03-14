@@ -14,14 +14,10 @@
     <list default="true" id="c95ab926-b452-4a9c-b922-ba21dfbed0ea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/.create_list.c.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/create_list.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/create_list.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/d_func1.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func2.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func3.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func3.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/d_func1.o" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func1.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/disassembler.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/disassembler.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/disassembler.o" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/disassembler.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +95,7 @@
       <workItem from="1583668101384" duration="7743000" />
       <workItem from="1583752028119" duration="7197000" />
       <workItem from="1584203531802" duration="3612000" />
-      <workItem from="1584209252684" duration="2457000" />
+      <workItem from="1584209252684" duration="2948000" />
     </task>
     <task id="LOCAL-00001" summary="29.02.2020 edgar">
       <created>1582977397945</created>
@@ -210,7 +206,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/d_func1.c</url>
-          <line>44</line>
+          <line>43</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -226,6 +222,7 @@
         <watch expression="g_byte" language="ObjectiveC" />
         <watch expression="g_column" language="ObjectiveC" />
         <watch expression="g_line" language="ObjectiveC" />
+        <watch expression="reader-&gt;i" />
       </configuration>
     </watches-manager>
   </component>

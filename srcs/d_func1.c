@@ -27,7 +27,6 @@ char	*ft_d_ld(t_read *reader)
 	char	*line;
 
 	line = "\nld ";
-	ft_printf("line = %s\n", line);
 	reader->i += 1;
 	reader->arg_types = reader->code[reader->i];
     reader->i += 1;

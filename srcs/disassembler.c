@@ -27,15 +27,13 @@ static char *create_file_s(char *filename)
 	int i;
 	char	*out_name;
 
-	out_name = (char*)ft_memalloc(sizeof(char) * (ft_strlen(filename) + 3));
-	ft_strcpy(out_name, filename);
+	out_name = ft_strdup(filename);
 	i = 0;
 	while (out_name[i] != '\0')
 		i++;
-	out_name[i - 1] = 'c';
-	out_name[i] = 'o';
-	out_name[i + 1] = 'r';
-	out_name[i + 2] = '\0';
+	out_name[i - 1] = '\0';
+	out_name[i - 2] = '\0';
+	out_name[i - 3] = 's';
 	return(out_name);
 }
 
@@ -97,9 +95,8 @@ int disassembler(char *filename)
     reader = reader_init(filename);
     read_codefile(reader, fd);
 	close(fd);
-	ft_printf("KEK");
 	hero_code(reader, &code);
-    ft_printf("KEK");
+    ft_printf("%s", reader->filename);
 	if ((fd = open(reader->filename, O_CREAT| O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
 	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));
