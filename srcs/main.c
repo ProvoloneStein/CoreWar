@@ -27,7 +27,7 @@ char *ft_progname(char *name)
 		 j++;
      }
 	 str[j] = '\0';
-     str = ft_strplus(str, ".cor", 1, 0);
+     str = ft_strplus(str, ft_strdup(".cor"), 1, 1);
      return(str);
 }
 
@@ -39,6 +39,7 @@ void ft_free_str(t_pars *parser)
 	while (parser->mention)
 	{
 		head_m = parser->mention->next;
+		free(parser->mention->name);
 		free(parser->mention);
 		parser->mention = head_m;
 	}
@@ -52,10 +53,6 @@ void ft_free_str(t_pars *parser)
 	}
 	if (parser->filename)
 		free(parser->filename);
-	if (parser->comment)
-		free(parser->comment);
-	if (parser->name)	
-		free(parser->name);
 	free(parser);
 }
 
@@ -97,7 +94,7 @@ int assembler(char *fd_map)
 	}*/
 	ft_printf("LEL\n");
 	writing_in_file(parser);
-	//ft_free_str(parser);
+	ft_free_str(parser);
 	return(1);
 }
 

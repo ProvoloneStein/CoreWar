@@ -39,6 +39,7 @@ int	writing_in_file(t_pars *pars)
 		return (-1);
     ft_printf("Writing in file %s\n", pars->filename);
 	write(fd, bytecode, len);
+	close(fd);
 	free(bytecode);
 	return (1);
 }

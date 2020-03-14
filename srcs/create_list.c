@@ -120,5 +120,6 @@ int    create_list(char* fd_map, t_pars* pars)
     }
     pars->token = temp;
     pars->mention = temp1;
+    free(map);
     return (1);
 }
