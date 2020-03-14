@@ -41,12 +41,12 @@ t_oken find_variables(char* c, t_token** tok)
         score_line(c, 1, 1);
     (*tok)->line = g_line;
     (*tok)->column = g_column;
-    if (!ft_strcmp1(c + g_end, DIRECT_CHAR) &&
-            !ft_strcmp1(c + g_end + 1, LABEL_CHAR) && if_label(c + g_end + 2))
+    if ((*(c + g_end) == DIRECT_CHAR) &&
+            (*(c + g_end + 1) == LABEL_CHAR) && if_label(c + g_end + 2))
         return DIRECT_LABEL;
-    else if (!ft_strcmp1(c + g_end, DIRECT_CHAR) && if_digits(c + g_end + 1))
+    else if ((*(c + g_end) == DIRECT_CHAR) && if_digits(c + g_end + 1))
         return DIRECT;
-    else if (!ft_strcmp1(c + g_end, LABEL_CHAR) && if_label(c + g_end + 1))
+    else if ((*(c + g_end) == LABEL_CHAR) && if_label(c + g_end + 1))
         return INDIRECT_LABEL;
     else if (!ft_strcmp1(c + g_end, "r") && if_register(c + g_end + 1))
         return REGISTER;

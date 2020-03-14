@@ -142,8 +142,8 @@ int main(int argc, char **argv)
 {
 	if (argc == 2 && is_s_file(argv[1]))
 		assembler(argv[1]);
-	else if (argc == 2 && is_cor_file(argv[1]))	
-		disassembler(argv[1]);
+//	else if (argc == 2 && is_cor_file(argv[1]))
+//		disassembler(argv[1]);
 	else
 		ft_printf("usage: ./assembler map");
 	return(0);
