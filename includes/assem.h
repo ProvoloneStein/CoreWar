@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/08 22:02:31 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 15:16:37 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ft_printf.h"
 # include "libft.h"
 # include "op.h"
+# include "disassem.h"
 #include <stdint.h>
 # define  NAME_SIZE 1
 
