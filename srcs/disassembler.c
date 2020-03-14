@@ -1,25 +1,5 @@
 #include "disassem.h"
 
-char *ft_progname1(char *name)
-{
-    char *str;
-    int i;
-    int j;
-
-     j = 0;
-     i = ft_strlen(name);
-     str = (char*)malloc(sizeof(char) * (i - 4));
-     while(j != i - 4)
-     {
-         str[j] = name[j];
-		 j++;
-     }
-	 str[j] = '\0';
-     str = ft_strplus(str, ft_strdup(".s"), 1, 1);
-     return(str);
-}
-
-
 int32_t		bytecode_to_int32(const uint8_t *bytecode, size_t size)
 {
 	int32_t	result;
@@ -70,10 +50,22 @@ t_read *reader_init(char *progname)
 	pars->arg_types = 0;
 	pars->code_size = 0;
     pars->code = NULL;
-	pars->filename = ft_progname1(progname);
+	pars->filename = create_file_s(progname);
 	return(pars);
 }
 
+void free_read(t_read *reader)
+{
+	if (reader->name)
+		free(reader->name);
+	if (reader->comment)
+		free(reader->comment);
+	if (reader->code)
+		free(reader->code);
+	if (reader->filename)
+		free(reader->filename);
+	free(reader);		
+}
 
 
 void hero_code(t_read *reader, char **code)
@@ -116,6 +108,7 @@ int disassembler(char *filename)
 	write(fd, code, ft_strlen(code));
 	write(fd, "\n", 1);
 	close(fd);
+	free_read(reader);
 	free(code);	
 	return(1);
 }

@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:51:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 17:21:10 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/14 19:10:07 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,8 +142,8 @@ int main(int argc, char **argv)
 {
 	if (argc == 2 && is_s_file(argv[1]))
 		assembler(argv[1]);
-//	else if (argc == 2 && is_cor_file(argv[1]))
-//		disassembler(argv[1]);
+	else if (argc == 2 && is_cor_file(argv[1]))
+		disassembler(argv[1]);
 	else
 		ft_printf("usage: ./assembler map");
 	return(0);
