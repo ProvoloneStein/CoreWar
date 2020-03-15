@@ -85,6 +85,7 @@ int			disassembler(char *filename)
 	ft_printf("%s", reader->filename);
 	if ((fd = open(reader->filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
+    ft_printf("Writing in file %s\n", pars->filename);
 	only_writer(fd, reader, code);
 	close(fd);
 	free_read(reader);

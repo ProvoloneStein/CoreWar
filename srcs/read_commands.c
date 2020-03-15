@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 17:01:07 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 15:29:46 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 16:44:47 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	make_com(t_pars *parser, int *i)
 {
-	if (parser->token->type == COMMENT && *i == 0)
+	if (parser->token && parser->token->type == COMMENT && *i == 0)
 	{
 		if (ft_strlen(parser->token->content) <= COMMENT_LENGTH)
 		{
@@ -32,7 +32,7 @@ int	make_com(t_pars *parser, int *i)
 
 int	make_name(t_pars *parser, int *i)
 {
-	if (parser->token->type == NAME && *i == 0)
+	if (parser->token && parser->token->type == NAME && *i == 0)
 	{
 		if (ft_strlen(parser->token->content) <= PROG_NAME_LENGTH)
 		{
@@ -64,7 +64,7 @@ int	check_commands(t_pars *parser)
 			continue;
 		return (errors_handler(3, parser->token->line, parser->token->column));
 	}
-	if (i != 1 && j != 1)
+	if (i != 1 || j != 1)
 		return (errors_handler(3, parser->token->line, parser->token->column));
 	parser->token = head;
 	return (1);

@@ -12,12 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c95ab926-b452-4a9c-b922-ba21dfbed0ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.cor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.cocor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.cor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/asm" beforeDir="false" afterPath="$PROJECT_DIR$/asm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func1.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/d_func1.o" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/d_func1.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/code_generator.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/code_generator.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/srcs/disassembler.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/disassembler.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/srcs/disassembler.o" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/disassembler.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/read_commands.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/read_commands.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,7 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1YRdjalOP7YcWvHVAL8nCaYcyP2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -44,6 +51,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -96,6 +104,8 @@
       <workItem from="1583752028119" duration="7197000" />
       <workItem from="1584203531802" duration="3612000" />
       <workItem from="1584209252684" duration="3173000" />
+      <workItem from="1584280730651" duration="475000" />
+      <workItem from="1584285518169" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="29.02.2020 edgar">
       <created>1582977397945</created>
@@ -140,10 +150,14 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="828" y="206" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1584209306518" />
-    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584208567857">
+    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584281300847">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1584208567857" />
+    <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1584281300847" />
+    <state x="829" y="414" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1584281512300">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="829" y="414" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.2560.1337@0.23.2560.1337" timestamp="1584281512300" />
     <state width="904" height="352" key="GridCell.Tab.0.bottom" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
@@ -176,10 +190,10 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state width="904" height="352" key="GridCell.Tab.1.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
-    <state x="959" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1584203533353">
+    <state x="959" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1584285527915">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state x="959" y="523" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1584203533353" />
+    <state x="959" y="523" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1584285527915" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -191,7 +205,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/disassembler.c</url>
-          <line>91</line>
+          <line>92</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
