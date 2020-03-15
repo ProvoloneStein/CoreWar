@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 13:38:03 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 14:44:31 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 14:57:44 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ char		*hero_func(t_read *reader)
 		return (ft_d_xor(reader));
 	return (hero_func2(reader));
 }
-
 
 void		hero_code(t_read *reader, char **code)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disassembler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 14:21:45 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 14:43:04 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 15:04:30 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,20 @@ t_read		*reader_init(char *progname)
 	return (pars);
 }
 
+static void	only_writer(int fd, t_read *reader, char *code)
+{
+	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));
+	write(fd, " \"", 2);
+	write(fd, reader->name, ft_strlen(reader->name));
+	write(fd, "\"\n", 2);
+	write(fd, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING));
+	write(fd, " \"", 2);
+	write(fd, reader->comment, ft_strlen(reader->comment));
+	write(fd, "\"\n", 2);
+	write(fd, code, ft_strlen(code));
+	write(fd, "\n", 1);
+}
+
 void		free_read(t_read *reader)
 {
 	if (reader->name)
@@ -53,17 +67,6 @@ void		free_read(t_read *reader)
 	if (reader->filename)
 		free(reader->filename);
 	free(reader);
-}
-
-void		hero_code(t_read *reader, char **code)
-{
-	while (reader->i < reader->code_size)
-	{
-		if (reader->code[reader->i] >= 0x01 && reader->code[reader->i] <= 0x10)
-			*code = ft_strplus(*code, hero_func(reader), 1, 1);
-		else
-			exit(0);
-	}
 }
 
 int			disassembler(char *filename)
@@ -82,16 +85,7 @@ int			disassembler(char *filename)
 	ft_printf("%s", reader->filename);
 	if ((fd = open(reader->filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
 		return (-1);
-	write(fd, NAME_CMD_STRING, ft_strlen(NAME_CMD_STRING));
-	write(fd, " \"", 2);
-	write(fd, reader->name, ft_strlen(reader->name));
-	write(fd, "\"\n", 2);
-	write(fd, COMMENT_CMD_STRING, ft_strlen(COMMENT_CMD_STRING));
-	write(fd, " \"", 2);
-	write(fd, reader->comment, ft_strlen(reader->comment));
-	write(fd, "\"\n", 2);
-	write(fd, code, ft_strlen(code));
-	write(fd, "\n", 1);
+	only_writer(fd, reader, code);
 	close(fd);
 	free_read(reader);
 	free(code);

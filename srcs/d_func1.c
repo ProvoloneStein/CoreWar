@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 15:21:16 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 20:37:57 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 14:49:39 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_d_ld(t_read *reader)
 	line = "\nld ";
 	reader->i += 1;
 	reader->arg_types = reader->code[reader->i];
-    reader->i += 1;
+	reader->i += 1;
 	line = ft_strplus(line, print_arg(reader, 4, 4, 1), 0, 1);
 	line = ft_strplus(line, ", ", 1, 0);
 	line = ft_strplus(line, print_arg(reader, 4, 3, 2), 1, 1);
