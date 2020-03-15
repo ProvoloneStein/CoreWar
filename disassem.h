@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   disassem.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: galiza <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 19:40:59 by galiza            #+#    #+#             */
-/*   Updated: 2020/03/15 19:42:26 by galiza           ###   ########.fr       */
+/*   Updated: 2020/03/15 22:16:42 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ typedef struct			s_read
 	char				*filename;
 }						t_read;
 
-
-char *d_errors(int error);
+char					*d_errors(int error);
 void					read_codefile(t_read *reader, int fd);
 char					*ft_d_live(t_read *reader);
 char					*ft_d_ld(t_read *reader);
@@ -57,7 +56,6 @@ char					*hero_func(t_read *reader);
 char					*print_arg(t_read *reader,
 		int size, int type, int num);
 int32_t					code_to_int(t_read *reader, size_t size);
-int32_t					bytecode_to_int32(const uint8_t *bytecode, size_t size);
 int						disassembler(char *filename);
 void					hero_code(t_read *reader, char **code);
 t_read					*reader_init(char *progname);
