@@ -17,7 +17,7 @@
 # include "libft.h"
 # include "op.h"
 # include <stdint.h>
-# include <assem.h>
+# include "assem.h"
 # include <stdbool.h>
 
 typedef struct			s_read
@@ -31,6 +31,8 @@ typedef struct			s_read
 	char				*filename;
 }						t_read;
 
+
+char *d_errors(int error);
 void					read_codefile(t_read *reader, int fd);
 char					*ft_d_live(t_read *reader);
 char					*ft_d_ld(t_read *reader);

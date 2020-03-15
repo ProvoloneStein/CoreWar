@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 22:43:04 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 19:22:32 by galiza           ###   ########.fr       */
+/*   Updated: 2020/03/15 20:53:46 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ int		errors_handler(int i, int x, int y)
 int		err_handler(int i, int y, int x)
 {
 	if (i == 0)
-		ft_printf("Syntax error - Perhaps you forgot to end with a newline?");
+		ft_printf("Syntax error - Perhaps you forgot to end with a newline?\n");
 	else if (i == 1)
-		ft_printf("Lexical error at [%i,%i]", x, y);
+		ft_printf("Lexical error at [%i,%i]\n", x, y);
 	else if (i == 2)
-		ft_printf("Labels got same names");
+		ft_printf("Labels got same names\n");
 	else if (i == 3)
-		ft_printf("Syntax error at token [TOKEN][%i:%i]", x, y);
+		ft_printf("Syntax error at token [TOKEN][%i:%i]\n", x, y);
 	exit(0);
 }

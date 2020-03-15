@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 19:38:22 by galiza           ###   ########.fr       */
+/*   Updated: 2020/03/15 21:00:37 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,102 @@ typedef struct			s_pars
 	int					f_head;
 	char				*filename;
 }						t_pars;
-int						errors_handler(int i, int x, int y);
+
+
+
+
+/*
+** assembler.c
+*/
+
+void		ft_free_str(t_pars *parser);
+t_pars		*parser_init(char *progname);
+int			assembler(char *fd_map);
+
+/*
+** errors.c
+*/
+
+int		errors_handler(int i, int x, int y);
+int		err_handler(int i, int y, int x);
+
 /*
 ** main.c
 */
-t_pars					*parser_init();
-int						is_s_file(char *str);
-int						assembler(char *fd_map);
-int						writing_in_file(t_pars *parser);
+int	is_cor_file(char *str);
+int	is_s_file(char *str);
+
+/*
+**=====================FILE_READER=======================
+*/
+
+/*
+** ===>>>   checks.c   <<<===
+*/
+
+char	*find_oper(char *str);
+char	*find_operation(char *str);
+int		if_digits(char *str);
+int		if_register(char *str);
+int		if_label(char *str);
+
+/*
+** ===>>>   checks2.c   <<<===
+*/
+
+int		if_name(char *str);
+int		if_comment(char *str);
+int		if_operation(char *str);
+int		check_map(char *map);
+int		check_commas(char *map);
+
+/*
+** ===>>>   create_list.c   <<<===
+*/
+
+int		read_map(char **map, char *fd_map);
+t_oken	find_token(char *c, t_token **tok, t_pars *pars);
+t_token	*create_elem(void);
+void	get_next_metion(t_pars *pars, char *map, t_ment **temp1);
+int		create_list(char *fd_map, t_pars *pars);
+
+/*
+** ===>>>   variables.c   <<<===
+*/
+
+void	add_variables(t_token **token, char *map);
+t_oken	find_variables(char *c, t_token **tok);
+char	*qwe1(char *map, t_oken token, char *temp, int len);
+char	*qwe(char *map, t_oken token, char *temp, int len);
+char	*get_variables(char *map, t_oken token);
+
+/*
+** ===>>>   edgar_func.c   <<<===
+*/
+
+void	scr_lin(char *c);
+void	score_line(char *c, int value, int ascending);
+char	*get_name_com(char *map);
+char	*get_content(char *map, t_oken token);
+void	skip_space(char *c);
+
+/*
+** ===>>>   edgar_func1.c   <<<===
+*/
+
+t_oken	get_tok(char *c);
+void	skip_sp(char *map);
+void	take_label(t_pars *pars, char *map, t_ment **temp1);
+void	take_ins(t_pars *pars, char *map);
+
+/*
+** ===>>>   operations.c   <<<===
+*/
+
+void	plus2bytes(char *str);
+void	plus_byte(char *str);
+void	check_unique_label(t_ment *ment);
+
 /*
 ** ====================CODE GENERATOR====================
 */
@@ -151,57 +239,4 @@ int						write_dir(t_pars *pars, size_t size, char **code);
 int						write_indir(t_pars *pars, char **code);
 int						write_reg(t_pars *pars, char **code);
 
-/*
-** create_list.c
-*/
-int						create_list(char *fd_map, t_pars *pars);
-t_token					*create_elem();
-void					get_next_metion(t_pars *pars,
-		char *map, t_ment **temp1);
-/*
-** operations.c
-*/
-void					plus2bytes(char *str);
-void					plus_byte(char *str);
-void					check_unique_label(t_ment *ment);
-/*
-** variables.c
-*/
-t_oken					find_variables(char *c, t_token **tok);
-void					add_variables(t_token **token, char *map);
-char					*get_variables(char *map, t_oken token);
-/*
-** checks.c
-*/
-char					*find_operation(char *str);
-int						if_digits(char *str);
-int						if_register(char *str);
-int						if_label(char *str);
-/*
-** checks2.c
-*/
-int						if_name(char *str);
-int						if_comment(char *str);
-int						if_operation(char *str);
-int						check_map(char *map);
-int						check_commas(char *map);
-
-/*
-** errors.c
-*/
-int						errors_handler(int i, int x, int y);
-int						err_handler(int i, int x, int y);
-/*
-** edgar_func.c
-*/
-void					score_line(char *c, int value, int ascending);
-char					*get_content(char *map, t_oken token);
-void					skip_space(char *c);
-/*
-** edgar_func1.c
-*/
-t_oken					get_tok(char *c);
-void					skip_sp(char *map);
-void					take_label(t_pars *pars, char *map, t_ment **temp1);
-void					take_ins(t_pars *pars, char *map);
 #endif

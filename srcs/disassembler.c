@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 14:21:45 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 18:45:10 by galiza           ###   ########.fr       */
+/*   Updated: 2020/03/15 20:17:39 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,17 @@ static char	*create_file_s(char *filename)
 
 t_read		*reader_init(char *progname)
 {
-	t_read	*pars;
+	t_read	*rd;
 
-	pars = (t_read*)malloc(sizeof(t_read));
-	pars->comment = NULL;
-	pars->name = NULL;
-	pars->i = 0;
-	pars->arg_types = 0;
-	pars->code_size = 0;
-	pars->code = NULL;
-	pars->filename = create_file_s(progname);
-	return (pars);
+	rd = (t_read*)malloc(sizeof(t_read));
+	rd->comment = NULL;
+	rd->name = NULL;
+	rd->i = 0;
+	rd->arg_types = 0;
+	rd->code_size = 0;
+	rd->code = NULL;
+	rd->filename = create_file_s(progname);
+	return (rd);
 }
 
 static void	only_writer(int fd, t_read *reader, char *code)
@@ -77,15 +77,15 @@ int			disassembler(char *filename)
 
 	code = ft_strnew(0);
 	if ((fd = open(filename, O_RDONLY)) == -1)
-		exit(1);
+		d_errors(1);
 	reader = reader_init(filename);
 	read_codefile(reader, fd);
 	close(fd);
 	hero_code(reader, &code);
 	ft_printf("%s", reader->filename);
 	if ((fd = open(reader->filename, O_CREAT | O_TRUNC | O_WRONLY, 0644)) == -1)
-		return (-1);
-	ft_printf("Writing in file %s\n", pars->filename);
+		d_errors(2);
+	ft_printf("Writing in file %s\n", reader->filename);
 	only_writer(fd, reader, code);
 	close(fd);
 	free_read(reader);

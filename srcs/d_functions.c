@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 13:38:03 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 14:57:44 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 20:19:33 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char		*print_arg(t_read *reader, int size, int type, int num)
 
 	bt = 8 - 2 * num;
 	if ((tr = (reader->arg_types & (uint8_t)3)))
-		exit(1);
+		d_errors(3);
 	if ((type == 1 || type == 4 || type == 5 || type == 7)
 			&& ((reader->arg_types >> bt) & (uint8_t)3) == (uint8_t)2)
 		return (print_dir(reader, size));
@@ -43,7 +43,7 @@ char		*print_arg(t_read *reader, int size, int type, int num)
 	else if (type == 0 && ((reader->arg_types >> bt)
 				& (uint8_t)3) == (uint8_t)0)
 		return (NULL);
-	exit(0);
+	return (d_errors(3));
 }
 
 int32_t		code_to_int(t_read *rd, size_t size)
@@ -86,7 +86,7 @@ static char	*hero_func2(t_read *reader)
 		return (ft_d_lfork(reader));
 	else if (reader->code[reader->i] == 0x10)
 		return (ft_d_aff(reader));
-	exit(1);
+	return (d_errors(3));
 }
 
 char		*hero_func(t_read *reader)
@@ -117,6 +117,6 @@ void		hero_code(t_read *reader, char **code)
 		if (reader->code[reader->i] >= 0x01 && reader->code[reader->i] <= 0x10)
 			*code = ft_strplus(*code, hero_func(reader), 1, 1);
 		else
-			exit(0);
+			d_errors(3);
 	}
 }
