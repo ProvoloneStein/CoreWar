@@ -1,4 +1,4 @@
-.name "Lisbeth Salander"
+Lisbeth Salander"
 .comment "I will hack you"
 
 ld %1, r2

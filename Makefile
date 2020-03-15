@@ -6,7 +6,7 @@
 #    By: pstein <pstein@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/27 16:25:48 by pstein            #+#    #+#              #
-#    Updated: 2020/03/14 15:44:36 by pstein           ###   ########.fr        #
+#    Updated: 2020/03/15 14:02:11 by pstein           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ HEADER= assem.h
 
 
 C_ASM= main.c functions.c read_struct.c funct1.c funct2.c funct3.c funct4.c create_list.c checks.c operations.c variables.c\
-functions2.c read_commands.c errors.c code_generator.c checks2.c edgar_func.c edgar_func1.c d_func.c d_func1.c d_func2.c d_func3.c d_func4.c reader.c disassembler.c
+functions2.c read_commands.c errors.c code_generator.c checks2.c edgar_func.c edgar_func1.c\
+d_functions.c d_functions2.c d_func1.c d_func2.c d_func3.c d_func4.c reader.c disassembler.c
 
 ASM_SRC = $(addprefix $(ASM_SRC_DIR),$(C_ASM))
 

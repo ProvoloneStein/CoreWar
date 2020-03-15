@@ -52,7 +52,6 @@ char *ft_d_aff(t_read *reader);
 char *print_dir(t_read *reader, int size);
 char *print_indir(t_read *reader);
 char *print_reg(t_read *reader);
-char	*hero_func2(t_read *reader);
 char		*hero_func(t_read *reader);
 char *print_arg(t_read  *reader, int size, int type, int num);
 int32_t		code_to_int(t_read *reader, size_t size);

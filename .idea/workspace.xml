@@ -95,7 +95,7 @@
       <workItem from="1583668101384" duration="7743000" />
       <workItem from="1583752028119" duration="7197000" />
       <workItem from="1584203531802" duration="3612000" />
-      <workItem from="1584209252684" duration="2948000" />
+      <workItem from="1584209252684" duration="3173000" />
     </task>
     <task id="LOCAL-00001" summary="29.02.2020 edgar">
       <created>1582977397945</created>
@@ -144,38 +144,38 @@
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="997" y="501" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1584208567857" />
-    <state width="904" height="352" key="GridCell.Tab.0.bottom" timestamp="1584211536984">
+    <state width="904" height="352" key="GridCell.Tab.0.bottom" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
-    <state width="904" height="352" key="GridCell.Tab.0.center" timestamp="1584211536984">
+    <state width="904" height="352" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
+    <state width="904" height="352" key="GridCell.Tab.0.center" timestamp="1584212565800">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
-    <state width="904" height="352" key="GridCell.Tab.0.left" timestamp="1584211536983">
+    <state width="904" height="352" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565800" />
+    <state width="904" height="352" key="GridCell.Tab.0.left" timestamp="1584212565800">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536983" />
-    <state width="904" height="352" key="GridCell.Tab.0.right" timestamp="1584211536984">
+    <state width="904" height="352" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565800" />
+    <state width="904" height="352" key="GridCell.Tab.0.right" timestamp="1584212565800">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584211536984" />
-    <state width="904" height="352" key="GridCell.Tab.1.bottom" timestamp="1584211537511">
+    <state width="904" height="352" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565800" />
+    <state width="904" height="352" key="GridCell.Tab.1.bottom" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.1.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
-    <state width="904" height="352" key="GridCell.Tab.1.center" timestamp="1584211537511">
+    <state width="904" height="352" key="GridCell.Tab.1.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
+    <state width="904" height="352" key="GridCell.Tab.1.center" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.1.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
-    <state width="904" height="352" key="GridCell.Tab.1.left" timestamp="1584211537510">
+    <state width="904" height="352" key="GridCell.Tab.1.center/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
+    <state width="904" height="352" key="GridCell.Tab.1.left" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.1.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537510" />
-    <state width="904" height="352" key="GridCell.Tab.1.right" timestamp="1584211537511">
+    <state width="904" height="352" key="GridCell.Tab.1.left/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
+    <state width="904" height="352" key="GridCell.Tab.1.right" timestamp="1584212565801">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
-    <state width="904" height="352" key="GridCell.Tab.1.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584211537511" />
+    <state width="904" height="352" key="GridCell.Tab.1.right/0.23.2560.1337@0.23.2560.1337" timestamp="1584212565801" />
     <state x="959" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1584203533353">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
@@ -191,12 +191,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/disassembler.c</url>
-          <line>93</line>
+          <line>91</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/srcs/disassembler.c</url>
-          <line>74</line>
+          <line>72</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

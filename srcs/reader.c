@@ -1,5 +1,27 @@
 #include "disassem.h"
 
+static int32_t buff_to_int(const uint8_t *bytecode, size_t size)
+{
+	int32_t	result;
+	_Bool	sign;
+	int		i;
+
+	result = 0;
+	sign = (_Bool)(bytecode[0] & 0x80);
+	i = 0;
+	while (size)
+	{
+		if (sign)
+			result += ((bytecode[size - 1] ^ 0xFF) << (i++ * 8));
+		else
+			result += bytecode[size - 1] << (i++ * 8);
+		size--;
+	}
+	if (sign)
+		result = ~(result);
+	return (result);
+}
+
 static int32_t	read_int(int fd)
 {
 	ssize_t	size;
@@ -10,7 +32,7 @@ static int32_t	read_int(int fd)
 		exit(0);
 	if (size < 4)
 		exit(0);
-	return (bytecode_to_int32(buffer, 4));
+	return (buff_to_int(buffer, 4));
 }
 
 static char *read_commands(int fd, size_t len)
