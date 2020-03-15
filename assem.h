@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 08:37:44 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 21:00:37 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 21:03:26 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,6 +164,12 @@ void	check_unique_label(t_ment *ment);
 /*
 ** ====================CODE GENERATOR====================
 */
+
+/*
+** ===>>>   code_generator.c   <<<===
+*/
+
+int	writing_in_file(t_pars *pars);
 
 /*
 ** read from token struct and validate CHAMPIONS NAME AND COMMENT
