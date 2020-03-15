@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 16:33:30 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/08 20:27:05 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 15:36:20 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			make_code(t_pars *pars, char **bytecode)
 	while (pars->token->type == NAME || pars->token->type == COMMENT)
 		pars->token = pars->token->next;
 	if (pars->token->type == END)
-		return(errors_handler(6, pars->token->line, pars->token->column));	
+		return (errors_handler(6, pars->token->line, pars->token->column));
 	while (pars->token && pars->token->type != END)
 	{
 		if (pars->token->type == INSTRUCTION)
@@ -70,16 +70,12 @@ int			make_code(t_pars *pars, char **bytecode)
 			pars->f_head = pars->token->byte;
 			if (what_function(pars, bytecode))
 				continue;
-			pars->token = head;
-			return (ft_printf("LOL?"));
+			return (errors_handler(7, pars->token->line, pars->token->column));
 		}
 		else if (pars->token->type == LABEL)
 			pars->token = pars->token->next;
 		else
-		{
-			pars->token = head;
 			return (errors_handler(4, pars->token->line, pars->token->column));
-		}
 	}
 	pars->token = head;
 	return (1);
