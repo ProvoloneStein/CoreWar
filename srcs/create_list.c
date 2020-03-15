@@ -6,7 +6,7 @@
 /*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 20:07:12 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/14 20:43:09 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 18:44:02 by galiza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,7 @@ t_oken	find_token(char *c, t_token **tok, t_pars *pars)
 		return (END);
 	else if (c[g_end] == LABEL_CHAR && flag)
 		return (LABEL);
-	err_handler(1, (*tok)->column, (*tok)->line);
-	return (0);
+	return (err_handler(1, (*tok)->column, (*tok)->line));
 }
 
 t_token	*create_elem(void)
