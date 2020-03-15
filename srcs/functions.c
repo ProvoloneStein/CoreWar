@@ -6,15 +6,11 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 15:43:31 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 14:16:03 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 15:13:59 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "assem.h"
-
-/*
-** find valude что-то сделать если 0 вылетает
-*/
 
 /*
 ** arg types
@@ -54,17 +50,6 @@ int		next_arg(t_pars *parser, int type, int size, char **bytecode)
 	return (errors_handler(2, parser->token->line, parser->token->column));
 }
 
-int ft_equ(char *str, char *str1)
-{
-	int i;
-	i = 0;
-	while(str[i] && str1[i] && str[i] == str1[i])
-	i++;
-	if (str[i] == '\0' && str1[i] == '\0')
-		return(1);
-	return(0);	
-}
-
 int		find_value(t_pars *parser)
 {
 	t_ment	*head;
@@ -72,10 +57,9 @@ int		find_value(t_pars *parser)
 
 	head = parser->mention;
 	i = -1;
-	while (parser->mention && (ft_strcmp(parser->mention->name, parser->token->content)))
-	{
+	while (parser->mention
+			&& (ft_strcmp(parser->mention->name, parser->token->content)))
 		parser->mention = parser->mention->next;
-	}
 	if (parser->mention)
 		i = parser->mention->byte - parser->f_head + 1;
 	parser->mention = head;
@@ -90,7 +74,6 @@ int		write_dir(t_pars *pars, size_t size, char **code)
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == DIRECT_LABEL)
 	{
-        num = find_value(pars);
 		if ((num = find_value(pars)) == -1)
 			return (errors_handler(1, pars->token->line, pars->token->column));
 		int_to_byte(*code, pars->i, num, size);
@@ -103,7 +86,7 @@ int		write_dir(t_pars *pars, size_t size, char **code)
 	return (1);
 }
 
-int		write_indir(t_pars *pars, char **code)
+int		write_indir(t_pars *pars, char **cd)
 {
 	int	num;
 
@@ -111,13 +94,12 @@ int		write_indir(t_pars *pars, char **code)
 		return (errors_handler(0, pars->token->line, pars->token->column));
 	if (pars->token->type == INDIRECT_LABEL)
 	{
-        num = find_value(pars);
 		if ((num = find_value(pars)) == -1)
 			return (errors_handler(1, pars->token->line, pars->token->column));
-		int_to_byte(*code, pars->i, num, IND_SIZE);
+		int_to_byte(*cd, pars->i, num, IND_SIZE);
 	}
 	else if (pars->token->type == INDIRECT)
-		int_to_byte(*code, pars->i, ft_atoi_asm(pars->token->content), IND_SIZE);
+		int_to_byte(*cd, pars->i, ft_atoi_asm(pars->token->content), IND_SIZE);
 	else
 		return (errors_handler(2, pars->token->line, pars->token->column));
 	pars->i += IND_SIZE;
