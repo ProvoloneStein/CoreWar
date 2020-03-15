@@ -5,6 +5,11 @@ CHAMPS[3]=ex
 CHAMPS[4]=Gagnant
 CHAMPS[5]=jumper
 CHAMPS[6]=maxidef
+CHAMPS[7]=Octobre_Rouge_V4.2
+CHAMPS[8]=mortel
+CHAMPS[9]=slider2
+CHAMPS[10]=toto
+
 #!/bin/bash
 for element in ${CHAMPS[@]}
 do
@@ -17,4 +22,7 @@ mv ./champs/$element.cor ./ > /dev/null
 		then echo "OK $element";
 		else echo "KO $element";
 fi
+rm $element.cor
+rm $element.s
+rm ./champs/$element.cor
 done

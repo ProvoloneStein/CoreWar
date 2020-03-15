@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 17:13:30 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/08 22:48:18 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 22:04:43 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,33 @@ int					ft_atoi(const char *str)
 	return (result * neg);
 }
 
+static void			ft_help_atoi(char *str, int *i)
+{
+	while (str[*i] == 32 || (str[*i] >= 9 && str[*i] <= 13))
+		(*i)++;
+	if (str[*i] == '-' || str[*i] == '+')
+		(*i)++;
+}
+
 int					ft_atoi_asm(const char *str)
 {
 	int				i;
 	long long int	result;
 	long long int	neg;
-	long long int j;
+	long long int	j;
 
 	i = 0;
 	j = 0;
 	neg = 1;
 	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
+	ft_help_atoi(str, &i);
 	if (i > 0 && str[i - 1] == '-')
 		neg = -1;
 	while (str[i])
 	{
 		if (j > result)
-			return(-1);
-		j = result;	
+			return (-1);
+		j = result;
 		if (str[i] < 48 || 57 < str[i])
 			return (result * neg);
 		else

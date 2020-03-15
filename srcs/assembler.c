@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assembler.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pstein <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/15 20:25:52 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 20:35:50 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/15 21:46:05 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ t_pars		*parser_init(char *progname)
 {
 	t_pars	*pars;
 
-	pars = (t_pars*)malloc(sizeof(t_pars));
+	if (!(pars = (t_pars*)malloc(sizeof(t_pars))))
+		return (NULL);
 	pars->comment = NULL;
 	pars->name = NULL;
 	pars->token = NULL;
