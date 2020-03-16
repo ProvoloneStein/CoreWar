@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/29 22:43:04 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 20:53:46 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/16 17:49:01 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ int		err_handler(int i, int y, int x)
 		ft_printf("Labels got same names\n");
 	else if (i == 3)
 		ft_printf("Syntax error at token [TOKEN][%i:%i]\n", x, y);
+	else if (i == 4)
+		ft_printf("Can't open this file\n");
 	exit(0);
 }

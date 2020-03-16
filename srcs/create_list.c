@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/14 20:07:12 by pstein            #+#    #+#             */
-/*   Updated: 2020/03/15 20:45:12 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/16 17:50:01 by pstein           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int		read_map(char **map, char *fd_map)
 	int		fd;
 
 	*map = 0;
-	fd = open(fd_map, O_RDONLY);
+	if ((fd = open(fd_map, O_RDONLY)) == -1)
+		err_handler(4, 1, 1);
 	while ((i = read(fd, buf, BUFF_SIZE)))
 	{
 		buf[i] = '\0';
