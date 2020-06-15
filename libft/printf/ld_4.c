@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 12:06:11 by pstein            #+#    #+#             */
-/*   Updated: 2019/12/25 12:47:56 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/27 13:43:11 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,8 @@ char	*okruglenie(char *str, int precision)
 {
 	char	*str_plus;
 	int		i;
-	int		point;
 	int		fix;
 
-	point = 0;
 	str_plus = NULL;
 	i = check_after_stop(str);
 	fix = i;

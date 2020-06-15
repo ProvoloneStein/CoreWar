@@ -6,7 +6,7 @@
 /*   By: pstein <pstein@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 15:19:34 by pstein            #+#    #+#             */
-/*   Updated: 2020/01/23 16:39:06 by pstein           ###   ########.fr       */
+/*   Updated: 2020/03/27 13:41:02 by sts              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int			get_next_line(const int fd, char **line)
 	tmp = live->content;
 	if (tmp[read_result] != '\0')
 	{
-		live->content = ft_strdup(&((live->content)[read_result + 1]));
+		live->content = ft_strdup(&(((char*)live->content)[read_result + 1]));
 		free(tmp);
 	}
 	else
